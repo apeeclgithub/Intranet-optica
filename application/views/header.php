@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link href="img/logo-250.png" rel="icon" type="image/x-icon" /><!--faltafavicon -->
+		<link href="img/logo-250.png" type="image/x-icon" rel="shortcut icon" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>OpticRed</title>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/modernizr.js"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<!--[if lt IE 9 ]>
+<script type="text/javascript" src="js/html5shiv.min.js"></script>
+<script type="text/javascript" src="js/html5shiv-printshiv.min.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<![endif]-->
+
+	</head>
