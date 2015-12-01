@@ -31,6 +31,7 @@
 		<label for="mail_label" >
 			<span>Buscador</span>
 			<input id="input_search" type="text" />
+			<button>Buscar</button>
 		</label> 	
 	</div>
 	<div style="border:1px solid black;">
