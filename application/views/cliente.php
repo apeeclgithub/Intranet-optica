@@ -4,31 +4,31 @@
 	<div>Clientes</div>
 	<div style="border:1px solid black;">
 		<div>Agregar Cliente</div>
-		<label for="add_client_name_label" >
+		<label for="addClientNameLabel" >
 			<span>Nombre</span>
-			<input id="input_add_client_name" type="text" required/>
+			<input id="inputAddClientName" type="text" required/>
 		</label>
-		<label for="add_client_rut_label" >
+		<label for="addClientRutLabel" >
 			<span>Rut</span>
-			<input id="input_add_client_rut" type="text" required/>
+			<input id="inputAddClientRut" type="text" required/>
 		</label>	
-		<label for="add_client_phone_label" >
+		<label for="addClientPhoneLabel" >
 			<span>Teléfono</span>
-			<input id="input_add_client_phone" type="text" required/>
+			<input id="inputAddClientPhone" type="text" required/>
 		</label>
-		<label for="add_client_address_label" >
+		<label for="addClientAddressLabel" >
 			<span>Dirección</span>
-			<input id="input_add_client_address" type="text" required/>
+			<input id="inputAddClientAddress" type="text" required/>
 		</label>		
-        <label for="add_client_gir_label">
+        <label for="addClientGirLabel">
         	<span>Giro</span>
-            <input id="input_add_client_gir" type="text" required/>
+            <input id="inputAddClientGir" type="text" required/>
         </label>
 	</div>
 		<div style="border:1px solid black;">
-		<label for="mail_label" >
+		<label for="searchClientLabel" >
 			<span>Buscador</span>
-			<input id="input_search" type="text" />
+			<input id="inputClientSearch" type="text" />
 			<button>Buscar</button>
 		</label> 	
 	</div>

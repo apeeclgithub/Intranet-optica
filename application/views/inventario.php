@@ -6,31 +6,31 @@
 
 	<div style="border:1px solid black;">
 		<div>Agregar Producto</div>
-		<label for="add_product_cod_label" >
+		<label for="addProductCodLabel" >
 			<span>Código</span>
-			<input id="input_add_product_cod" type="text" required/>
+			<input id="inputAddProductCod" type="text" required/>
 		</label>
-		<label for="add_product_brand_label" >
+		<label for="addProductBrandLabel" >
 			<span>Marca</span>
-			<input id="input_add_product_brand" type="text" required/>
+			<input id="inputAddProductBrand" type="text" required/>
 		</label>	
-		<label for="add_product_colour_label" >
+		<label for="addProductColourLabel" >
 			<span>Color</span>
-			<input id="input_add_product_colour" type="text" required/>
+			<input id="inputAddProductColour" type="text" required/>
 		</label>
-		<label for="add_product_desc_label" >
+		<label for="addProductDescLabel" >
 			<span>Descripción</span>
-			<textarea rows="4" cols="50" id="input_add_product_desc" type="text" required></textarea>
+			<textarea rows="4" cols="50" id="inputAddProductDesc" type="text" required></textarea>
 		</label>		
-        <label for="add_product_stock_label">
+        <label for="addProductStockLabel">
         	<span>Stock</span>
-            <input id="input_add_product_stock" type="number" required/>
+            <input id="inputAddProductStock" type="number" required/>
         </label>
 	</div>
 	<div style="border:1px solid black;">
-		<label for="mail_label" >
+		<label for="searchInventLabel" >
 			<span>Buscador</span>
-			<input id="input_search" type="text" />
+			<input id="inputSearch" type="text" />
 			<button>Buscar</button>
 		</label> 	
 	</div>

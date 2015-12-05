@@ -8,50 +8,50 @@
 		
 		<div>
 			<div>Sistema</div>
-			<label for="close_cash_label" >
+			<label for="closeCashLabel" >
 				<span>Efectivo</span>
-				<input id="input_close_cash" type="text" required/>
+				<input id="inputCloseCash" type="text" required/>
 			</label>
-			<label for="close_card_label" >
+			<label for="closeCardLabel" >
 				<span>Tarjeta Crédito</span>
-				<input id="input_close_card" type="text" required/>
+				<input id="inputCloseCard" type="text" required/>
 			</label>
-			<label for="close_doc_label" >
+			<label for="closeDocLabel" >
 				<span>Cheque</span>
-				<input id="input_close_doc" type="text" required/>
+				<input id="inputCloseDoc" type="text" required/>
 			</label>
-			<label for="close_total_label" >
+			<label for="closeTotalLabel" >
 				<span>Total</span>
-				<input id="input_close_total" type="text" required/>
+				<input id="inputCloseTotal" type="text" required/>
 			</label>
 		</div>
 		<div>
 			<div>Real</div>
-			<label for="close_cash_label_real" >
+			<label for="closeCashLabelReal" >
 				<span>Efectivo</span>
-				<input id="input_close_cash_real" type="text" required/>
+				<input id="inputCloseCashReal" type="text" required/>
 			</label>
-			<label for="close_card_label_real" >
+			<label for="closeCardLabelReal" >
 				<span>Tarjeta Crédito</span>
-				<input id="input_close_card_real" type="text" required/>
+				<input id="inputCloseCardReal" type="text" required/>
 			</label>
-			<label for="close_doc_label_real" >
+			<label for="closeDocLabelReal" >
 				<span>Cheque</span>
-				<input id="input_close_doc_real" type="text" required/>
+				<input id="inputCloseDocReal" type="text" required/>
 			</label>
-			<label for="close_total_label_real" >
+			<label for="closeTotalLabelReal" >
 				<span>Total</span>
-				<input id="input_close_total_real" type="text" required/>
+				<input id="inputCloseTotalReal" type="text" required/>
 			</label>
 		</div>
 		<div>
-			<label for="close_dif_label" >
+			<label for="closeDifLabel" >
 				<span>Diferencia</span>
-				<input id="input_close_dif" type="text" required/>
+				<input id="inputCloseDif" type="text" required/>
 			</label>
-			<label for="close_pending_label" >
+			<label for="closePendingLabel" >
 				<span>Saldo Pendiente</span>
-				<input id="input_close_pending" type="text" required/>
+				<input id="inputClosePending" type="text" required/>
 			</label>
 			<button>Resumen venta diaría</button>
 			<button>Cerrar Caja</button>
