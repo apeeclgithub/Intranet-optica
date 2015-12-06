@@ -91,6 +91,12 @@
 				</tr>
 			</table>
 		</div>
+		<div style="border:1px solid black;">Exportar Cierre Caja
+			<button>Cierre Caja</button>
+		</div>
+		<div style="border:1px solid black;">Exportar Saldo pendiente diario
+			<button>Saldo Pendiente</button>
+		</div>
 	</div>
 
 </div>

@@ -68,6 +68,12 @@
 			</tr>
 		</table>
 	</div>
+	<div style="border:1px solid black;">Exportar Detalle Inventario
+		<button>Detalle Inventario</button>
+	</div>
+	<div style="border:1px solid black;">Exportar Productos más vendidos
+		<button>Productos más Vendidos</button>
+	</div>
 </div>
 
 <?php include('footer.php') ?>

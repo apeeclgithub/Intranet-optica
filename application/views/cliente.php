@@ -69,5 +69,8 @@
 			</tr>
 		</table>
 	</div>
+	<div style="border:1px solid black;">Exportar Listado Clientes
+		<button>Exportar Listado</button>
+	</div>
 </div>
 <?php include('footer.php') ?>
