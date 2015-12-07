@@ -17,7 +17,7 @@ body{
 header, #content, footer{
     width: 100%;
     margin-top: 3%;
-    border: 1px solid #a1a1a1;
+    border: 2px solid #CEE3F6;
     padding: 0px 2px;
     background: aliceblue;
     border-radius: 5px;
