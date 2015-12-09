@@ -2,7 +2,7 @@
 <?php include('nav_menu.php') ?>
 
 <div id ="content">
-	<div>Inventario</div>
+	<h2>Inventario</h2>
 
 	<div style="border:1px solid black;">
 		<div>Agregar Producto</div>

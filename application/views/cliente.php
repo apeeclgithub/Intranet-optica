@@ -1,37 +1,38 @@
 <?php include('header.php');?>
 <?php include('nav_menu.php') ?>
 <div id="content">
-	<div>Clientes</div>
-	<div style="border:1px solid black;">
+	<h2>Clientes</h2>
+	<div id="addClientForm" style="border:1px solid black;">
 		<div>Agregar Cliente</div>
-		<label for="addClientNameLabel" >
-			<span>Nombre</span>
-			<input id="inputAddClientName" type="text" required/>
-		</label>
-		<label for="addClientRutLabel" >
-			<span>Rut</span>
-			<input id="inputAddClientRut" type="text" required/>
-		</label>	
-		<label for="addClientPhoneLabel" >
-			<span>Teléfono</span>
-			<input id="inputAddClientPhone" type="text" required/>
-		</label>
-		<label for="addClientAddressLabel" >
-			<span>Dirección</span>
-			<input id="inputAddClientAddress" type="text" required/>
-		</label>		
-        <label for="addClientGirLabel">
-        	<span>Giro</span>
-            <input id="inputAddClientGir" type="text" required/>
-        </label>
-	</div>
+		<div id="dataClient">
+			<label for="addClientNameLabel" id="addClientNameLabel">
+				<span>Nombre</span>
+				<input id="inputAddClientName" type="text" required/>
+			</label>
+			<label for="addClientRutLabel" id="addClientRutLabel" >
+				<span>Rut</span>
+				<input id="inputAddClientRut" type="text" required/>
+			</label>			
+			<label for="addClientPhoneLabel" id="addClientPhoneLabel">
+				<span>Teléfono</span>
+				<input id="inputAddClientPhone" type="text" required/>
+			</label>
+			<label for="addClientAddressLabel" id="addClientAddressLabel" >
+				<span>Dirección</span>
+				<input id="inputAddClientAddress" type="text" required/>
+			</label>				
+	        <label for="addClientGirLabel" id="addClientGirLabel">
+	        	<span>Giro</span>
+	            <input id="inputAddClientGir" type="text" required/>
+	        </label>
+        </div>
 		<div style="border:1px solid black;">
-		<label for="searchClientLabel" >
+		<label for="searchClientLabel" id="searchClientLabel">
 			<span>Buscador</span>
 			<input id="inputClientSearch" type="text" />
 			<button>Buscar</button>
 		</label> 	
-	</div>
+		</div>
 	<div style="border:1px solid black;">
 		<table border="1">
 			<tr>
@@ -72,5 +73,6 @@
 	<div style="border:1px solid black;">Exportar Listado Clientes
 		<button>Exportar Listado</button>
 	</div>
+</div>
 </div>
 <?php include('footer.php') ?>
