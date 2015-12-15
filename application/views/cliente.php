@@ -34,41 +34,69 @@
 		</label> 	
 		</div>
 	<div style="border:1px solid black;">
-		<table border="1">
-			<tr>
-				<td>Nombre</td>
-				<td>Rut</td>
-				<td>Teléfono</td>
-				<td>Dirección</td>
-				<td>Giro</td>
-				<td>Cheques</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Nombre1</td>
-				<td>Rut1</td>
-				<td>Teléfono1</td>
-				<td>Dirección1</td>
-				<td>Giro1</td>
-				<td>Cheques1</td>
-				<td>
-					<button>Eliminar</button>
-					<button>Modificar</button>
-				</td>
-			</tr>
-			<tr>
-				<td>Nombre2</td>
-				<td>Rut2</td>
-				<td>Teléfono2</td>
-				<td>Dirección2</td>
-				<td>Giro2</td>
-				<td>Cheques2</td>
-				<td>
-					<button>Eliminar</button>
-					<button>Modificar</button>
-				</td>
-			</tr>
-		</table>
+	<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+	  <thead>
+	    <tr>
+			<th class="mdl-data-table__cell--non-numeric">Nombre</th>
+			<th>Rut</th>
+			<th>Teléfono</th>
+			<th>Dirección</th>
+			<th>Giro</th>
+			<th>Cheques</th>
+			<th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+			<td class="mdl-data-table__cell--non-numeric">Nombre1</td>
+			<td>Rut1</td>
+			<td>Fono1</td>
+			<td>Dirección1</td>
+			<td>Giro1</td>
+			<td>Cheques1</td>
+			<td>
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+	  				<i class="material-icons">edit</i>
+				</button>		
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+	  				<i class="material-icons">delete</i>
+				</button>
+			</td>
+	    </tr>
+	    <tr>
+			<td class="mdl-data-table__cell--non-numeric">Nombre2</td>
+			<td>Rut2</td>
+			<td>Fono2</td>
+			<td>Dirección2</td>
+			<td>Giro2</td>
+			<td>Cheques2</td>
+			<td>
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+	  				<i class="material-icons">edit</i>
+				</button>		
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+	  				<i class="material-icons">delete</i>
+				</button>
+			</td>
+	    </tr>
+	    <tr>
+			<td class="mdl-data-table__cell--non-numeric">Nombre3</td>
+			<td>Rut3</td>
+			<td>Fono3</td>
+			<td>Dirección3</td>
+			<td>Giro3</td>
+			<td>Cheques3</td>
+			<td>
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+	  				<i class="material-icons">edit</i>
+				</button>		
+				<button class="mdl-button mdl-js-button mdl-button--icon">
+	  				<i class="material-icons">delete</i>
+				</button>
+			</td>
+	    </tr>
+	  </tbody>
+	</table>
 	</div>
 	<div style="border:1px solid black;">Exportar Listado Clientes
 		<button>Exportar Listado</button>

@@ -16,6 +16,10 @@
 		<script src="../../public/js/script.js"></script>
 		<script src="../../public/js/modernizr.js"></script>
 		<link href="../../public/css/style.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../../public/mdl/material.min.css">
+		<script src="../../public/mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 		<!--[if lt IE 9 ]>
 <script type="text/javascript" src="js/html5shiv.min.js"></script>
 <script type="text/javascript" src="js/html5shiv-printshiv.min.js"></script>
