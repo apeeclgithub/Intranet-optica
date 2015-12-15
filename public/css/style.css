@@ -3,8 +3,8 @@
     src: url(../font/Roboto-Black.ttf);
 }
 @font-face{
-    font-family: Roboto-Regular;
-    src: url(../font/Roboto-Regular.ttf);
+    font-family: Roboto;
+    src: url(../font/Roboto.ttf);
 }
 @font-face{
     font-family: Roboto-Condensed;
@@ -23,122 +23,25 @@ body{
     max-width: 960px;
     padding:0px;
     height: auto;
-    font-family: 'Roboto-Regular', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500px;
     font-size: 1rem;
 }
 
 header, #content, footer{
     width: 100%;
-    margin-top: 3%;
-    border: 2px solid #CEE3F6;
-    padding: 0px 2px;
-    background: aliceblue;
-    border-radius: 5px;
-}
-h1{
-    text-align: center;
-    margin:10px;
 }
 
-h2{
-    text-align: center;
-    font-size: 30px;
-    margin:10px;
-    font-weight: bold;
-    color:#7bacff ;
+.mdl-layout {
+    align-items: center;
+    justify-content: center;
+}
+.mdl-layout__content {
+    padding: 24px;
+    flex: none;
 }
 
-.form{
-    padding: 20px;
-    width: 50%;
-    margin: 0 auto;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-.form>label>input, .form>label>textarea {
-    margin-bottom: 15px;
-    width: 100%;
-    border: 1px solid #81BEF7;
-    height: 30px;
-    margin-top: 15px;
-} 
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-    border-right:1px solid #bbb;
-}
-
-li:last-child {
-    border-right: none;
-}
-
-li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: lightblue;
-}
-
-.active {
-    background-color: lightblue;
-}
-
-#content{
-}
-   
-input{
-    border: 1px solid #a4caff;
-    height: 20px;
-}
-
-textarea{
-    border: 1px solid #a4caff;
-    height: 100px;  
-    resize:none;  
-}
-
-button{
-    background-color: #a4caff;
-    color: white;
-    width: 120px;
-    height: 35px;
-    border-radius: 3px;
-}
-
-button:hover{
-    background-color: #7bacff;
-}
-
-/*Cliente*/
-#addClientForm{
-    margin:10px;
-    font-family: 'Roboto-Condensed', sans-serif;
-    padding:10px;
-}
-
-#dataClient{
-    margin-top:20px;
-}
-
-#dataClient>label{
-    padding-left:10px;
-    padding-right: 10px;
-}
-
-#inputAddClientGir{
-    margin-left: 24px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.mdl-navigation__link{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem !important;
 }
