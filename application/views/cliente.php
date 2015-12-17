@@ -3,7 +3,7 @@
 <div id="content">
 	<h2>CLIENTES</h2>
 	<div id="addClientForm">
-		<div>AGREGAR CLIENTE</div>
+		<div class="fontItem">AGREGAR CLIENTE</h3><br><br>
 		<div id="dataClient">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
@@ -32,14 +32,16 @@
         </div>
 		<div >
 			<form action="#">
-				<div>Buscador</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-					<label class="mdl-button mdl-js-button mdl-button--icon" for="site-search">
+				<br><div class="fontItem">BUSCAR CLIENTE</div><br>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
 						<i class="material-icons">search</i>
 					</label>
 					<div class="mdl-textfield__expandable-holder">
-					<input class="mdl-textfield__input" type="search" id="site-search" />
-					<label class="mdl-textfield__label" for="site-search">Buscar</label>
+						<input class="mdl-textfield__input" type="text" id="search-expandable2">
+						<label class="mdl-textfield__label" for="search-expandable2">
+							Ingrese rut cliente
+						</label>
 					</div>
 				</div>
 			</form>
@@ -49,22 +51,22 @@
 			  <thead>
 			    <tr>
 					<th class="mdl-data-table__cell--non-numeric">Nombre</th>
-					<th>Rut</th>
-					<th>Teléfono</th>
-					<th>Dirección</th>
-					<th>Giro</th>
-					<th>Cheques</th>
+					<th class="mdl-data-table__cell--non-numeric">Rut</th>
+					<th class="mdl-data-table__cell--non-numeric">Teléfono</th>
+					<th class="mdl-data-table__cell--non-numeric">Dirección</th>
+					<th class="mdl-data-table__cell--non-numeric">Giro</th>
+					<th class="mdl-data-table__cell--non-numeric">Cheques</th>
 					<th></th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr>
 					<td class="mdl-data-table__cell--non-numeric">Nombre1</td>
-					<td>Rut1</td>
-					<td>Fono1</td>
-					<td>Dirección1</td>
-					<td>Giro1</td>
-					<td>Cheques1</td>
+					<td class="mdl-data-table__cell--non-numeric">Rut1</td>
+					<td class="mdl-data-table__cell--non-numeric">Fono1</td>
+					<td class="mdl-data-table__cell--non-numeric">Dirección1</td>
+					<td class="mdl-data-table__cell--non-numeric">Giro1</td>
+					<td class="mdl-data-table__cell--non-numeric">Cheques1</td>
 					<td>
 						<button class="mdl-button mdl-js-button mdl-button--icon">
 			  				<i class="material-icons">edit</i>
@@ -76,11 +78,11 @@
 			    </tr>
 			    <tr>
 					<td class="mdl-data-table__cell--non-numeric">Nombre2</td>
-					<td>Rut2</td>
-					<td>Fono2</td>
-					<td>Dirección2</td>
-					<td>Giro2</td>
-					<td>Cheques2</td>
+					<td class="mdl-data-table__cell--non-numeric">Rut2</td>
+					<td class="mdl-data-table__cell--non-numeric">Fono2</td>
+					<td class="mdl-data-table__cell--non-numeric">Dirección2</td>
+					<td class="mdl-data-table__cell--non-numeric">Giro2</td>
+					<td class="mdl-data-table__cell--non-numeric">Cheques2</td>
 					<td>
 						<button class="mdl-button mdl-js-button mdl-button--icon">
 			  				<i class="material-icons">edit</i>
@@ -92,11 +94,11 @@
 			    </tr>
 			    <tr>
 					<td class="mdl-data-table__cell--non-numeric">Nombre3</td>
-					<td>Rut3</td>
-					<td>Fono3</td>
-					<td>Dirección3</td>
-					<td>Giro3</td>
-					<td>Cheques3</td>
+					<td class="mdl-data-table__cell--non-numeric">Rut3</td>
+					<td class="mdl-data-table__cell--non-numeric">Fono3</td>
+					<td class="mdl-data-table__cell--non-numeric">Dirección3</td>
+					<td class="mdl-data-table__cell--non-numeric">Giro3</td>
+					<td class="mdl-data-table__cell--non-numeric">Cheques3</td>
 					<td>
 						<button class="mdl-button mdl-js-button mdl-button--icon">
 			  				<i class="material-icons">edit</i>

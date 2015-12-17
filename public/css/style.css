@@ -34,13 +34,14 @@ header, #content, footer{
 }
 
 /* Cliente*/
-.mdl-layout {
+.mdl-card mdl-shadow--6dp {
     align-items: center;
     justify-content: center;
+    
 }
-.mdl-layout__content {
-    padding: 24px;
-    flex: none;
+
+.mdl-shadow--6dp{
+  margin:0 auto !important;  
 }
 
 .mdl-navigation__link{
@@ -68,4 +69,13 @@ h2{
     text-align: center;
     color: #0277BD;
 }
+
+.fontItem{
+    font-weight: bold;
+}
 /*fin cliente*/
+
+/*inventario*/
+#textAreaDesc{
+    width:100% !important;
+}

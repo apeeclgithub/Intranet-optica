@@ -15,8 +15,6 @@
 </div>
 -->
 <div id="content">
-	<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
-	    <main class="mdl-layout__content">
 	        <div class="mdl-card mdl-shadow--6dp">
 	            <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
 	                <h2 class="mdl-card__title-text">Optic-Red</h2>
@@ -37,7 +35,5 @@
 	                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Ingresar</button>
 	            </div>
 	        </div>
-	    </main>
-	</div>	
 </div>
 <?php include('footer.php') ?>

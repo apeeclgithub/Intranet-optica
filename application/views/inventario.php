@@ -2,78 +2,116 @@
 <?php include('nav_menu.php') ?>
 
 <div id ="content">
-	<h2>Inventario</h2>
-
-	<div style="border:1px solid black;">
-		<div>Agregar Producto</div>
-		<label for="addProductCodLabel" >
-			<span>Código</span>
-			<input id="inputAddProductCod" type="text" required/>
-		</label>
-		<label for="addProductBrandLabel" >
-			<span>Marca</span>
-			<input id="inputAddProductBrand" type="text" required/>
-		</label>	
-		<label for="addProductColourLabel" >
-			<span>Color</span>
-			<input id="inputAddProductColour" type="text" required/>
-		</label>
-		<label for="addProductDescLabel" >
-			<span>Descripción</span>
-			<textarea rows="4" cols="50" id="inputAddProductDesc" type="text" required></textarea>
-		</label>		
-        <label for="addProductStockLabel">
-        	<span>Stock</span>
-            <input id="inputAddProductStock" type="number" required/>
-        </label>
+	<h2>INVENTARIO</h2>
+	<div class="fontItem">AGREGAR PRODUCTO</h3><br><br>
+	<div id="dataProducts">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
+			<label class="mdl-textfield__label" for="productCode">Código</label>
+			<span class="mdl-textfield__error">No puede ser vacío</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
+			<label class="mdl-textfield__label" for="productBrand">Marca</label>
+			<span class="mdl-textfield__error">No puede ser vacío</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield">
+			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor">
+			<label class="mdl-textfield__label" for="productColor">Color</label>
+			<span class="mdl-textfield__error">No puede ser vacío</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
+			<label class="mdl-textfield__label" for="productStock">Stock</label>
+		</div>
+    </div>
+    <div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
+			<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc"></textarea>
+			<label class="mdl-textfield__label" for="productDesc">Descripción</label>
+			<span class="mdl-textfield__error">No puede ser vacío</span>
+		</div>
+    </div>
+	<div >
+		<form action="#">
+		<br><div class="fontItem">BUSCAR PRODUCTO</div><br>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+						<i class="material-icons">search</i>
+					</label>
+					<div class="mdl-textfield__expandable-holder">
+						<input class="mdl-textfield__input" type="text" id="search-expandable2">
+						<label class="mdl-textfield__label" for="search-expandable2">
+							Ingrese código de producto
+						</label>
+					</div>
+				</div>
+		</form>
 	</div>
-	<div style="border:1px solid black;">
-		<label for="searchInventLabel" >
-			<span>Buscador</span>
-			<input id="inputSearch" type="text" />
-			<button>Buscar</button>
-		</label> 	
-	</div>
-	<div style="border:1px solid black;">
-		<table border="1">
-			<tr>
-				<td>Código</td>
-				<td>Marca</td>
-				<td>Color</td>
-				<td>Descripción</td>
+	<div >
+		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+		  <thead>
+		    <tr>
+				<th class="mdl-data-table__cell--non-numeric">Código</th>
+				<th class="mdl-data-table__cell--non-numeric">Marca</th>
+				<th class="mdl-data-table__cell--non-numeric">Color</th>
+				<th>Stock</th>
+				<th class="mdl-data-table__cell--non-numeric">Descripción</th>
+				<th></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+				<td class="mdl-data-table__cell--non-numeric">Código1</td>
+				<td class="mdl-data-table__cell--non-numeric">Marca</td>
+				<td class="mdl-data-table__cell--non-numeric">Color</td>
 				<td>Stock</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Cód1</td>
-				<td>Marca1</td>
-				<td>Color1</td>
-				<td>Desc1</td>
-				<td>Stock1</td>
+				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
 				<td>
-					<button>Eliminar</button>
-					<button>Modificar</button>
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+		  				<i class="material-icons">edit</i>
+					</button>		
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+		  				<i class="material-icons">delete</i>
+					</button>
 				</td>
-			</tr>
-			<tr>
-				<td>Cód2</td>
-				<td>Marca2</td>
-				<td>Color2</td>
-				<td>Desc2</td>
-				<td>Stock2</td>
+		    </tr>
+		    <tr>
+				<td class="mdl-data-table__cell--non-numeric">Código2</td>
+				<td class="mdl-data-table__cell--non-numeric">Marca</td>
+				<td class="mdl-data-table__cell--non-numeric">Color</td>
+				<td>Stock</td>
+				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
 				<td>
-					<button>Eliminar</button>
-					<button>Modificar</button>
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+		  				<i class="material-icons">edit</i>
+					</button>		
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+		  				<i class="material-icons">delete</i>
+					</button>
 				</td>
-			</tr>
+		    </tr>
+		    <tr>
+				<td class="mdl-data-table__cell--non-numeric">Código3</td>
+				<td class="mdl-data-table__cell--non-numeric">Marca</td>
+				<td class="mdl-data-table__cell--non-numeric">Color</td>
+				<td>Stock</td>
+				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
+				<td>
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+		  				<i class="material-icons">edit</i>
+					</button>		
+					<button class="mdl-button mdl-js-button mdl-button--icon">
+		  				<i class="material-icons">delete</i>
+					</button>
+				</td>
+		    </tr>
+		  </tbody>
 		</table>
 	</div>
-	<div style="border:1px solid black;">Exportar Detalle Inventario
-		<button>Detalle Inventario</button>
-	</div>
-	<div style="border:1px solid black;">Exportar Productos más vendidos
-		<button>Productos más Vendidos</button>
+	<div>
+		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Detalle Inventario</button>
+		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
 	</div>
 </div>
-
 <?php include('footer.php') ?>
