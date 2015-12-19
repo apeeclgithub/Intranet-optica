@@ -3,7 +3,7 @@
 <div id="content">
 	<h2>CLIENTES</h2>
 	<div id="addClientForm">
-		<div class="fontItem">AGREGAR CLIENTE</h3><br><br>
+		<div class="fontItem">AGREGAR CLIENTE</div><br><br>
 		<div id="dataClient">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">

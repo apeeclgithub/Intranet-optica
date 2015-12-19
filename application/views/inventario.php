@@ -3,7 +3,7 @@
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
-	<div class="fontItem">AGREGAR PRODUCTO</h3><br><br>
+	<div class="fontItem">AGREGAR PRODUCTO</div><br><br>
 	<div id="dataProducts">
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
@@ -11,18 +11,31 @@
 			<span class="mdl-textfield__error">No puede ser vacío</span>
 		</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
-			<label class="mdl-textfield__label" for="productBrand">Marca</label>
-			<span class="mdl-textfield__error">No puede ser vacío</span>
+			<div class="mdl-selectfield">
+				<label>Marca</label>
+				<select class="browser-default">
+					<option value="" disabled selected>Marca</option>
+					<option value="1">Marca 1</option>
+					<option value="2">Marca 2</option>
+					<option value="3">Marca 3</option>
+				</select>
+			</div>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield">
-			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor">
-			<label class="mdl-textfield__label" for="productColor">Color</label>
-			<span class="mdl-textfield__error">No puede ser vacío</span>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<div class="mdl-selectfield">
+				<label>Color</label>
+				<select class="browser-default">
+					<option value="" disabled selected>Color</option>
+					<option value="1">Color 1</option>
+					<option value="2">Color 2</option>
+					<option value="3">Color 3</option>
+				</select>
+			</div>
 		</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
 			<label class="mdl-textfield__label" for="productStock">Stock</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
     </div>
     <div>
@@ -32,6 +45,50 @@
 			<span class="mdl-textfield__error">No puede ser vacío</span>
 		</div>
     </div>
+<div>
+  <div class="interior">
+    <a class="btn" href="#open-modal">AGREGAR MARCA</a>
+  </div>
+    <div class="interior">
+    <a class="btn" href="#open-modal-color">AGREGAR COLOR</a>
+  </div>
+</div>
+<div>
+
+</div>
+<!-- modal marca-->
+<div id="open-modal" class="modal-window">
+    <div>
+     <h1>AGREGAR MARCA</h1>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
+			<label class="mdl-textfield__label" for="productBrand">Marca</label>
+			<span class="mdl-textfield__error">No puede ser vacío</span>
+		</div>
+		<div>
+			<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
+			<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
+		</div>
+    </div>
+</div>
+<!-- modal color -->
+<div id="open-modal-color" class="modal-window">
+    <div>
+     <h1>AGREGAR COLOR</h1>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor">
+			<label class="mdl-textfield__label" for="productColor">Color</label>
+			<span class="mdl-textfield__error">No puede ser vacío</span>
+		</div>
+			<div>
+			<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
+			<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
+		</div>
+    </div>
+</div>
+
+
+
 	<div >
 		<form action="#">
 		<br><div class="fontItem">BUSCAR PRODUCTO</div><br>

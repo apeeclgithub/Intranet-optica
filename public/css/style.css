@@ -79,3 +79,121 @@ h2{
 #textAreaDesc{
     width:100% !important;
 }
+
+select {
+    font-family: inherit;
+    background-color: transparent;
+    width: 300px;
+    padding: 4px 0;
+    font-size: 16px;
+    color: rgba(0,0,0, 0.26);
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+/* Remove focus */
+select:focus {
+    outline: none;
+}
+
+select:checked { color: red; }
+
+
+/* Hide label */
+.mdl-selectfield label {
+    display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.mdl-selectfield {
+    font-family: 'Roboto','Helvetica','Arial',sans-serif;
+    position: relative;
+}
+.mdl-selectfield:after {
+    position: absolute;
+    top: 0.75em;
+    right: 0.5em;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: 0.375em solid rgba(0,0,0, 0.12);
+    pointer-events: none;
+}
+/*modal marca inventario*/
+.interior {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn {
+    background-color: #2196F3;
+    padding: 1em 3em;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+}
+.modal-window {
+    position:fixed;
+    background-color: rgba(255,255,255,0.5);
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:999;
+    opacity:0;
+    pointer-events:none;
+    -webkit-transition:all 0.3s;
+    -moz-transition:all 0.3s;
+    transition:all 0.3s;
+}
+.modal-window:target {
+    opacity:1;
+    pointer-events:auto;
+    background-color: #90CAF9;
+}
+.modal-window>div {
+    width:400px;
+    position:relative;
+    margin:10% auto;
+    padding:2rem;
+    background:#fff;
+    color:#444;
+}
+.modal-window header {
+    font-weight:bold;
+}
+.modal-close {
+    color:#aaa;
+    line-height:50px;
+    font-size:80%;
+    position:absolute;
+    right:0;
+    text-align:center;
+    top:0;
+    width:70px;
+    text-decoration:none;
+}
+
+#modal-close{
+    text-decoration:none;
+    color: white !important; 
+}
+.modal-close:hover {
+    color:#000;
+}
+.modal-window h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+}
+
