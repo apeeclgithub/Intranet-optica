@@ -15,9 +15,9 @@
 				<label>Marca</label>
 				<select class="browser-default">
 					<option value="" disabled selected>Marca</option>
-					<option value="1">Marca 1</option>
-					<option value="2">Marca 2</option>
-					<option value="3">Marca 3</option>
+					<?php 
+						require '../controller/selectMarca.php';
+					?>
 				</select>
 			</div>
 		</div>
@@ -26,9 +26,9 @@
 				<label>Color</label>
 				<select class="browser-default">
 					<option value="" disabled selected>Color</option>
-					<option value="1">Color 1</option>
-					<option value="2">Color 2</option>
-					<option value="3">Color 3</option>
+					<?php 
+						require '../controller/selectColor.php';
+					?>
 				</select>
 			</div>
 		</div>
