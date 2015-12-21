@@ -1,16 +1,24 @@
 <?php 
 
-	function selectColor(){
+	require 'database.php';
+
+	class SelectColor{
+
+		function selectColor(){
 		
-		//require 'database.php';
-		$objConn = new Database();
+			$objConn = new Database(); 
+			$sql = $objConn->prepare('SELECT col_id, col_nombre FROM color');
+			
+			$sql->execute();
 
-		$sql = $objConn->prepare('SELECT col_id, col_nombre FROM color');
-		$sql->execute();
-		$result = $sql->fetchAll(); 
+			//return 
+			$result = $sql->fetchAll(PDO::FETCH_ASSOC);
+			var_dump($result);
+		}	
 
-		return $result;
-	
 	}
+
+	$clase = new SelectColor();
+	$clase->selectColor();
 
 ?>

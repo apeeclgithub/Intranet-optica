@@ -2,9 +2,12 @@
 
 	require '../model/selectColor.php';
 
-	$array = selectColor();
-	foreach ($array as $key => $value) {
-		echo '<option value="'.$value['col_id'].'">'.$value['col_nombre'].'</option>';
-	}
+	$clase = new SelectColor();
+	$clase->selectColor();
+	
+	print_r($clase);
+	/*foreach ($clase as $key => $value) {
+		echo $value['col_id'].' - '.$value['col_nombre'].'<br>';
+	}*/
 
 ?>

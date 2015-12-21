@@ -14,18 +14,6 @@
 		}
 
 	}
-	/*este es el gatillador de la conexion.
-		<?php 
-			require '../class/database.php';
-			$objConn = new Database();
-			$sql = $objConn->prepare('SELECT * FROM usuario');
-			$sql->execute();
-			$result = $sql->fetchAll();
-			foreach ($result as $key => $value) {
-				echo $value['USU_NOMBRE'].'<br>';
-			}
-	    ?>
-    */
 
 ?>
 
