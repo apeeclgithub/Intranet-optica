@@ -1,5 +1,6 @@
 <?php include('header.php');?>
-<?php include('nav_menu.php') ?>
+<?php include('nav_menu.php');
+require '../model/database.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
@@ -74,57 +75,9 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr>
-				<td class="mdl-data-table__cell--non-numeric">Código1</td>
-				<td class="mdl-data-table__cell--non-numeric">Marca</td>
-				<td class="mdl-data-table__cell--non-numeric">Color</td>
-				<td>Stock</td>
-				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-				<td>
-					<div class="btnRight">
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-						</div>
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-						</div>
-					</div>
-				</td>
-		    </tr>
-		    <tr>
-				<td class="mdl-data-table__cell--non-numeric">Código2</td>
-				<td class="mdl-data-table__cell--non-numeric">Marca</td>
-				<td class="mdl-data-table__cell--non-numeric">Color</td>
-				<td>Stock</td>
-				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-				<td>
-					<div class="btnRight">
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-						</div>
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-						</div>
-					</div>
-				</td>
-		    </tr>
-		    <tr>
-				<td class="mdl-data-table__cell--non-numeric">Código3</td>
-				<td class="mdl-data-table__cell--non-numeric">Marca</td>
-				<td class="mdl-data-table__cell--non-numeric">Color</td>
-				<td>Stock</td>
-				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-				<td>
-					<div class="btnRight">
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-						</div>
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-						</div>
-					</div>
-				</td>
-		    </tr>
+			<?php 
+				require '../controller/selectProductAll.php';
+			?>
 		  </tbody>
 		</table>
 	</div>

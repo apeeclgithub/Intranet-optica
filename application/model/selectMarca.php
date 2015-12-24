@@ -2,7 +2,7 @@
 
 	function selectMarca(){
 		
-		require 'database.php';
+		//require 'database.php';
 		$objConn = new Database();
 
 		$sql = $objConn->prepare('SELECT mar_id, mar_nombre FROM marca');

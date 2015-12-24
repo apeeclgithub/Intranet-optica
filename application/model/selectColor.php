@@ -1,9 +1,5 @@
 <?php 
 
-	require 'database.php';
-
-	class SelectColor{
-
 		function selectColor(){
 		
 			$objConn = new Database(); 
@@ -11,14 +7,8 @@
 			
 			$sql->execute();
 
-			//return 
-			$result = $sql->fetchAll(PDO::FETCH_ASSOC);
-			var_dump($result);
-		}	
+			return $result = $sql->fetchAll();
 
-	}
-
-	$clase = new SelectColor();
-	$clase->selectColor();
+		}
 
 ?>
