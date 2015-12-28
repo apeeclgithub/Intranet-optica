@@ -2,9 +2,7 @@
 
 	function insertProducto($proCodigo, $proStock, $proDescripcion, $proColor, $proMarca){
 		
-		require 'database.php';
 		$objConn = new Database();
-
 		$sql = $objConn->prepare('INSERT INTO producto (pro_codigo, pro_stock, pro_descripcion, color_col_id, marca_mar_id) VALUES (:proCodigo, :proStock, :proDescripcion, :proColor, :proMarca)');
 		
 		$sql->bindParam(':proCodigo', $proCodigo);

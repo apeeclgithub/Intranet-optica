@@ -2,9 +2,9 @@
 
 	require '../model/selectMarca.php';
 
-	$array = selectMarca();
+	$select = selectMarca();
 	
-	foreach ($array as $key => $value) {
+	foreach ($select as $key => $value) {
 		echo '<option value="'.$value['mar_id'].'">'.$value['mar_nombre'].'</option>';
 	}
 
