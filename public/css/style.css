@@ -80,6 +80,24 @@ h2{
     width:100% !important;
 }
 
+.formAddProduct{
+    border: dotted 1px;
+    padding: 10px;
+    border-radius: 5px;   
+}
+
+.searchProduct{
+    border: dotted 1px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.buttonProducts{
+    border: dotted 1px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 select {
     font-family: inherit;
     background-color: transparent;

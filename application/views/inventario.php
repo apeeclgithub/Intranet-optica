@@ -4,51 +4,56 @@ require '../model/database.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
-	<div class="fontItem">AGREGAR PRODUCTO</div><br><br>
-	<div id="dataProducts">
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
-			<label class="mdl-textfield__label" for="productCode">Código</label>
-			<span class="mdl-textfield__error">No puede ser vacío</span>
-		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<div class="mdl-selectfield">
-				<label>Marca</label>
-				<select class="browser-default">
-					<option value="" disabled selected>Marca</option>
-					<?php 
-						require '../controller/selectMarca.php';
-					?>
-				</select>
+	<form class="formAddProduct">
+		<div class="fontItem">AGREGAR PRODUCTO</div>
+		<div id="dataProducts">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode" >
+				<label class="mdl-textfield__label" for="productCode">Código</label>
+				<span class="mdl-textfield__error">No puede ser vacío</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-selectfield">
+					<label>Marca</label>
+					<select class="browser-default">
+						<option value="" disabled selected>Marca</option>
+						<?php 
+							require '../controller/selectMarca.php';
+						?>
+					</select>
+				</div>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-selectfield">
+					<label>Color</label>
+					<select class="browser-default">
+						<option value="" disabled selected>Color</option>
+						<?php 
+							require '../controller/selectColor.php';
+						?>
+					</select>
+				</div>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
+				<label class="mdl-textfield__label" for="productStock">Stock</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+	    </div>
+	    <div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
+				<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc" ></textarea>
+				<label class="mdl-textfield__label" for="productDesc">Descripción</label>
+				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<div class="mdl-selectfield">
-				<label>Color</label>
-				<select class="browser-default">
-					<option value="" disabled selected>Color</option>
-					<?php 
-						require '../controller/selectColor.php';
-					?>
-				</select>
-			</div>
+		<div class="submitProduct">
+			<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
-			<label class="mdl-textfield__label" for="productStock">Stock</label>
-			<span class="mdl-textfield__error">Ingresar solo números</span>
-		</div>
-    </div>
-    <div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
-			<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc"></textarea>
-			<label class="mdl-textfield__label" for="productDesc">Descripción</label>
-			<span class="mdl-textfield__error">No puede ser vacío</span>
-		</div>
-    </div>
+	</form>
 	<div>
-		<form action="#">
-		<br><div class="fontItem">BUSCAR PRODUCTO</div><br>
+		<form action="#" class="searchProduct">
+		<br><div class="fontItem">BUSCAR PRODUCTO</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
 					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
 						<i class="material-icons">search</i>
@@ -81,7 +86,7 @@ require '../model/database.php'; ?>
 		  </tbody>
 		</table>
 	</div>
-	<div><br><br>
+	<div class="buttonProducts"><br><br>
 		<div class="interior">
 			<a class="btn" href="#open-modal">AGREGAR MARCA</a>
 		</div>
