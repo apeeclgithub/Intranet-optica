@@ -1,101 +1,106 @@
 <?php include('header.php');?>
 <?php include('nav_menu.php') ?>
 <div id="content">
-	<div>Cierre de caja</div>
-	<div>Fecha:</div>
-	<div>Hora</div>
+	<h2>CIERRE DE CAJA</h2>
+	<div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text"  id="closingCashDate">
+			<label class="mdl-textfield__label" for="closingCashDate">Fecha</label>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text"  id="closingCashTime">
+			<label class="mdl-textfield__label" for="closingCashTime">Hora</label>
+		</div>
+	</div>	
 	<div style="border:1px solid black;">
-		
 		<div>
-			<div>Sistema</div>
-			<label for="closeCashLabel" >
-				<span>Efectivo</span>
-				<input id="inputCloseCash" type="text" required/>
-			</label>
-			<label for="closeCardLabel" >
-				<span>Tarjeta Crédito</span>
-				<input id="inputCloseCard" type="text" required/>
-			</label>
-			<label for="closeDocLabel" >
-				<span>Cheque</span>
-				<input id="inputCloseDoc" type="text" required/>
-			</label>
-			<label for="closeTotalLabel" >
-				<span>Total</span>
-				<input id="inputCloseTotal" type="text" required/>
-			</label>
-		</div>
-		<div>
-			<div>Real</div>
-			<label for="closeCashLabelReal" >
-				<span>Efectivo</span>
-				<input id="inputCloseCashReal" type="text" required/>
-			</label>
-			<label for="closeCardLabelReal" >
-				<span>Tarjeta Crédito</span>
-				<input id="inputCloseCardReal" type="text" required/>
-			</label>
-			<label for="closeDocLabelReal" >
-				<span>Cheque</span>
-				<input id="inputCloseDocReal" type="text" required/>
-			</label>
-			<label for="closeTotalLabelReal" >
-				<span>Total</span>
-				<input id="inputCloseTotalReal" type="text" required/>
-			</label>
+			<div class="fontItem">SISTEMA</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashMoneySis" >
+				<label class="mdl-textfield__label" for="closingCashMoneySis">Efectivo</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashCardSis" >
+				<label class="mdl-textfield__label" for="closingCashCardSis">Tarjeta de Crédito</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashCheckSis" >
+				<label class="mdl-textfield__label" for="closingCashCheckSis">Cheque</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashTotalSis" >
+				<label class="mdl-textfield__label" for="closingCashTotalSis">Total</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
 		</div>
 		<div>
-			<label for="closeDifLabel" >
-				<span>Diferencia</span>
-				<input id="inputCloseDif" type="text" required/>
-			</label>
-			<label for="closePendingLabel" >
-				<span>Saldo Pendiente</span>
-				<input id="inputClosePending" type="text" required/>
-			</label>
-			<button>Resumen venta diaría</button>
-			<button>Cerrar Caja</button>
+			<div class="fontItem">REAL</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashMoneyReal" >
+				<label class="mdl-textfield__label" for="closingCashMoneyReal">Efectivo</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashCardReal" >
+				<label class="mdl-textfield__label" for="closingCashCardReal">Tarjeta de Crédito</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashCheckReal" >
+				<label class="mdl-textfield__label" for="closingCashCheckReal">Cheque</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashTotalReal" >
+				<label class="mdl-textfield__label" for="closingCashTotalReal">Total</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
 		</div>
 		<div>
-			<div>Detalle de venta</div>
-			<table border="1">
-				<tr>
-					<td>N° Venta</td>
-					<td>Cod. Producto</td>
-					<td>Descripción</td>
-					<td>Precio Unitario</td>
-					<td>Cantidad</td>
-					<td>Forma Pago</td>
-					<td>Total Venta</td>
-				</tr>
-					<tr>
-					<td>N° Venta1</td>
-					<td>Cod. Producto1</td>
-					<td>Descripción1</td>
-					<td>Precio Unitario1</td>
-					<td>Cantidad1</td>
-					<td>Forma Pago1</td>
-					<td>Total Venta1</td>
-				</tr>
-				<tr>
-					<td>N° Venta2</td>
-					<td>Cod. Producto2</td>
-					<td>Descripción2</td>
-					<td>Precio Unitario2</td>
-					<td>Cantidad2</td>
-					<td>Forma Pago2</td>
-					<td>Total Venta2</td>
-				</tr>
-				<tr>
-					<td>Total</td>
-				</tr>
-			</table>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashDif" >
+				<label class="mdl-textfield__label" for="closingCashDif">Diferencia</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashBalance" >
+				<label class="mdl-textfield__label" for="closingCashBalance">Saldo Pendiente</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div>
+				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="RESUMEN VENTA DIARIA">
+				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="CERRAR CAJA">
+			</div>
 		</div>
-		<div style="border:1px solid black;">Exportar Cierre Caja
-			<button>Cierre Caja</button>
+		<div>
+			<div class="fontItem">DETALLE DE VENTA</div>
+			<div >
+				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+				  <thead>
+				    <tr>
+						<th>N° Venta</th>
+						<th class="mdl-data-table__cell--non-numeric">Código</th>
+						<th class="mdl-data-table__cell--non-numeric">Producto</th>
+						<th class="mdl-data-table__cell--non-numeric">Desc.</th>
+						<th>Precio Unit.</th>
+						<th>Cant.</th>
+						<th class="mdl-data-table__cell--non-numeric">Forma Pago</th>
+						<th>Total</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  </tbody>
+				</table>
+			</div>
 		</div>
-		<div style="border:1px solid black;">Exportar Saldo pendiente diario
-			<button>Saldo Pendiente</button>
+		<div class="interior">
+			<button class="mdl-button mdl-button--raised mdl-button--colored">EXPORTAR CIERRE CAJA </button>	
+		</div>
+		<div class="interior">
+			<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Saldo pendiente diario</button>
 		</div>
 	</div>
 
