@@ -35,7 +35,7 @@
 				<select class="browser-default">
 					<option value="" disabled selected>Marca</option>
 					<?php 
-						require '../controller/selectMarca.php';
+					require '../controller/selectMarca.php';
 					?>
 				</select>
 			</div>
@@ -53,95 +53,95 @@
 			<label class="mdl-textfield__label" for="productStock">Stock</label>
 			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
-    </div>
-    <div>
+	</div>
+	<div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
 			<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc"></textarea>
 			<label class="mdl-textfield__label" for="productDesc">Descripción</label>
 			<span class="mdl-textfield__error">No puede ser vacío</span>
 		</div>
-    </div>
+	</div>
 	<div>
 		<form action="#">
-		<br><div class="fontItem">BUSCAR PRODUCTO</div><br>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-						<i class="material-icons">search</i>
+			<br><div class="fontItem">BUSCAR PRODUCTO</div><br>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+					<i class="material-icons">search</i>
+				</label>
+				<div class="mdl-textfield__expandable-holder">
+					<input class="mdl-textfield__input" type="text" id="search-expandable2">
+					<label class="mdl-textfield__label" for="search-expandable2">
+						Ingrese código de producto
 					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" id="search-expandable2">
-						<label class="mdl-textfield__label" for="search-expandable2">
-							Ingrese código de producto
-						</label>
-					</div>
 				</div>
+			</div>
 		</form>
 	</div>
 	<div >
 		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-		  <thead>
-		    <tr>
-				<th class="mdl-data-table__cell--non-numeric">Código</th>
-				<th class="mdl-data-table__cell--non-numeric">Marca</th>
-				<th class="mdl-data-table__cell--non-numeric">Color</th>
-				<th>Stock</th>
-				<th class="mdl-data-table__cell--non-numeric">Descripción</th>
-				<th></th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-				<td class="mdl-data-table__cell--non-numeric">Código1</td>
-				<td class="mdl-data-table__cell--non-numeric">Marca</td>
-				<td class="mdl-data-table__cell--non-numeric">Color</td>
-				<td>Stock</td>
-				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-				<td>
-					<div class="btnRight">
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+			<thead>
+				<tr>
+					<th class="mdl-data-table__cell--non-numeric">Código</th>
+					<th class="mdl-data-table__cell--non-numeric">Marca</th>
+					<th class="mdl-data-table__cell--non-numeric">Color</th>
+					<th>Stock</th>
+					<th class="mdl-data-table__cell--non-numeric">Descripción</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Código1</td>
+					<td class="mdl-data-table__cell--non-numeric">Marca</td>
+					<td class="mdl-data-table__cell--non-numeric">Color</td>
+					<td>Stock</td>
+					<td class="mdl-data-table__cell--non-numeric">Descripción</td>
+					<td>
+						<div class="btnRight">
+							<div class="interior">
+								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+							</div>
+							<div class="interior">
+								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
+							</div>
 						</div>
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Código2</td>
+					<td class="mdl-data-table__cell--non-numeric">Marca</td>
+					<td class="mdl-data-table__cell--non-numeric">Color</td>
+					<td>Stock</td>
+					<td class="mdl-data-table__cell--non-numeric">Descripción</td>
+					<td>
+						<div class="btnRight">
+							<div class="interior">
+								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+							</div>
+							<div class="interior">
+								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
+							</div>
 						</div>
-					</div>
-				</td>
-		    </tr>
-		    <tr>
-				<td class="mdl-data-table__cell--non-numeric">Código2</td>
-				<td class="mdl-data-table__cell--non-numeric">Marca</td>
-				<td class="mdl-data-table__cell--non-numeric">Color</td>
-				<td>Stock</td>
-				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-				<td>
-					<div class="btnRight">
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Código3</td>
+					<td class="mdl-data-table__cell--non-numeric">Marca</td>
+					<td class="mdl-data-table__cell--non-numeric">Color</td>
+					<td>Stock</td>
+					<td class="mdl-data-table__cell--non-numeric">Descripción</td>
+					<td>
+						<div class="btnRight">
+							<div class="interior">
+								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+							</div>
+							<div class="interior">
+								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
+							</div>
 						</div>
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-						</div>
-					</div>
-				</td>
-		    </tr>
-		    <tr>
-				<td class="mdl-data-table__cell--non-numeric">Código3</td>
-				<td class="mdl-data-table__cell--non-numeric">Marca</td>
-				<td class="mdl-data-table__cell--non-numeric">Color</td>
-				<td>Stock</td>
-				<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-				<td>
-					<div class="btnRight">
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-						</div>
-						<div class="interior">
-							<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-						</div>
-					</div>
-				</td>
-		    </tr>
-		  </tbody>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 	<div><br><br>
@@ -160,8 +160,8 @@
 	</div>
 	<!-- modal marca-->
 	<div id="open-modal" class="modal-window">
-	    <div>
-	     <h1>AGREGAR MARCA</h1>
+		<div>
+			<h1>AGREGAR MARCA</h1>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
 				<label class="mdl-textfield__label" for="productBrand">Marca</label>
@@ -171,26 +171,26 @@
 				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
-	    </div>
+		</div>
 	</div>
 	<!-- modal color -->
 	<div id="open-modal-color" class="modal-window">
-	    <div>
-	     <h1>AGREGAR COLOR</h1>
+		<div>
+			<h1>AGREGAR COLOR</h1>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor">
 				<label class="mdl-textfield__label" for="productColor">Color</label>
 				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
-				<div>
+			<div>
 				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
-	    </div>
+		</div>
 	</div>
 	<!--modal editar -->
 	<div id="open-modal-edit" class="modal-window">
-	    <div>
+		<div>
 			<h1>EDITAR PRODUCTO</h1>
 			<div id="dataProductsEdit">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -230,17 +230,17 @@
 				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
-	    </div>
+		</div>
 	</div>
 	<!--modal eliminar -->
 	<div id="open-modal-delete" class="modal-window">
-	    <div>
+		<div>
 			<h1>ELIMINAR PRODUCTO</h1>
 			<div>
 				<button class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
-	    </div>
+		</div>
 	</div>
 </div>
 <?php include('footer.php') ?>

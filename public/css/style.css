@@ -86,6 +86,12 @@ h2{
     border-radius: 5px;   
 }
 
+.contentProducts{
+    border: dotted 1px;
+    padding: 10px;
+    border-radius: 5px;    
+}
+
 .searchProduct{
     border: dotted 1px;
     padding: 10px;

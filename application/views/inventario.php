@@ -4,95 +4,125 @@ require '../model/database.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
-	<form class="formAddProduct">
-		<div class="fontItem">AGREGAR PRODUCTO</div>
-		<div id="dataProducts">
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode" >
-				<label class="mdl-textfield__label" for="productCode">Código</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<div class="mdl-selectfield">
-					<label>Marca</label>
-					<select class="browser-default">
-						<option value="" disabled selected>Marca</option>
-						<?php 
-							require '../controller/selectMarca.php';
-						?>
-					</select>
-				</div>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<div class="mdl-selectfield">
-					<label>Color</label>
-					<select class="browser-default">
-						<option value="" disabled selected>Color</option>
-						<?php 
-							require '../controller/selectColor.php';
-						?>
-					</select>
-				</div>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
-				<label class="mdl-textfield__label" for="productStock">Stock</label>
-				<span class="mdl-textfield__error">Ingresar solo números</span>
-			</div>
-	    </div>
-	    <div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
-				<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc" ></textarea>
-				<label class="mdl-textfield__label" for="productDesc">Descripción</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
+	<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+		<div class="mdl-tabs__tab-bar">
+			<a href="#starks-panel" class="mdl-tabs__tab is-active">AGREGAR PRODUCTO</a>
+			<a href="#lannisters-panel" class="mdl-tabs__tab">AGREGAR MARCA</a>
+			<a href="#targaryens-panel" class="mdl-tabs__tab">AGREGAR COLOR</a>
 		</div>
-		<div class="submitProduct">
-			<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
-		</div>
-	</form>
-	<div>
-		<form action="#" class="searchProduct">
-		<br><div class="fontItem">BUSCAR PRODUCTO</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-						<i class="material-icons">search</i>
-					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" id="search-expandable2">
-						<label class="mdl-textfield__label" for="search-expandable2">
-							Ingrese código de producto
-						</label>
+
+		<div class="mdl-tabs__panel is-active" id="starks-panel">
+			<form class="formAddProduct">
+				<div class="fontItem">AGREGAR PRODUCTO</div>
+				<div id="dataProducts">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode" >
+						<label class="mdl-textfield__label" for="productCode">Código</label>
+						<span class="mdl-textfield__error">No puede ser vacío</span>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<div class="mdl-selectfield">
+							<label>Marca</label>
+							<select class="browser-default">
+								<option value="" disabled selected>Marca</option>
+								<?php 
+								require '../controller/selectMarca.php';
+								?>
+							</select>
+						</div>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<div class="mdl-selectfield">
+							<label>Color</label>
+							<select class="browser-default">
+								<option value="" disabled selected>Color</option>
+								<?php 
+								require '../controller/selectColor.php';
+								?>
+							</select>
+						</div>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
+						<label class="mdl-textfield__label" for="productStock">Stock</label>
+						<span class="mdl-textfield__error">Ingresar solo números</span>
 					</div>
 				</div>
+				<div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
+						<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc" ></textarea>
+						<label class="mdl-textfield__label" for="productDesc">Descripción</label>
+						<span class="mdl-textfield__error">No puede ser vacío</span>
+					</div>
+				</div>
+				<div class="submitProduct">
+					<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
+				</div>
+			</form>
+		</div>
+		<div class="mdl-tabs__panel" id="lannisters-panel">
+			<div class="contentProducts">
+				<div class="fontItem">AGREGAR MARCA</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
+					<label class="mdl-textfield__label" for="productBrand">Marca</label>
+					<span class="mdl-textfield__error">No puede ser vacío</span>
+				</div>
+				<div>
+					<button onclick="insertMarca()" class="mdl-button mdl-button--raised mdl-button--colored">Guardar Marca</button>
+				</div>
+			</div>
+		</div>
+		<div class="mdl-tabs__panel" id="targaryens-panel">
+			<div class="contentProducts">
+				<div class="fontItem">AGREGAR COLOR</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor" >
+					<label class="mdl-textfield__label" for="productColor">Color</label>
+					<span class="mdl-textfield__error">No puede ser vacío</span>
+				</div>
+				<div>
+					<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar Color</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<form action="#" class="searchProduct">
+			<br><div class="fontItem">BUSCAR PRODUCTO</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+				<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+					<i class="material-icons">search</i>
+				</label>
+				<div class="mdl-textfield__expandable-holder">
+					<input class="mdl-textfield__input" type="text" id="search-expandable2">
+					<label class="mdl-textfield__label" for="search-expandable2">
+						Ingrese código de producto
+					</label>
+				</div>
+			</div>
 		</form>
 	</div>
 	<div >
 		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-		  <thead>
-		    <tr>
-				<th class="mdl-data-table__cell--non-numeric">Código</th>
-				<th class="mdl-data-table__cell--non-numeric">Marca</th>
-				<th class="mdl-data-table__cell--non-numeric">Color</th>
-				<th>Stock</th>
-				<th class="mdl-data-table__cell--non-numeric">Descripción</th>
-				<th></th>
-		    </tr>
-		  </thead>
-		  <tbody>
-			<?php 
+			<thead>
+				<tr>
+					<th class="mdl-data-table__cell--non-numeric">Código</th>
+					<th class="mdl-data-table__cell--non-numeric">Marca</th>
+					<th class="mdl-data-table__cell--non-numeric">Color</th>
+					<th>Stock</th>
+					<th class="mdl-data-table__cell--non-numeric">Descripción</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php 
 				require '../controller/selectProductAll.php';
-			?>
-		  </tbody>
+				?>
+			</tbody>
 		</table>
 	</div>
 	<div class="buttonProducts"><br><br>
-		<div class="interior">
-			<a class="btn" href="#open-modal">AGREGAR MARCA</a>
-		</div>
-		<div class="interior">
-			<a class="btn" href="#open-modal-color">AGREGAR COLOR</a>
-		</div>
 		<div class="interior">
 			<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Detalle Inventario</button>	
 		</div>
@@ -100,39 +130,10 @@ require '../model/database.php'; ?>
 			<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
 		</div>
 	</div>
-	<!-- modal marca-->
-	<div id="open-modal" class="modal-window">
-	    <div>
-	     <h1>AGREGAR MARCA</h1>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
-				<label class="mdl-textfield__label" for="productBrand">Marca</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
-			<div>
-				<button onclick="insertMarca()" class="mdl-button mdl-button--raised mdl-button--colored"><a href="#modal-close">Guardar</a></button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-	    </div>
-	</div>
-	<!-- modal color -->
-	<div id="open-modal-color" class="modal-window">
-	    <div>
-	     <h1>AGREGAR COLOR</h1>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor">
-				<label class="mdl-textfield__label" for="productColor">Color</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
-				<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-	    </div>
-	</div>
+
 	<!--modal editar -->
 	<div id="open-modal-edit" class="modal-window">
-	    <div>
+		<div>
 			<h1>EDITAR PRODUCTO</h1>
 			<div id="dataProductsEdit">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -172,17 +173,17 @@ require '../model/database.php'; ?>
 				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
-	    </div>
+		</div>
 	</div>
 	<!--modal eliminar -->
 	<div id="open-modal-delete" class="modal-window">
-	    <div>
+		<div>
 			<h1>ELIMINAR PRODUCTO</h1>
 			<div>
 				<button class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
-	    </div>
+		</div>
 	</div>
 </div>
 <?php include('footer.php') ?>

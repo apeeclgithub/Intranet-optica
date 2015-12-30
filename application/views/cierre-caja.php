@@ -79,20 +79,20 @@
 			<div class="fontItem">DETALLE DE VENTA</div>
 			<div >
 				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-				  <thead>
-				    <tr>
-						<th>N° Venta</th>
-						<th class="mdl-data-table__cell--non-numeric">Código</th>
-						<th class="mdl-data-table__cell--non-numeric">Producto</th>
-						<th class="mdl-data-table__cell--non-numeric">Desc.</th>
-						<th>Precio Unit.</th>
-						<th>Cant.</th>
-						<th class="mdl-data-table__cell--non-numeric">Forma Pago</th>
-						<th>Total</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				  </tbody>
+					<thead>
+						<tr>
+							<th>N° Venta</th>
+							<th class="mdl-data-table__cell--non-numeric">Código</th>
+							<th class="mdl-data-table__cell--non-numeric">Producto</th>
+							<th class="mdl-data-table__cell--non-numeric">Desc.</th>
+							<th>Precio Unit.</th>
+							<th>Cant.</th>
+							<th class="mdl-data-table__cell--non-numeric">Forma Pago</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
 				</table>
 			</div>
 		</div>

@@ -29,7 +29,7 @@
 				<label class="mdl-textfield__label" for="clientAddress">Dirección</label>
 				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
-        </div>
+		</div>
 		<div >
 			<form action="#">
 				<br><div class="fontItem">BUSCAR CLIENTE</div><br>
@@ -48,67 +48,67 @@
 		</div>
 		<div >
 			<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-			  <thead>
-			    <tr>
-					<th class="mdl-data-table__cell--non-numeric">Nombre</th>
-					<th class="mdl-data-table__cell--non-numeric">Rut</th>
-					<th class="mdl-data-table__cell--non-numeric">Teléfono</th>
-					<th class="mdl-data-table__cell--non-numeric">Dirección</th>
-					<th class="mdl-data-table__cell--non-numeric">Giro</th>
-					<th class="mdl-data-table__cell--non-numeric">Cheques</th>
-					<th></th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-					<td class="mdl-data-table__cell--non-numeric">Nombre1</td>
-					<td class="mdl-data-table__cell--non-numeric">Rut1</td>
-					<td class="mdl-data-table__cell--non-numeric">Fono1</td>
-					<td class="mdl-data-table__cell--non-numeric">Dirección1</td>
-					<td class="mdl-data-table__cell--non-numeric">Giro1</td>
-					<td class="mdl-data-table__cell--non-numeric">Cheques1</td>
-					<td>
-						<button class="mdl-button mdl-js-button mdl-button--icon">
-			  				<i class="material-icons">edit</i>
-						</button>		
-						<button class="mdl-button mdl-js-button mdl-button--icon">
-			  				<i class="material-icons">delete</i>
-						</button>
-					</td>
-			    </tr>
-			    <tr>
-					<td class="mdl-data-table__cell--non-numeric">Nombre2</td>
-					<td class="mdl-data-table__cell--non-numeric">Rut2</td>
-					<td class="mdl-data-table__cell--non-numeric">Fono2</td>
-					<td class="mdl-data-table__cell--non-numeric">Dirección2</td>
-					<td class="mdl-data-table__cell--non-numeric">Giro2</td>
-					<td class="mdl-data-table__cell--non-numeric">Cheques2</td>
-					<td>
-						<button class="mdl-button mdl-js-button mdl-button--icon">
-			  				<i class="material-icons">edit</i>
-						</button>		
-						<button class="mdl-button mdl-js-button mdl-button--icon">
-			  				<i class="material-icons">delete</i>
-						</button>
-					</td>
-			    </tr>
-			    <tr>
-					<td class="mdl-data-table__cell--non-numeric">Nombre3</td>
-					<td class="mdl-data-table__cell--non-numeric">Rut3</td>
-					<td class="mdl-data-table__cell--non-numeric">Fono3</td>
-					<td class="mdl-data-table__cell--non-numeric">Dirección3</td>
-					<td class="mdl-data-table__cell--non-numeric">Giro3</td>
-					<td class="mdl-data-table__cell--non-numeric">Cheques3</td>
-					<td>
-						<button class="mdl-button mdl-js-button mdl-button--icon">
-			  				<i class="material-icons">edit</i>
-						</button>		
-						<button class="mdl-button mdl-js-button mdl-button--icon">
-			  				<i class="material-icons">delete</i>
-						</button>
-					</td>
-			    </tr>
-			  </tbody>
+				<thead>
+					<tr>
+						<th class="mdl-data-table__cell--non-numeric">Nombre</th>
+						<th class="mdl-data-table__cell--non-numeric">Rut</th>
+						<th class="mdl-data-table__cell--non-numeric">Teléfono</th>
+						<th class="mdl-data-table__cell--non-numeric">Dirección</th>
+						<th class="mdl-data-table__cell--non-numeric">Giro</th>
+						<th class="mdl-data-table__cell--non-numeric">Cheques</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="mdl-data-table__cell--non-numeric">Nombre1</td>
+						<td class="mdl-data-table__cell--non-numeric">Rut1</td>
+						<td class="mdl-data-table__cell--non-numeric">Fono1</td>
+						<td class="mdl-data-table__cell--non-numeric">Dirección1</td>
+						<td class="mdl-data-table__cell--non-numeric">Giro1</td>
+						<td class="mdl-data-table__cell--non-numeric">Cheques1</td>
+						<td>
+							<button class="mdl-button mdl-js-button mdl-button--icon">
+								<i class="material-icons">edit</i>
+							</button>		
+							<button class="mdl-button mdl-js-button mdl-button--icon">
+								<i class="material-icons">delete</i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="mdl-data-table__cell--non-numeric">Nombre2</td>
+						<td class="mdl-data-table__cell--non-numeric">Rut2</td>
+						<td class="mdl-data-table__cell--non-numeric">Fono2</td>
+						<td class="mdl-data-table__cell--non-numeric">Dirección2</td>
+						<td class="mdl-data-table__cell--non-numeric">Giro2</td>
+						<td class="mdl-data-table__cell--non-numeric">Cheques2</td>
+						<td>
+							<button class="mdl-button mdl-js-button mdl-button--icon">
+								<i class="material-icons">edit</i>
+							</button>		
+							<button class="mdl-button mdl-js-button mdl-button--icon">
+								<i class="material-icons">delete</i>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="mdl-data-table__cell--non-numeric">Nombre3</td>
+						<td class="mdl-data-table__cell--non-numeric">Rut3</td>
+						<td class="mdl-data-table__cell--non-numeric">Fono3</td>
+						<td class="mdl-data-table__cell--non-numeric">Dirección3</td>
+						<td class="mdl-data-table__cell--non-numeric">Giro3</td>
+						<td class="mdl-data-table__cell--non-numeric">Cheques3</td>
+						<td>
+							<button class="mdl-button mdl-js-button mdl-button--icon">
+								<i class="material-icons">edit</i>
+							</button>		
+							<button class="mdl-button mdl-js-button mdl-button--icon">
+								<i class="material-icons">delete</i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 		<div>
