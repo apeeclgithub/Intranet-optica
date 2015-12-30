@@ -6,12 +6,12 @@ require '../model/database.php'; ?>
 	<h2>INVENTARIO</h2>
 	<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 		<div class="mdl-tabs__tab-bar">
-			<a href="#starks-panel" class="mdl-tabs__tab is-active">AGREGAR PRODUCTO</a>
-			<a href="#lannisters-panel" class="mdl-tabs__tab">AGREGAR MARCA</a>
-			<a href="#targaryens-panel" class="mdl-tabs__tab">AGREGAR COLOR</a>
+			<a href="#addProductPanel" class="mdl-tabs__tab is-active">AGREGAR PRODUCTO</a>
+			<a href="#addBrandPanel" class="mdl-tabs__tab">AGREGAR MARCA</a>
+			<a href="#addColorPanel" class="mdl-tabs__tab">AGREGAR COLOR</a>
 		</div>
 
-		<div class="mdl-tabs__panel is-active" id="starks-panel">
+		<div class="mdl-tabs__panel is-active" id="addProductPanel">
 			<form class="formAddProduct">
 				<div class="fontItem">AGREGAR PRODUCTO</div>
 				<div id="dataProducts">
@@ -60,7 +60,7 @@ require '../model/database.php'; ?>
 				</div>
 			</form>
 		</div>
-		<div class="mdl-tabs__panel" id="lannisters-panel">
+		<div class="mdl-tabs__panel" id="addBrandPanel">
 			<div class="contentProducts">
 				<div class="fontItem">AGREGAR MARCA</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -73,7 +73,7 @@ require '../model/database.php'; ?>
 				</div>
 			</div>
 		</div>
-		<div class="mdl-tabs__panel" id="targaryens-panel">
+		<div class="mdl-tabs__panel" id="addColorPanel">
 			<div class="contentProducts">
 				<div class="fontItem">AGREGAR COLOR</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
