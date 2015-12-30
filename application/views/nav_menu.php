@@ -3,11 +3,11 @@
 		<span class="mdl-layout-title">Optic-Red</span>
 		<div class="mdl-layout-spacer"></div>
 		<nav class="mdl-navigation">
-			<a class="mdl-navigation__link" href="#">Nueva Venta</a>
-			<a class="mdl-navigation__link" href="#">Cliente</a>
-			<a class="mdl-navigation__link" href="#">Cierre Caja</a>
-			<a class="mdl-navigation__link" href="#">Informes</a>
-			<a class="mdl-navigation__link" href="#">Inventario</a>			
+			<a class="mdl-navigation__link" href="venta.php">Nueva Venta</a>
+			<a class="mdl-navigation__link" href="cliente.php">Cliente</a>
+			<a class="mdl-navigation__link" href="cierre-caja.php">Cierre Caja</a>
+			<a class="mdl-navigation__link" href="informes.php">Informes</a>
+			<a class="mdl-navigation__link" href="inventario.php">Inventario</a>			
 		</nav>            
 	</div>
 </header>
