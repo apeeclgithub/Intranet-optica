@@ -1,6 +1,7 @@
 <?php include('header.php');?>
 <?php include('nav_menu.php') ?>
 <div id ="content">
+	<h2>REPORTES</h2>
 	<div style="border:1px solid black;">Reporte Diario (Incluye detalle de venta)
 		<div>Seleccione Fecha</div>
 		<input id="dateSaleDaily" type="date">

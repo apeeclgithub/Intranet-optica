@@ -29,6 +29,9 @@
 				<label class="mdl-textfield__label" for="clientAddress">Dirección</label>
 				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
+			<div class="submitProduct">
+				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR CLIENTE">
+			</div>
 		</div>
 		<div >
 			<form action="#">
