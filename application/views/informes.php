@@ -2,6 +2,7 @@
 <?php include('nav_menu.php') ?>
 <div id ="content">
 	<h2>REPORTES</h2>
+	<!-- 
 	<div class="fontItem" style="float:left;">REPORTE DIARIO (Incluye detalle de venta)
 		<pre>Seleccione Fecha</pre>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -38,6 +39,7 @@
 	<div class="fontItem" >Exportar Listado Clientes
 		<button>Exportar Listado</button>
 	</div>
+	-->
 	<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 		<div class="mdl-tabs__tab-bar">
 			<a href="#printDailyReportPanel" class="mdl-tabs__tab is-active">REPORTE DIARIO</a>
