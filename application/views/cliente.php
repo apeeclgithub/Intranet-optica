@@ -3,8 +3,8 @@
 <div id="content">
 	<h2>CLIENTES</h2>
 	<div id="addClientForm">
-		<div class="fontItem">AGREGAR CLIENTE</div><br><br>
 		<div id="dataClient">
+			<div class="fontItem">AGREGAR CLIENTE</div><br><br>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
 				<label class="mdl-textfield__label" for="clientName">Nombre</label>
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div >
-			<form action="#">
+			<form action="#" class="formSearchClient">
 				<br><div class="fontItem">BUSCAR CLIENTE</div><br>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
 					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">

@@ -12,7 +12,7 @@
 			<label class="mdl-textfield__label" for="closingCashTime">Hora</label>
 		</div>
 	</div>	
-	<div style="border:1px solid black;">
+	<div class="closingCash">
 		<div>
 			<div class="fontItem">SISTEMA</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -75,8 +75,8 @@
 				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="CERRAR CAJA">
 			</div>
 		</div>
-		<div>
-			<div class="fontItem">DETALLE DE VENTA</div>
+		<div><br><br>
+			<div class="fontItem">DETALLE DE VENTA</div><br>
 			<div >
 				<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 					<thead>
@@ -95,7 +95,7 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</div><br>
 		<div class="interior">
 			<button class="mdl-button mdl-button--raised mdl-button--colored">EXPORTAR CIERRE CAJA </button>	
 		</div>

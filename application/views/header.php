@@ -29,3 +29,5 @@
 	</head>
 	<body>
 	<h1>Logo</h1>
+	<?php error_reporting(E_ALL); ?>
+	
