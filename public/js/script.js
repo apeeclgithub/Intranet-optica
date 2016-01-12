@@ -18,6 +18,30 @@ function insertMarca(){
     });
 };
 
+function insertClient(){
+    var params = {
+        'clientName' : $('input[id=clientName]').val(),
+        'clientRut' : $('input[id=clientRut]').val(),
+        'clientPhone' : $('input[id=clientPhone]').val(),
+        'clientGir' : $('input[id=clientGir]').val(),
+        'clientAddress' : $('input[id=clientAddress]').val()
+
+    };
+    $.ajax({
+        url : '../controller/insertClient.php',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            //alertify.success("Carro actualizado.");
+            alert('cliente agregada');
+        }else{
+            //alertify.error("Producto no agregado.");
+            alert('cliente no agregada');
+        }
+    });
+};
 function insertProducto(){
     var params = {
         'proCodigo' : $('input[id=productCode]').val(),

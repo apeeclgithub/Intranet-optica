@@ -30,7 +30,7 @@
 				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
 			<div class="submitProduct">
-				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR CLIENTE">
+				<button onclick="insertClient()" class="mdl-button mdl-button--raised mdl-button--colored">Guardar Cliente</button>
 			</div>
 		</div>
 		<div >

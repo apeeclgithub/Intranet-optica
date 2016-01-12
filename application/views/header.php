@@ -29,5 +29,5 @@
 	</head>
 	<body>
 	<h1>Logo</h1>
-	<?php error_reporting(E_ALL); ?>
+	<?php ini_set("error_reporting", E_ALL);?>
 	
