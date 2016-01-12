@@ -17,3 +17,27 @@ function insertMarca(){
         }
     });
 };
+
+function insertProducto(){
+    var params = {
+        'proCodigo' : $('input[id=productCode]').val(),
+        'proMarca' : $('select[id=productBrand]').val(),
+        'proColor' : $('select[id=productColor]').val(),
+        'proStock' : $('input[id=productStock]').val(),
+        'proDesc' : $('textarea[id=productDesc]').val()
+    };
+    $.ajax({
+        url : '../controller/insertProduct.php',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            //alertify.success("Carro actualizado.");
+            alert('producto agregada');
+        }else{
+            //alertify.error("Producto no agregado.");
+            alert('producto no agregada');
+        }
+    });
+};

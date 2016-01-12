@@ -2,12 +2,12 @@
 	
 	require '../model/insertProduct.php';
 
-	$proCodigo = $_POST[''];
-	$proStock = $_POST[''];
-	$proDescripcion = $_POST[''];
-	$proColor = $_POST[''];
-	$proMarca = $_POST[''];
+	$proCodigo = $_POST['proCodigo'];
+	$proMarca = $_POST['proMarca'];
+	$proColor = $_POST['proColor'];
+	$proStock = $_POST['proStock'];
+	$proDesc = $_POST['proDesc'];
 
-	insertProducto($proCodigo, $proStock, $proDescripcion, $proColor, $proMarca);
+	insertProducto($proCodigo, $proMarca, $proColor, $proStock, $proDesc);
 
 ?>

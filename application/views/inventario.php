@@ -1,6 +1,6 @@
 <?php include('header.php');?>
 <?php include('nav_menu.php');
-require '../model/database.php'; ?>
+require_once '../model/Database.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
@@ -11,8 +11,8 @@ require '../model/database.php'; ?>
 			<a href="#addColorPanel" class="mdl-tabs__tab">AGREGAR COLOR</a>
 		</div>
 
-		<div class="mdl-tabs__panel is-active" id="addProductPanel">
-			<form class="formAddProduct">
+		<div class="mdl-tabs__panel is-active formAddProduct" id="addProductPanel">
+			<!--<form class="formAddProduct">-->
 				<div class="fontItem">AGREGAR PRODUCTO</div>
 				<div id="dataProducts">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -23,7 +23,7 @@ require '../model/database.php'; ?>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<div class="mdl-selectfield">
 							<label>Marca</label>
-							<select class="browser-default">
+							<select class="browser-default" id="productBrand">
 								<option value="" disabled selected>Marca</option>
 								<?php 
 								require '../controller/selectMarca.php';
@@ -34,10 +34,12 @@ require '../model/database.php'; ?>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<div class="mdl-selectfield">
 							<label>Color</label>
-							<select class="browser-default">
+							<select class="browser-default" id="productColor">
 								<option value="" disabled selected>Color</option>
 								<?php 
-								require '../controller/selectColor.php';
+									require '../controller/selectColor.php';
+									/*$color = new SelectColor;
+									$color->selectColor();*/
 								?>
 							</select>
 						</div>
@@ -56,9 +58,9 @@ require '../model/database.php'; ?>
 					</div>
 				</div>
 				<div class="submitProduct">
-					<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
+					<input onclick="insertProducto()" class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
 				</div>
-			</form>
+			<!--</form>-->
 		</div>
 		<div class="mdl-tabs__panel" id="addBrandPanel">
 			<div class="contentProducts">
