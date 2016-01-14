@@ -32,17 +32,7 @@ require_once '../model/Database.php'; ?>
 						</div>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<div class="mdl-selectfield">
-							<label>Color</label>
-							<select class="browser-default" id="productColor">
-								<option value="" disabled selected>Color</option>
-								<?php 
-									require '../controller/selectColor.php';
-									/*$color = new SelectColor;
-									$color->selectColor();*/
-								?>
-							</select>
-						</div>
+						<?php require '../controller/selectColor.php'; ?>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
