@@ -1,6 +1,9 @@
 <?php include('header.php');?>
-<?php include('nav_menu.php');
-require_once '../model/Database.php'; ?>
+<?php include('nav_menu.php');?>
+<?php require '../model/Database.php'; ?>
+<?php require '../model/Color.php'; ?>
+<?php require '../model/Marca.php'; ?>
+<?php require '../model/Producto.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
@@ -110,26 +113,10 @@ require_once '../model/Database.php'; ?>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<div class="mdl-selectfield">
-						<label>Marca</label>
-						<select class="browser-default">
-							<option value="" disabled selected>Marca</option>
-							<option value="1">Marca 1</option>
-							<option value="2">Marca 2</option>
-							<option value="3">Marca 3</option>
-						</select>
-					</div>
+					<?php require '../controller/selectMarca.php'; ?>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<div class="mdl-selectfield">
-						<label>Color</label>
-						<select class="browser-default">
-							<option value="" disabled selected>Color</option>
-							<option value="1">Color 1</option>
-							<option value="2">Color 2</option>
-							<option value="3">Color 3</option>
-						</select>
-					</div>
+					<?php require '../controller/selectColor.php'; ?>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">

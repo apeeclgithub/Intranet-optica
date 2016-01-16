@@ -1,5 +1,3 @@
-<?php require '../model/Producto.php'; ?>
-
 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 	<thead>
 		<tr>

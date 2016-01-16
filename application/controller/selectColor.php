@@ -1,5 +1,3 @@
-<?php require '../model/Color.php'; ?>
-
 <div class="mdl-selectfield">
 	<label>Color</label>
 	<select class="browser-default" id="productColor">

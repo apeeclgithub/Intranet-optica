@@ -1,5 +1,3 @@
-<?php require '../model/Marca.php'; ?>
-
 <div class="mdl-selectfield">
 	<label>Marca</label>
 	<select class="browser-default" id="productBrand">
