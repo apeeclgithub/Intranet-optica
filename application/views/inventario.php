@@ -88,23 +88,7 @@ require_once '../model/Database.php'; ?>
 		</form>
 	</div>
 	<div >
-		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-			<thead>
-				<tr>
-					<th class="mdl-data-table__cell--non-numeric">Código</th>
-					<th class="mdl-data-table__cell--non-numeric">Marca</th>
-					<th class="mdl-data-table__cell--non-numeric">Color</th>
-					<th>Stock</th>
-					<th class="mdl-data-table__cell--non-numeric">Descripción</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php 
-				require '../controller/selectProductAll.php';
-				?>
-			</tbody>
-		</table>
+		<?php require '../controller/selectProductAll.php'; ?>
 	</div>
 	<div class="buttonProducts"><br><br>
 		<div class="interior">
