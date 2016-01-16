@@ -16,7 +16,7 @@ require_once '../model/Database.php'; ?>
 				<div class="fontItem">AGREGAR PRODUCTO</div>
 				<div id="dataProducts">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode" >
+						<input class="mdl-textfield__input" type="text" pattern="[w-\.]{1,20}" id="productCode" >
 						<label class="mdl-textfield__label" for="productCode">Código</label>
 						<span class="mdl-textfield__error">No puede ser vacío</span>
 					</div>
@@ -35,14 +35,14 @@ require_once '../model/Database.php'; ?>
 						<?php require '../controller/selectColor.php'; ?>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
+						<input class="mdl-textfield__input" type="text" pattern="[0-9]*{1,20}" id="productStock" >
 						<label class="mdl-textfield__label" for="productStock">Stock</label>
 						<span class="mdl-textfield__error">Ingresar solo números</span>
 					</div>
 				</div>
 				<div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
-						<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc" ></textarea>
+						<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]{1,4000}" rows= "4" id="productDesc" ></textarea>
 						<label class="mdl-textfield__label" for="productDesc">Descripción</label>
 						<span class="mdl-textfield__error">No puede ser vacío</span>
 					</div>

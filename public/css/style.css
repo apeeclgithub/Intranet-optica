@@ -86,6 +86,16 @@ h2{
 /*fin cliente*/
 
 /*inventario*/
+
+.mdl-textfield--floating-label.is-invalid .mdl-textfield__label{
+    color:black !important;
+}
+
+.mdl-textfield__label{
+    color:black !important;
+}
+
+
 #textAreaDesc{
     width:100% !important;
 }
@@ -116,7 +126,6 @@ select {
     width: 300px;
     padding: 4px 0;
     font-size: 16px;
-    color: rgba(0,0,0, 0.26);
     border: none;
     border-bottom: 1px solid rgba(0,0,0, 0.12);
 }
