@@ -21,15 +21,7 @@ require_once '../model/Database.php'; ?>
 						<span class="mdl-textfield__error">No puede ser vacío</span>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<div class="mdl-selectfield">
-							<label>Marca</label>
-							<select class="browser-default" id="productBrand">
-								<option value="" disabled selected>Marca</option>
-								<?php 
-								require '../controller/selectMarca.php';
-								?>
-							</select>
-						</div>
+						<?php require '../controller/selectMarca.php'; ?>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<?php require '../controller/selectColor.php'; ?>
