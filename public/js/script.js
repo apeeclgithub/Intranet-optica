@@ -50,6 +50,19 @@ function insertProducto(){
         'proStock' : $('input[id=productStock]').val(),
         'proDesc' : $('textarea[id=productDesc]').val()
     };
+
+    if ($('input[id=productCode]').val() === '') {
+        alert('codigo vacio');
+
+    } else if ($('select[id=productBrand]').val() <= '0') {
+        alert('marca vacio');
+    } else if ($('select[id=productColor]').val()  <= '0') {
+        alert('productColor vacio');
+    } else if ($('input[id=productStock]').val() === '') {
+        alert('productStock vacio');
+    } else if ($('textarea[id=productDesc]').val() === '') {
+        alert('productDesc vacio');
+    }else{
     $.ajax({
         url : '../controller/insertProduct.php',
         type : 'post',
@@ -63,5 +76,7 @@ function insertProducto(){
             //alertify.error("Producto no agregado.");
             alert('producto no agregada');
         }
-    });
+    })
+}
+;
 };

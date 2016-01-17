@@ -1,6 +1,6 @@
 <div class="mdl-selectfield">
 	<label>Color</label>
-	<select class="browser-default" id="productColor">
+	<select class="browser-default" name="productColor" id="productColor">
 		<option value="" disabled selected>Color</option>
 		<?php 
 
