@@ -108,7 +108,7 @@
 			<h1>EDITAR PRODUCTO</h1>
 			<div id="dataProductsEdit">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
+					<input id="editCodigo" class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
 					<label class="mdl-textfield__label" for="productCode">Código</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
@@ -119,7 +119,7 @@
 					<?php require '../controller/selectColor.php'; ?>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
+					<input id="editStock" class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
 					<label class="mdl-textfield__label" for="productStock">Stock</label>
 					<span class="mdl-textfield__error">Ingresar solo números</span>
 				</div>

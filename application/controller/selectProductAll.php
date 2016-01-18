@@ -26,7 +26,12 @@
 					<td>
 						<div class="btnRight">
 							<div class="interior">
-								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+								<a onclick="editarProducto(
+								'<?php echo $value['pro_codigo']; ?>', 
+								'<?php echo $value['mar_nombre']; ?>',
+								'<?php echo $value['col_nombre']; ?>',
+								<?php echo $value['pro_stock']; ?>,
+								'<?php echo $value['pro_descripcion']; ?>')" class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
 							</div>
 							<div class="interior">
 								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>

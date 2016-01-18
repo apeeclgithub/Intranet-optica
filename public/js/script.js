@@ -107,3 +107,7 @@ function insertColor(){
     })
     };
 };
+
+function editarProducto(codigo, marca, color, stock, descripcion){
+    $('input[id=editCodigo]').val(codigo);
+};
