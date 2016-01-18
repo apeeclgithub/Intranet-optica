@@ -69,7 +69,7 @@
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
 				<div>
-					<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar Color</button>
+					<button onclick="insertColor()" class="mdl-button mdl-button--raised mdl-button--colored">Guardar Color</button>
 				</div>
 			</div>
 		</div>

@@ -2,20 +2,24 @@ function insertMarca(){
     var params = {
         'marNombre' : $('input[id=productBrand]').val()
     };
-    $.ajax({
-        url : '../controller/insertMarca.php',
-        type : 'post',
-        data : params,
-        dataType : 'json'
-    }).done(function(data){
-        if(data.success==true){
+    if ($('input[id=productBrand]').val() === '') {
+        alert('marca vacio');
+    }else{
+        $.ajax({
+            url : '../controller/insertMarca.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
             //alertify.success("Carro actualizado.");
             alert('marca agregada');
         }else{
             //alertify.error("Producto no agregado.");
             alert('marca no agregada');
         }
-    });
+    })
+    };
 };
 
 function insertClient(){
@@ -42,6 +46,7 @@ function insertClient(){
         }
     });
 };
+
 function insertProducto(){
     var params = {
         'proCodigo' : $('input[id=productCode]').val(),
@@ -53,7 +58,6 @@ function insertProducto(){
 
     if ($('input[id=productCode]').val() === '') {
         alert('codigo vacio');
-
     } else if ($('select[id=productBrand]').val() <= '0') {
         alert('marca vacio');
     } else if ($('select[id=productColor]').val()  <= '0') {
@@ -63,13 +67,13 @@ function insertProducto(){
     } else if ($('textarea[id=productDesc]').val() === '') {
         alert('productDesc vacio');
     }else{
-    $.ajax({
-        url : '../controller/insertProduct.php',
-        type : 'post',
-        data : params,
-        dataType : 'json'
-    }).done(function(data){
-        if(data.success==true){
+        $.ajax({
+            url : '../controller/insertProduct.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
             //alertify.success("Carro actualizado.");
             alert('producto agregada');
         }else{
@@ -77,6 +81,29 @@ function insertProducto(){
             alert('producto no agregada');
         }
     })
-}
-;
+    };
+};
+
+function insertColor(){
+    var params = {
+        'colNombre' : $('input[id=productColor]').val()
+    };
+    if ($('input[id=productColor').val() === '') {
+        alert('color vacio');
+    }else{
+        $.ajax({
+            url : '../controller/insertColor.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+            //alertify.success("Carro actualizado.");
+            alert('color agregada');
+        }else{
+            //alertify.error("Producto no agregado.");
+            alert('color no agregada');
+        }
+    })
+    };
 };

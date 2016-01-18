@@ -9,9 +9,6 @@
 
 		$sql->execute();
 
-		$json['success'] = true;
-    	echo json_encode($json);
-
 	}
 
 ?>
