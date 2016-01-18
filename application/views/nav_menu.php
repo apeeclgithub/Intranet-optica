@@ -4,10 +4,10 @@
 		<div class="mdl-layout-spacer"></div>
 		<nav class="mdl-navigation">
 			<a class="mdl-navigation__link" href="venta.php">Nueva Venta</a>
-			<a class="mdl-navigation__link" href="cliente.php">Cliente</a>
 			<a class="mdl-navigation__link" href="cierre-caja.php">Cierre Caja</a>
-			<a class="mdl-navigation__link" href="informes.php">Informes</a>
 			<a class="mdl-navigation__link" href="inventario.php">Inventario</a>			
+			<a class="mdl-navigation__link" href="cliente.php">Cliente</a>
+			<a class="mdl-navigation__link" href="informes.php">Informes</a>
 		</nav>            
 	</div>
 </header>
