@@ -31,6 +31,15 @@ function insertClient(){
         'clientAddress' : $('input[id=clientAddress]').val()
 
     };
+    if ($('input[id=clientName]').val() === '') {
+        alert('clientName vacio');
+    } else if ($('input[id=clientRut]').val() === '') {
+        alert('clientRut vacio');
+    }else if ($('input[id=clientPhone]').val() === '') {
+        alert('clientPhone vacio');
+    }else if ($('input[id=clientAddress]').val() === '') {
+        alert('clientAddress vacio');
+    }else{
     $.ajax({
         url : '../controller/insertClient.php',
         type : 'post',
@@ -44,7 +53,8 @@ function insertClient(){
             //alertify.error("Producto no agregado.");
             alert('cliente no agregada');
         }
-    });
+    })
+    };
 };
 
 function insertProducto(){
