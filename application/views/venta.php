@@ -4,7 +4,7 @@
 <div id ="content">
 	<h2>VENTA</h2>
 	<div id="dataSale">
-		<div>
+		<div><!--
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text"  id="saleDate">
 				<label class="mdl-textfield__label" for="saleDate">Fecha</label>
@@ -12,14 +12,21 @@
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text"  id="saleTime">
 				<label class="mdl-textfield__label" for="saleTime">Hora</label>
+			</div>-->
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="radio">
+					<input name="radio" type="radio" checked>
+					<span>Boleta</span>
+				</label>
 			</div>
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="radio">
+					<input name="radio" type="radio">
+					<span>Factura</span>
+				</label>
+			</div>			
 		</div>
-		<div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
-				<label class="mdl-textfield__label" for="clientRut">Rut</label>
-				<span class="mdl-textfield__error">Ingrese rut válido</span>
-			</div>		
+		<div>	
 			<div id="tt1" class="icon material-icons"><a class="btnIcons" href="#"><i class="material-icons">search</i></a></div>
 			<div class="mdl-tooltip mdl-tooltip--large" for="tt1">
 				Buscar Cliente
@@ -27,31 +34,38 @@
 			<div id="tt2" class="icon material-icons"><a class="btnIcons" href="#"><i class="material-icons">person_add</i></a></div>
 			<div class="mdl-tooltip mdl-tooltip--large" for="tt2">
 				Agregar Cliente
-			</div>	
-		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<div class="mdl-selectfield">
-				<label>Marca</label>
-				<select class="browser-default">
-					<option value="" disabled selected>Marca</option>
-					<?php 
-					require '../controller/selectMarca.php';
-					?>
-				</select>
 			</div>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<div class="mdl-selectfield">
-				<label>Color</label>
-				<select class="browser-default">
-					<option value="" disabled selected>Color</option>
-				</select>
+		<div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
+				<label class="mdl-textfield__label" for="clientRut">Rut</label>
+				<span class="mdl-textfield__error">Ingrese rut válido</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
+				<label class="mdl-textfield__label" for="clientName">Nombre</label>
+				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
-			<label class="mdl-textfield__label" for="productStock">Stock</label>
-			<span class="mdl-textfield__error">Ingresar solo números</span>
+		<div>
+			<form action="#" class="searchProduct">
+				<br><div class="fontItem">BUSCAR PRODUCTO</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+						<i class="material-icons">search</i>
+					</label>
+					<div class="mdl-textfield__expandable-holder">
+						<input class="mdl-textfield__input" type="text" id="search-expandable2">
+						<label class="mdl-textfield__label" for="search-expandable2">
+							Ingrese código de producto
+						</label>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="">
+			<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Agregar Producto</button>
 		</div>
 	</div>
 	<div>
