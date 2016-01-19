@@ -1,12 +1,14 @@
 <?php 
 	
-	require '../model/insertColor.php';
-	require '../model/database.php';
+	require '../model/Color.php';
+	require '../model/Database.php';
 
 	$colNombre = $_POST['colNombre'];
 
-	insertColor($colNombre);
+	$objColor = new Color();
+	$json['success'] = false;
+	$json['success'] = $objColor->insertColor($colNombre);
 
-	$json['success'] = true;
     echo json_encode($json);
+
 ?>
