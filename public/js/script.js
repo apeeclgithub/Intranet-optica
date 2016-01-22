@@ -84,6 +84,11 @@ function insertProducto(){
             if(data.success==true){
                 $("#tablaProducts").load('../controller/selectProductAll.php');
                 alertify.success('Producto agregado.');
+                $('input[id=productCode]').val('');
+                $('select[id=productBrand]').val('');
+                $('select[id=productColor]').val('');
+                $('input[id=productStock]').val('');
+                $('textarea[id=productDesc]').val('');
             }else{
                 alertify.error('Producto no agregado.');
             }

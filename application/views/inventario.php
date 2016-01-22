@@ -73,22 +73,6 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<form action="#" class="searchProduct">
-			<br><div class="fontItem">BUSCAR PRODUCTO</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-				<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-					<i class="material-icons">search</i>
-				</label>
-				<div class="mdl-textfield__expandable-holder">
-					<input class="mdl-textfield__input" type="text" id="search-expandable2">
-					<label class="mdl-textfield__label" for="search-expandable2">
-						Ingrese código de producto
-					</label>
-				</div>
-			</div>
-		</form>
-	</div>
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductAll.php'; ?>
 	</div>
