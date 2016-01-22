@@ -13,7 +13,7 @@ function insertMarca(){
         }).done(function(data){
             if(data.success==true){
                 $('input[id=productBrand]').val();
-                $("#addProductPanel").reload();
+                $("#productBrand").load('../controller/selectMarca.php');
                 alertify.success("Marca agregada exitosamente.");
             }else{
                 alertify.error("Marca no agregada.");
