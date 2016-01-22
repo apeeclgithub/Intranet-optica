@@ -3,7 +3,7 @@
 	<select class="browser-default" name="productBrand" id="productBrand">
 		<option value="" disabled selected>Marca</option>
 		<?php 
-
+			require_once '../model/Marca.php';
 			$objMarca = new Marca();
 			$objMarca->listMarca();
 

@@ -12,9 +12,9 @@ function insertMarca(){
             dataType : 'json'
         }).done(function(data){
             if(data.success==true){
-                $('input[id=productBrand]').val();
-                $("#productBrand").load('../controller/selectMarca.php');
+                $("#addMarca").load('../controller/selectMarca.php');
                 alertify.success("Marca agregada exitosamente.");
+                $('input[id=productBrand]').val('');
             }else{
                 alertify.error("Marca no agregada.");
             }
