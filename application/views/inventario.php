@@ -1,9 +1,8 @@
 <?php include('header.php');?>
 <?php include('nav_menu.php');?>
-<?php require '../model/Database.php'; ?>
+
 <?php require '../model/Color.php'; ?>
 <?php require '../model/Marca.php'; ?>
-<?php require '../model/Producto.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
@@ -90,7 +89,7 @@
 			</div>
 		</form>
 	</div>
-	<div >
+	<div id="tablaProducts">
 		<?php require '../controller/selectProductAll.php'; ?>
 	</div>
 	<div class="buttonProducts"><br><br>

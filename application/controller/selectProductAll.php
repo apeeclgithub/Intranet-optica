@@ -11,7 +11,7 @@
 	</thead>
 	<tbody>
 	<?php
-	
+		require_once '../model/Producto.php';
 		$objProducto = new Producto();
 		$objProducto->selectProductAll();
 

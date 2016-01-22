@@ -82,11 +82,12 @@ function insertProducto(){
             dataType : 'json'
         }).done(function(data){
             if(data.success==true){
-            alertify.success('Producto agregado.');
-        }else{
-            alertify.error('Producto no agregado.');
-        }
-    })
+                $("#tablaProducts").load('../controller/selectProductAll.php');
+                alertify.success('Producto agregado.');
+            }else{
+                alertify.error('Producto no agregado.');
+            }
+        })
     };
 };
 
