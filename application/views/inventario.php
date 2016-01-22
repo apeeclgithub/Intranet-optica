@@ -2,7 +2,6 @@
 <?php include('nav_menu.php');?>
 
 <?php require '../model/Color.php'; ?>
-<?php require '../model/Marca.php'; ?>
 
 <div id ="content">
 	<h2>INVENTARIO</h2>
@@ -22,7 +21,7 @@
 						<label class="mdl-textfield__label" for="productCode">Código</label>
 						<span class="mdl-textfield__error">No puede ser vacío</span>
 					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<div id="addMarca" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<?php require '../controller/selectMarca.php'; ?>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
