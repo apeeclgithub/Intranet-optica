@@ -99,7 +99,7 @@ function insertColor(){
         'colNombre' : $('input[id=productColor]').val()
     };
     if ($('input[id=productColor').val() === '') {
-        alert('color vacio');
+        alertify.error("Color no debe ir vacío.");
     }else{
         $.ajax({
             url : '../controller/insertColor.php',
