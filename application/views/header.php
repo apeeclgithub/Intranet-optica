@@ -22,6 +22,10 @@
 		<script src="../../public/mdl/material.min.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+		<link href="../../public/css/alertify.bootstrap.css" rel="stylesheet" type="text/css" />
+		<link href="../../public/css/alertify.core.css" rel="stylesheet" type="text/css" />
+		<script src="../../public/js/alertify.min.js"></script>
+
 		<!--[if lt IE 9 ]>
 <script type="text/javascript" src="js/html5shiv.min.js"></script>
 <script type="text/javascript" src="js/html5shiv-printshiv.min.js"></script>

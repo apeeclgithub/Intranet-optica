@@ -3,7 +3,7 @@ function insertMarca(){
         'marNombre' : $('input[id=productBrand]').val()
     };
     if ($('input[id=productBrand]').val() === '') {
-        alert('marca vacio');
+        alertify.error("Marca no debe ir vacia.");
     }else{
         $.ajax({
             url : '../controller/insertMarca.php',
@@ -12,13 +12,13 @@ function insertMarca(){
             dataType : 'json'
         }).done(function(data){
             if(data.success==true){
-            //alertify.success("Carro actualizado.");
-            alert('marca agregada');
-        }else{
-            //alertify.error("Producto no agregado.");
-            alert('marca no agregada');
-        }
-    })
+                $('input[id=productBrand]').val();
+                $("#addProductPanel").reload();
+                alertify.success("Marca agregada exitosamente.");
+            }else{
+                alertify.error("Marca no agregada.");
+            }
+        })
     };
 };
 
@@ -108,16 +108,17 @@ function insertColor(){
             dataType : 'json'
         }).done(function(data){
             if(data.success==true){
-            //alertify.success("Carro actualizado.");
-            alert('color agregada');
-        }else{
-            //alertify.error("Producto no agregado.");
-            alert('color no agregada');
-        }
-    })
+                $('input[id=productColor]').val('');
+                location.href='#addProductPanel';
+                alertify.success("Color agregado exitosamente.");
+            }else{
+                alertify.error("Color no agregado.");
+            }
+        })
     };
 };
 
-function editarProducto(codigo, marca, color, stock, descripcion){
+function editarProducto(codigo, marca, color, stock){
     $('input[id=editCodigo]').val(codigo);
+    $('input[id=editStock]').val(stock);
 };
