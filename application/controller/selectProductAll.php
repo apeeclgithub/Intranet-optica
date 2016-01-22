@@ -1,3 +1,10 @@
+<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+		$('#paginationProducts').DataTable( {
+			"pagingType": "full_numbers"
+		} );
+	} );
+</script>
 <table id="paginationProducts" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp display" cellspacing="0">
 	<thead style="  cursor: pointer;">
 		<tr>

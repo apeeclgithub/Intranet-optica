@@ -31,15 +31,7 @@
 <script type="text/javascript" src="js/html5shiv-printshiv.min.js"></script>
 <script type="text/javascript" src="js/respond.min.js"></script>
 <![endif]-->
-	<script type="text/javascript" language="javascript" class="init">
 	
-$(document).ready(function() {
-	$('#paginationProducts').DataTable( {
-		"pagingType": "full_numbers"
-	} );
-} );
-
-	</script>
 	</head>
 	<body>
 	<h1>Logo</h1>
