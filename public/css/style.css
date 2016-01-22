@@ -146,6 +146,13 @@ h2{
   width: 300px !important;
 }
 
+.dataTables_wrapper .dataTables_filter input{
+  height: 30px;
+  border-bottom: 1px solid rgba(0,0,0, 0.12);
+  background: 0;
+  padding-top: 12px;
+}
+
 #productColor{
   width: 300px !important;
 }
