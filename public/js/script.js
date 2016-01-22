@@ -32,13 +32,13 @@ function insertClient(){
 
     };
     if ($('input[id=clientName]').val() === '') {
-        alert('clientName vacio');
+        alertify.error('clientName vacio');
     } else if ($('input[id=clientRut]').val() === '') {
-        alert('clientRut vacio');
+        alertify.error('clientRut vacio');
     }else if ($('input[id=clientPhone]').val() === '') {
-        alert('clientPhone vacio');
+        alertify.error('clientPhone vacio');
     }else if ($('input[id=clientAddress]').val() === '') {
-        alert('clientAddress vacio');
+        alertify.error('clientAddress vacio');
     }else{
     $.ajax({
         url : '../controller/insertClient.php',
@@ -47,11 +47,9 @@ function insertClient(){
         dataType : 'json'
     }).done(function(data){
         if(data.success==true){
-            //alertify.success("Carro actualizado.");
-            alert('cliente agregada');
+            alertify.success('Cliente agregado.');
         }else{
-            //alertify.error("Producto no agregado.");
-            alert('cliente no agregada');
+            alertify.error('cliente no agregada');
         }
     })
     };
@@ -67,15 +65,15 @@ function insertProducto(){
     };
 
     if ($('input[id=productCode]').val() === '') {
-        alert('codigo vacio');
+        alertify.error('Ingrese un código.');
     } else if ($('select[id=productBrand]').val() <= '0') {
-        alert('marca vacio');
+        alertify.error('Seleccione una marca.');
     } else if ($('select[id=productColor]').val()  <= '0') {
-        alert('productColor vacio');
+        alertify.error('Seleccione un color.');
     } else if ($('input[id=productStock]').val() === '') {
-        alert('productStock vacio');
+        alertify.error('Ingrese el stock');
     } else if ($('textarea[id=productDesc]').val() === '') {
-        alert('productDesc vacio');
+        alertify.error('Ingrese una descripción');
     }else{
         $.ajax({
             url : '../controller/insertProduct.php',
@@ -84,11 +82,9 @@ function insertProducto(){
             dataType : 'json'
         }).done(function(data){
             if(data.success==true){
-            //alertify.success("Carro actualizado.");
-            alert('producto agregada');
+            alertify.success('Producto agregado.');
         }else{
-            //alertify.error("Producto no agregado.");
-            alert('producto no agregada');
+            alertify.error('Producto no agregado.');
         }
     })
     };
