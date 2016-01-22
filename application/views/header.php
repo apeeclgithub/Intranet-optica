@@ -12,9 +12,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>OpticRed</title>
-		<script src="../../public/js/jquery-1.11.1.min.js"></script>
+		<script src="../../public/js/jquery-1.12.0.min.js"></script>
+		<script src="../../public/js/jquery.dataTables.min.js"></script>
 		<script src="../../public/js/script.js"></script>
 		<script src="../../public/js/modernizr.js"></script>
+		<link href="../../public/css/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css" />
 		<link href="../../public/css/style.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="../../public/mdl/material.min.css">
 		<script src="../../public/mdl/material.min.js"></script>
@@ -25,7 +27,15 @@
 <script type="text/javascript" src="js/html5shiv-printshiv.min.js"></script>
 <script type="text/javascript" src="js/respond.min.js"></script>
 <![endif]-->
+	<script type="text/javascript" language="javascript" class="init">
+	
+$(document).ready(function() {
+	$('#paginationProducts').DataTable( {
+		"pagingType": "full_numbers"
+	} );
+} );
 
+	</script>
 	</head>
 	<body>
 	<h1>Logo</h1>

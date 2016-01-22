@@ -1,5 +1,5 @@
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-	<thead>
+<table id="paginationProducts" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp display" cellspacing="0">
+	<thead style="  cursor: pointer;">
 		<tr>
 			<th class="mdl-data-table__cell--non-numeric">Código</th>
 			<th class="mdl-data-table__cell--non-numeric">Marca</th>
