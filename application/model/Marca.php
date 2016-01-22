@@ -15,6 +15,18 @@
 
 		}
 
+		public function insertMarca($colMarca){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('INSERT INTO marca (mar_nombre) VALUES (:colMarca)');
+			$sql->bindParam(':colMarca', $colMarca);
+
+			$this->marca = $sql->execute();
+
+			return $this->marca;
+
+		}
+
 	}
 
 ?>

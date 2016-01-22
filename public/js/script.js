@@ -22,6 +22,30 @@ function insertMarca(){
     };
 };
 
+function insertColor(){
+    var params = {
+        'colNombre' : $('input[id=productColor]').val()
+    };
+    if ($('input[id=productColor').val() === '') {
+        alertify.error("Color no debe ir vacío.");
+    }else{
+        $.ajax({
+            url : '../controller/insertColor.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                $("#addColor").load('../controller/selectColor.php');
+                alertify.success("Color agregado exitosamente.");
+                $('input[id=productColor]').val('');
+            }else{
+                alertify.error("Color no agregado.");
+            }
+        })
+    };
+};
+
 function insertClient(){
     var params = {
         'clientName' : $('input[id=clientName]').val(),
@@ -96,29 +120,7 @@ function insertProducto(){
     };
 };
 
-function insertColor(){
-    var params = {
-        'colNombre' : $('input[id=productColor]').val()
-    };
-    if ($('input[id=productColor').val() === '') {
-        alertify.error("Color no debe ir vacío.");
-    }else{
-        $.ajax({
-            url : '../controller/insertColor.php',
-            type : 'post',
-            data : params,
-            dataType : 'json'
-        }).done(function(data){
-            if(data.success==true){
-                $('input[id=productColor]').val('');
-                location.href='#addProductPanel';
-                alertify.success("Color agregado exitosamente.");
-            }else{
-                alertify.error("Color no agregado.");
-            }
-        })
-    };
-};
+
 
 function editarProducto(codigo, marca, color, stock){
     $('input[id=editCodigo]').val(codigo);

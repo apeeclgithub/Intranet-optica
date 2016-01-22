@@ -1,7 +1,6 @@
 <?php 
 	
 	require '../model/Color.php';
-	require '../model/Database.php';
 
 	$colNombre = $_POST['colNombre'];
 
@@ -10,5 +9,5 @@
 	$json['success'] = $objColor->insertColor($colNombre);
 
     echo json_encode($json);
-
+ 
 ?>

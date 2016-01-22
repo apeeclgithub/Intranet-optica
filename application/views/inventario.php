@@ -1,8 +1,6 @@
 <?php include('header.php');?>
 <?php include('nav_menu.php');?>
 
-<?php require '../model/Color.php'; ?>
-
 <div id ="content">
 	<h2>INVENTARIO</h2>
 	<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -24,7 +22,7 @@
 					<div id="addMarca" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<?php require '../controller/selectMarca.php'; ?>
 					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<div id="addColor" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<?php require '../controller/selectColor.php'; ?>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
