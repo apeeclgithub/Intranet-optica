@@ -34,7 +34,7 @@
 					<td>
 						<div class="btnRight">
 							<div class="interior">
-								<a onclick="editarProducto(
+								<a onclick="loadModal(
 								'<?php echo $value['pro_codigo']; ?>', 
 								'<?php echo $value['mar_nombre']; ?>',
 								'<?php echo $value['col_nombre']; ?>',

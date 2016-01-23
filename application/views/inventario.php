@@ -106,7 +106,7 @@
 				</div>
 			</div>
 			<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
+				<button onclick="editProduct()" class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
 		</div>
