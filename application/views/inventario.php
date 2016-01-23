@@ -87,7 +87,7 @@
 		<div>
 			<h1>EDITAR PRODUCTO</h1>
 			<div id="dataProductsEdit">
-
+				<input type="hidden" id="proId">
 				<div class="mdl-textfield mdl-js-textfield ">
 					<input id="editCodigo" class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
 					<label for="productCode">Código</label>
@@ -116,7 +116,7 @@
 		<div>
 			<h1>ELIMINAR PRODUCTO</h1>
 			<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
+				<button onclick="deleteProduct()" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
 		</div>

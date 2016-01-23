@@ -122,7 +122,7 @@ function insertProducto(){
 
 
 
-function loadModal(codigo, marca, color, stock){
+function loadModal(id, codigo, marca, color, stock){
     
     $('input[id=editCodigo]').val(codigo);
     $("select[id=productBrand] option").prop('selected', false).filter(function() {
@@ -132,16 +132,19 @@ function loadModal(codigo, marca, color, stock){
         return $(this).text() == color;  
     }).prop('selected', true);
     $('input[id=editStock]').val(stock);
-
+    $('input[id=proId]').val(id);
 };
 
 function editProduct(){
     var params = {
-        'proCodigo' : $('input[id=editCodigo]').val(),
+        'proId'    : $('input[id=proId]').val(),
+        'proCodigo': $('input[id=editCodigo]').val(),
         'proMarca' : $('select[id=productBrand]').val(),
         'proColor' : $('select[id=productColor]').val(),
         'proStock' : $('input[id=editStock]').val()
     };
+    //alert('id: '+params['proId']+'codigo: '+params['proCodigo']+'marca: '+params['proMarca']+'color: '+params['proColor']+'stock: '+params['proStock']);
+    /*
     $.ajax({
         url : '../controller/updateProduct.php',
         type : 'post',
@@ -151,6 +154,7 @@ function editProduct(){
         if(data.success==true){
             $("#tablaProducts").load('../controller/selectProductAll.php');
             alertify.success('Producto modificado.');
+            $('input[id=proId]').val('');
             $('input[id=productCode]').val('');
             $('select[id=productBrand]').val('');
             $('select[id=productColor]').val('');
@@ -159,5 +163,31 @@ function editProduct(){
         }else{
             alertify.error('Producto no modificado.');
         }
-    })
+    })*/
 };
+
+function deleteProduct(){
+    var params = {
+        'proId'    : $('input[id=proId]').val()
+    };
+    $.ajax({
+        url : '../controller/deleteProduct.php',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            $("#tablaProducts").load('../controller/selectProductAll.php');
+            alertify.success('Producto eliminado exitosamente.');
+            $('input[id=proId]').val('');
+            $('input[id=productCode]').val('');
+            $('select[id=productBrand]').val('');
+            $('select[id=productColor]').val('');
+            $('input[id=productStock]').val('');
+            $('textarea[id=productDesc]').val('');
+        }else{
+            alertify.error('Producto no eliminado.');
+        }
+        location.href="#modal-close";
+    })
+}
