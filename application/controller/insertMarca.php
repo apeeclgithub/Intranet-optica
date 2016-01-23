@@ -1,13 +1,12 @@
 <?php 
 	
-	require '../model/insertMarca.php';
-	require '../model/database.php';
+	require '../model/Marca.php'; 
 
 	$marNombre = $_POST['marNombre'];
 
-	insertMarca($marNombre);
-
-	$json['success'] = true;
+	$objMarca = new Marca();
+	$json['success'] = false;
+	$json['success'] = $objMarca->insertMarca($marNombre);
     echo json_encode($json);
 
 ?>

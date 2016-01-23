@@ -1,9 +1,11 @@
 <?php 
+
 	require_once '../model/Database.php';
+	
 	class Marca{
 
 		private $marca;
-
+		
 		public function listMarca(){
 
 			$objConn = new Database();
@@ -18,6 +20,7 @@
 		public function insertMarca($colMarca){
 
 			$objConn = new Database();
+
 			$sql = $objConn->prepare('INSERT INTO marca (mar_nombre) VALUES (:colMarca)');
 			$sql->bindParam(':colMarca', $colMarca);
 
