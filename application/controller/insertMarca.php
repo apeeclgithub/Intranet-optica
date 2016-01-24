@@ -1,6 +1,6 @@
 <?php 
 	
-	require '../model/Marca.php'; 
+	require '../model/marca.php'; 
 
 	$marNombre = $_POST['marNombre'];
 

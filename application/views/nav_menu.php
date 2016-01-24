@@ -1,6 +1,6 @@
 <header class="mdl-layout__header">
 	<div class="mdl-layout__header-row">
-		<span class="mdl-layout-title">Optic-Red</span>
+		<span class="mdl-layout-title">Importadora</span>
 		<div class="mdl-layout-spacer"></div>
 		<nav class="mdl-navigation">
 			<a class="mdl-navigation__link" href="venta.php">Nueva Venta</a>

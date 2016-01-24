@@ -26,14 +26,29 @@
 				</label>
 			</div>			
 		</div>
-		<div>	
-			<div id="tt1" class="icon material-icons"><a class="btnIcons" href="#"><i class="material-icons">search</i></a></div>
-			<div class="mdl-tooltip mdl-tooltip--large" for="tt1">
-				Buscar Cliente
-			</div>&nbsp;&nbsp;&nbsp;
-			<div id="tt2" class="icon material-icons"><a class="btnIcons" href="#"><i class="material-icons">person_add</i></a></div>
-			<div class="mdl-tooltip mdl-tooltip--large" for="tt2">
-				Agregar Cliente
+		<div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+			<form action="#" class="searchClientSail">
+				<br><div class="fontItem">BUSCAR CLIENTE</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+						<i class="material-icons">search</i>
+					</label>
+					<div class="mdl-textfield__expandable-holder">
+						<input class="mdl-textfield__input" type="text" id="search-expandable2">
+						<label class="mdl-textfield__label" for="search-expandable2">
+							Ingrese Rut
+						</label>
+					</div>
+				</div>
+			</form>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+			<div class="submitProduct">
+				<button onclick="insertClient()" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
+			</div>
 			</div>
 		</div>
 		<div>

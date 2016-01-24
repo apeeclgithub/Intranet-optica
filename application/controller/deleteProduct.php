@@ -1,6 +1,6 @@
 <?php 
 
-	require '../model/Producto.php';
+	require '../model/producto.php';
 
 	$proId    = $_POST['proId'];
 

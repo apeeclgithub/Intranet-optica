@@ -1,6 +1,6 @@
 <?php 
 	
-	require '../model/Color.php';
+	require '../model/color.php';
 
 	$colNombre = $_POST['colNombre'];
 

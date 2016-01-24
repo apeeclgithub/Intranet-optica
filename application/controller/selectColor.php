@@ -3,7 +3,7 @@
 	<select class="browser-default" name="productColor" id="productColor">
 		<option value="" disabled selected>Color</option>
 		<?php 
-			require_once '../model/Color.php';
+			require_once '../model/color.php';
 			$objColor = new Color();
 			$objColor->listColor();
 
