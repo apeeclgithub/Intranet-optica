@@ -64,18 +64,18 @@ function insertClient(){
     }else if ($('input[id=clientAddress]').val() === '') {
         alertify.error('clientAddress vacio');
     }else{
-    $.ajax({
-        url : '../controller/insertClient.php',
-        type : 'post',
-        data : params,
-        dataType : 'json'
-    }).done(function(data){
-        if(data.success==true){
-            alertify.success('Cliente agregado.');
-        }else{
-            alertify.error('cliente no agregada');
-        }
-    })
+        $.ajax({
+            url : '../controller/insertClient.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                alertify.success('Cliente agregado.');
+            }else{
+                alertify.error('cliente no agregada');
+            }
+        })
     };
 };
 
