@@ -4,7 +4,7 @@
 <div id ="content">
 	<h2>VENTA</h2>
 	<div id="dataSale">
-		<div><!--
+		<div id="dataClient"><!--
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text"  id="saleDate">
 				<label class="mdl-textfield__label" for="saleDate">Fecha</label>
@@ -13,45 +13,40 @@
 				<input class="mdl-textfield__input" type="text"  id="saleTime">
 				<label class="mdl-textfield__label" for="saleTime">Hora</label>
 			</div>-->
-			<div class="mdl-textfield mdl-js-textfield">
-				<label class="radio">
-					<input name="radio" type="radio" checked>
-					<span>Boleta</span>
-				</label>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield">
-				<label class="radio">
-					<input name="radio" type="radio">
-					<span>Factura</span>
-				</label>
-			</div>			
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+				<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+				<span class="mdl-radio__label">Boleta</span>
+			</label>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+				<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+				<span class="mdl-radio__label">Factura</span>
+			</label>		
 		</div>
-		<div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<div id="dataClient">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-			<form action="#" class="searchClientSail">
-				<br><div class="fontItem">BUSCAR CLIENTE</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-						<i class="material-icons">search</i>
-					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" id="search-expandable2">
-						<label class="mdl-textfield__label" for="search-expandable2">
-							Ingrese Rut
+				<form action="#" class="searchClientSail">
+					<br><div class="fontItem">BUSCAR CLIENTE</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+						<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
+							<i class="material-icons">search</i>
 						</label>
+						<div class="mdl-textfield__expandable-holder">
+							<input class="mdl-textfield__input" type="text" id="search-expandable2">
+							<label class="mdl-textfield__label" for="search-expandable2">
+								Ingrese Rut
+							</label>
+						</div>
 					</div>
-				</div>
-			</form>
+				</form>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-			<div class="submitProduct">
-				<button onclick="insertClient()" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
+				<div class="submitProduct">
+					<button onclick="insertClient()" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
+				</div>
 			</div>
-			</div>
-		</div>
-		<div>
+					<div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
 				<label class="mdl-textfield__label" for="clientRut">Rut</label>
@@ -63,213 +58,46 @@
 				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
 		</div>
-		<div>
-			<form action="#" class="searchProduct">
-				<br><div class="fontItem">BUSCAR PRODUCTO</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-					<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-						<i class="material-icons">search</i>
-					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" id="search-expandable2">
-						<label class="mdl-textfield__label" for="search-expandable2">
-							Ingrese código de producto
-						</label>
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="">
-			<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Agregar Producto</button>
 		</div>
 	</div>
-	<div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
-			<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc"></textarea>
-			<label class="mdl-textfield__label" for="productDesc">Descripción</label>
-			<span class="mdl-textfield__error">No puede ser vacío</span>
+	<div id="tablaProducts">
+		<?php require '../controller/selectProductSail.php'; ?>
+	</div>
+	<div id="dataClient">
+		<div class="fontItem">MEDIO DE PAGO</div><br><br>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+				<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+				<span class="mdl-checkbox__label">Efectivo</span>
+			</label>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+				<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+				<span class="mdl-checkbox__label">Tarjeta</span>
+			</label>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+				<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
+				<span class="mdl-checkbox__label">Cheque</span>
+			</label>
 		</div>
 	</div>
-	<div>
-		<form action="#">
-			<br><div class="fontItem">BUSCAR PRODUCTO</div><br>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-				<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-					<i class="material-icons">search</i>
-				</label>
-				<div class="mdl-textfield__expandable-holder">
-					<input class="mdl-textfield__input" type="text" id="search-expandable2">
-					<label class="mdl-textfield__label" for="search-expandable2">
-						Ingrese código de producto
-					</label>
-				</div>
-			</div>
-		</form>
+</div>
+<div><br><br>
+	<div class="interior">
+		<a class="btn" href="#open-modal">AGREGAR MARCA</a>
 	</div>
-	<div >
-		<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-			<thead>
-				<tr>
-					<th class="mdl-data-table__cell--non-numeric">Código</th>
-					<th class="mdl-data-table__cell--non-numeric">Marca</th>
-					<th class="mdl-data-table__cell--non-numeric">Color</th>
-					<th>Stock</th>
-					<th class="mdl-data-table__cell--non-numeric">Descripción</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="mdl-data-table__cell--non-numeric">Código1</td>
-					<td class="mdl-data-table__cell--non-numeric">Marca</td>
-					<td class="mdl-data-table__cell--non-numeric">Color</td>
-					<td>Stock</td>
-					<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-					<td>
-						<div class="btnRight">
-							<div class="interior">
-								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-							</div>
-							<div class="interior">
-								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="mdl-data-table__cell--non-numeric">Código2</td>
-					<td class="mdl-data-table__cell--non-numeric">Marca</td>
-					<td class="mdl-data-table__cell--non-numeric">Color</td>
-					<td>Stock</td>
-					<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-					<td>
-						<div class="btnRight">
-							<div class="interior">
-								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-							</div>
-							<div class="interior">
-								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="mdl-data-table__cell--non-numeric">Código3</td>
-					<td class="mdl-data-table__cell--non-numeric">Marca</td>
-					<td class="mdl-data-table__cell--non-numeric">Color</td>
-					<td>Stock</td>
-					<td class="mdl-data-table__cell--non-numeric">Descripción</td>
-					<td>
-						<div class="btnRight">
-							<div class="interior">
-								<a class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
-							</div>
-							<div class="interior">
-								<a class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
-							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="interior">
+		<a class="btn" href="#open-modal-color">AGREGAR COLOR</a>
 	</div>
-	<div><br><br>
-		<div class="interior">
-			<a class="btn" href="#open-modal">AGREGAR MARCA</a>
-		</div>
-		<div class="interior">
-			<a class="btn" href="#open-modal-color">AGREGAR COLOR</a>
-		</div>
-		<div class="interior">
-			<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Detalle Inventario</button>	
-		</div>
-		<div class="interior">
-			<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
-		</div>
+	<div class="interior">
+		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Detalle Inventario</button>	
 	</div>
-	<!-- modal marca-->
-	<div id="open-modal" class="modal-window">
-		<div>
-			<h1>AGREGAR MARCA</h1>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productBrand">
-				<label class="mdl-textfield__label" for="productBrand">Marca</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
-			<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-		</div>
+	<div class="interior">
+		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
 	</div>
-	<!-- modal color -->
-	<div id="open-modal-color" class="modal-window">
-		<div>
-			<h1>AGREGAR COLOR</h1>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productColor">
-				<label class="mdl-textfield__label" for="productColor">Color</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
-			<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-		</div>
-	</div>
-	<!--modal editar -->
-	<div id="open-modal-edit" class="modal-window">
-		<div>
-			<h1>EDITAR PRODUCTO</h1>
-			<div id="dataProductsEdit">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
-					<label class="mdl-textfield__label" for="productCode">Código</label>
-					<span class="mdl-textfield__error">No puede ser vacío</span>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<div class="mdl-selectfield">
-						<label>Marca</label>
-						<select class="browser-default">
-							<option value="" disabled selected>Marca</option>
-							<option value="1">Marca 1</option>
-							<option value="2">Marca 2</option>
-							<option value="3">Marca 3</option>
-						</select>
-					</div>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<div class="mdl-selectfield">
-						<label>Color</label>
-						<select class="browser-default">
-							<option value="" disabled selected>Color</option>
-							<option value="1">Color 1</option>
-							<option value="2">Color 2</option>
-							<option value="3">Color 3</option>
-						</select>
-					</div>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
-					<label class="mdl-textfield__label" for="productStock">Stock</label>
-					<span class="mdl-textfield__error">Ingresar solo números</span>
-				</div>
-			</div>
-			<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Guardar</button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-		</div>
-	</div>
-	<!--modal eliminar -->
-	<div id="open-modal-delete" class="modal-window">
-		<div>
-			<h1>ELIMINAR PRODUCTO</h1>
-			<div>
-				<button class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-		</div>
-	</div>
+</div>
 </div>
 <?php include('footer.php') ?>
