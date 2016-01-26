@@ -1,7 +1,6 @@
 <?php 
 	
-	require '../model/insertClient.php';
-	require '../model/database.php';
+	require '../model/classCliente.php';
 
 	$clientName 	= $_POST['clientName'];
 	$clientRut 		= $_POST['clientRut'];
@@ -9,10 +8,10 @@
 	$clientGir		= $_POST['clientGir'];
 	$clientAddress	= $_POST['clientAddress'];
 
+	$objClient = new Cliente();
+	$json['success'] = false;
+	$json['success'] = $objClient->insertClient($clientName, $clientRut, $clientPhone, $clientGir, $clientAddress);
 
-	insertClient($clientName, $clientRut, $clientPhone, $clientGir, $clientAddress);
-
-	$json['success'] = true;
     echo json_encode($json);
 
 ?>

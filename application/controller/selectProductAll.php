@@ -20,7 +20,7 @@
 		</thead>
 		<tbody>
 			<?php
-			require_once '../model/producto.php';
+			require_once '../model/classProducto.php';
 			$objProducto = new Producto();
 			$objProducto->selectProductAll();
 
@@ -36,7 +36,7 @@
 						<td>
 							<div class="btnRight">
 								<div class="interior">
-									<a onclick="loadModal(
+									<a onclick="loadModalProduct(
 									<?php echo $value['pro_id']; ?>,
 									'<?php echo $value['pro_codigo']; ?>', 
 									'<?php echo $value['mar_nombre']; ?>',
@@ -44,7 +44,7 @@
 									<?php echo $value['pro_stock']; ?>)" class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
 								</div>
 								<div class="interior">
-									<a onclick="loadModal(
+									<a onclick="loadModalProduct(
 									<?php echo $value['pro_id']; ?>,
 									'<?php echo $value['pro_codigo']; ?>', 
 									'<?php echo $value['mar_nombre']; ?>',

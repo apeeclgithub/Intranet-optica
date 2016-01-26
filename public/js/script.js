@@ -71,9 +71,15 @@ function insertClient(){
             dataType : 'json'
         }).done(function(data){
             if(data.success==true){
-                alertify.success('Cliente agregado.');
+                $("#tablaClients").load('../controller/selectClientAll.php');
+                alertify.success('Cliente agregado exitosamente.');
+                $('input[id=clientName]').val('');
+                $('input[id=clientRut]').val('')
+                $('input[id=clientPhone]').val('');
+                $('input[id=clientGir]').val('');
+                $('input[id=clientAddress]').val('');
             }else{
-                alertify.error('cliente no agregada');
+                alertify.error('cliente no agregado.');
             }
         })
     };
@@ -122,7 +128,7 @@ function insertProducto(){
 
 
 
-function loadModal(id, codigo, marca, color, stock){
+function loadModalProduct(id, codigo, marca, color, stock){
     
     $('input[id=editCodigo]').val(codigo);
     $("select[id=productBrand] option").prop('selected', false).filter(function() {
@@ -134,6 +140,47 @@ function loadModal(id, codigo, marca, color, stock){
     $('input[id=editStock]').val(stock);
     $('input[id=proId]').val(id);
 };
+
+function loadModalClient(id, nombre, rut, fono, direccion, giro){
+    $('input[id=cliId]').val(id);
+    $('input[id=clientName]').val(nombre);
+    $('input[id=clientRut]').val(rut);
+    $('input[id=clientPhone]').val(fono);
+    $('input[id=clientGir]').val(giro);
+    $('input[id=clientAddress]').val(direccion);
+}
+
+function editClient(){
+    var params = {
+        'cliId'         : $('input[id=cliId]').val(),
+        'clientName'    : $('input[id=clientName]').val(),
+        'clientRut'     : $('input[id=clientRut]').val(),
+        'clientPhone'   : $('input[id=clientPhone]').val(),
+        'clientGir'     : $('input[id=clientGir]').val(),
+        'clientAddress' : $('input[id=clientAddress]').val()
+    };
+    $.ajax({
+        url : '../controller/updateClient.php',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            $("#tablaClients").load('../controller/selectClientAll.php');
+            alertify.success('Cliente modificado.');
+            $('input[id=proId]').val('');
+            $('input[id=clientName]').val('');
+            $('input[id=clientRut]').val('');
+            $('input[id=clientPhone]').val('');
+            $('input[id=clientGir]').val('');
+            $('input[id=clientAddress]').val('');
+        }else{
+            alertify.error('Cliente no modificado.');
+        }
+        location.href="#modal-close";
+    })
+}
+
 
 function editProduct(){
     var params = {

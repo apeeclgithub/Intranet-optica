@@ -1,6 +1,6 @@
 <?php 
 	
-	require '../model/producto.php';
+	require '../model/classProducto.php';
 
 	$proCodigo = $_POST['proCodigo'];
 	$proMarca = $_POST['proMarca'];

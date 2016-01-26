@@ -5,7 +5,7 @@
 		public function __construct(){
 			
 			try{
-				parent::__construct('mysql:host=localhost;dbname=optica_db','root','');
+				parent::__construct('mysql:host=localhost;dbname=optica_db_pabloo','root','');
 				//APEE parent::__construct('mysql:host=localhost;dbname=apeecl_optica_db','apeecl_optica_db','TdomZbzPF)Xu'); 	
 				parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			}catch(PDOException $e){
