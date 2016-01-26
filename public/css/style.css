@@ -40,6 +40,11 @@ header, #content, footer{
   
 }
 
+/* webkit solution */
+::-webkit-input-placeholder { padding-left:40px; }
+/* mozilla solution */
+input:-moz-placeholder { padding-left:40px; }
+
 .mdl-shadow--6dp{
   margin:0 auto !important;  
 }

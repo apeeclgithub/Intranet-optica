@@ -46,7 +46,6 @@
 			<h1>EDITAR CLIENTE</h1>
 			<div>
 				<input type="hidden" id="cliId">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
 					<label  for="clientName">Nombre</label>
