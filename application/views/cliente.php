@@ -148,28 +148,28 @@
 		<div>
 			<h1>EDITAR CLIENTE</h1>
 			<div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
-					<label class="mdl-textfield__label" for="clientName">Nombre</label>
+					<label  for="clientName">Nombre</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
-					<label class="mdl-textfield__label" for="clientRut">Rut</label>
+					<label  for="clientRut">Rut</label>
 					<span class="mdl-textfield__error">Ingrese rut válido</span>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="clientPhone">
-					<label class="mdl-textfield__label" for="clientPhone">Teléfono</label>
+					<label  for="clientPhone">Teléfono</label>
 					<span class="mdl-textfield__error">Sólo números</span>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" id="clientGir">
-					<label class="mdl-textfield__label" for="clientGir">Giro</label>
+					<label for="clientGir">Giro</label>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientAddress">
-					<label class="mdl-textfield__label" for="clientAddress">Dirección</label>
+					<label for="clientAddress">Dirección</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
 				<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
