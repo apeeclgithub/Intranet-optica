@@ -80,7 +80,7 @@
 		<div>
 			<h1>ELIMINAR CLIENTE</h1>
 			<div>
-				<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
+				<button onclick="deleteClient()" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
 		</div>

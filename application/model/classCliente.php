@@ -35,19 +35,19 @@
 
 		}
 
-		public function updateClient($cliId, $cliNombre, $cliRut, $cliFono, $cliGiro, $cliDireccion){
+		public function updateClient($cliId, $clientName, $clientRut, $clientPhone, $clientGir, $clientAddress){
 
 			$objConn = new Database();
-			$sql = $objConn->prepare('	UPDATE cliente 
-										SET cli_nombre = :cliNombre, cli_rut = :cliRut, cli_fono = :cliFono, cli_giro = :cliGiro, cli_direccion = :cliDireccion
-										WHERE cli_id = :cliId');
+			$sql = $objConn->prepare("	UPDATE `cliente` 
+										SET `cli_rut` = :clientRut, `cli_nombre` = :clientName, `cli_fono` = :clientPhone, `cli_direccion` = :clientAddress, `cli_giro` = :clientGir 
+										WHERE `cli_id` = :cliId");
 
 			$sql->bindParam(':cliId', $cliId);
-			$sql->bindParam(':cliNombre', $cliNombre);
-			$sql->bindParam(':cliRut', $cliRut);
-			$sql->bindParam(':cliFono', $cliFono);
-			$sql->bindParam(':cliGiro', $cliGiro);
-			$sql->bindParam(':cliDireccion', $cliDireccion);
+			$sql->bindParam(':clientName', $clientName);
+			$sql->bindParam(':clientRut', $clientRut);
+			$sql->bindParam(':clientPhone', $clientPhone);
+			$sql->bindParam(':clientGir', $clientGir);
+			$sql->bindParam(':clientAddress', $clientAddress);
 
 			$this->cliente = $sql->execute();
 
@@ -55,16 +55,16 @@
 
 		}
 
-		public function deleteProduct($proId){
+		public function deleteClient($cliId){
 
 			$objConn = new Database();
-			$sql = $objConn->prepare('	DELETE FROM producto WHERE pro_id = :proId');
+			$sql = $objConn->prepare('	DELETE FROM cliente WHERE cli_id = :cliId');
 
-			$sql->bindParam(':proId', $proId);
+			$sql->bindParam(':cliId', $cliId);
 
-			$this->producto = $sql->execute();
+			$this->cliente = $sql->execute();
 
-			return $this->producto;
+			return $this->cliente;
 		}
 
 	}

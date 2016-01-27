@@ -51,10 +51,13 @@
 											'<?php echo $value['cli_giro']; ?>')" href="#open-modal-edit-client" class="btnIcons"><i class="material-icons">edit</i></a>
 									</div>
 									<div class="interior">
-
-										<a href="#open-modal-delete-client" class="btnIcons">
-											<i class="material-icons">delete</i>
-										</a>
+										<a onclick="loadModalClient(
+											<?php echo $value['cli_id']; ?>,
+											'<?php echo $value['cli_nombre']; ?>',
+											'<?php echo $value['cli_rut']; ?>', 
+											<?php echo $value['cli_fono']; ?>,
+											'<?php echo $value['cli_direccion']; ?>',
+											'<?php echo $value['cli_giro']; ?>')" href="#open-modal-delete-client" class="btnIcons"><i class="material-icons">delete</i></a>
 									</div>
 								</div>
 							</td>
