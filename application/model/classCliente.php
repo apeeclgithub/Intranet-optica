@@ -38,9 +38,9 @@
 		public function updateClient($cliId, $clientName, $clientRut, $clientPhone, $clientGir, $clientAddress){
 
 			$objConn = new Database();
-			$sql = $objConn->prepare("	UPDATE `cliente` 
-										SET `cli_rut` = :clientRut, `cli_nombre` = :clientName, `cli_fono` = :clientPhone, `cli_direccion` = :clientAddress, `cli_giro` = :clientGir 
-										WHERE `cli_id` = :cliId");
+			$sql = $objConn->prepare('	UPDATE cliente 
+										SET cli_rut = :clientRut, cli_nombre = :clientName, cli_fono = :clientPhone, cli_direccion = :clientAddress, cli_giro = :clientGir 
+										WHERE cli_id = :cliId');
 
 			$sql->bindParam(':cliId', $cliId);
 			$sql->bindParam(':clientName', $clientName);
