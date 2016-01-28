@@ -87,20 +87,20 @@
 		<div>
 			<h1>EDITAR PRODUCTO</h1>
 			<div id="dataProductsEdit">
-				<input type="hidden" id="proId">
+				<input type="hidden" id="editId">
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input id="editCodigo" class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode">
+					<input id="editCodigo" class="mdl-textfield__input" type="text" pattern="[w-\.]" id="editCode">
 					<label for="productCode">Código</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<?php require '../controller/selectMarca.php'; ?>
+				<div id="addMarcaEdit" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<?php require '../controller/selectMarcaEdit.php'; ?>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<?php require '../controller/selectColor.php'; ?>
+				<div id="addColorEdit" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<?php require '../controller/selectColorEdit.php'; ?>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input id="editStock" class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock">
+					<input id="editStock" class="mdl-textfield__input" type="text" pattern="[0-9]*" id="editStock">
 					<label for="productStock">Stock</label>
 					<span class="mdl-textfield__error">Ingresar solo números</span>
 				</div>

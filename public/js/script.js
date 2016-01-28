@@ -13,6 +13,7 @@ function insertMarca(){
         }).done(function(data){
             if(data.success==true){
                 $("#addMarca").load('../controller/selectMarca.php');
+                $("#addMarcaEdit").load('../controller/selectMarcaEdit.php');
                 alertify.success("Marca agregada exitosamente.");
                 $('input[id=productBrand]').val('');
             }else{
@@ -37,6 +38,7 @@ function insertColor(){
         }).done(function(data){
             if(data.success==true){
                 $("#addColor").load('../controller/selectColor.php');
+                $("#addColorEdit").load('../controller/selectColorEdit.php');
                 alertify.success("Color agregado exitosamente.");
                 $('input[id=productColor]').val('');
             }else{
@@ -46,13 +48,25 @@ function insertColor(){
     };
 };
 
+function loadModalProduct(id, codigo, marca, color, stock){
+    $('input[id=editCodigo]').val(codigo);
+    $("select[id=editBrand] option").prop('selected', false).filter(function() {
+        return $(this).text() == marca;
+    }).prop('selected', true);
+    $("select[id=editColor] option").prop('selected', false).filter(function() {
+        return $(this).text() == color;  
+    }).prop('selected', true);
+    $('input[id=editStock]').val(stock);
+    $('input[id=editId]').val(id);
+};
+
 function insertProducto(){
     var params = {
         'proCodigo' : $('input[id=productCode]').val(),
-        'proMarca' : $('select[id=productBrand]').val(),
-        'proColor' : $('select[id=productColor]').val(),
-        'proStock' : $('input[id=productStock]').val(),
-        'proDesc' : $('textarea[id=productDesc]').val()
+        'proMarca'  : $('select[id=productBrand]').val(),
+        'proColor'  : $('select[id=productColor]').val(),
+        'proStock'  : $('input[id=productStock]').val(),
+        'proDesc'   : $('textarea[id=productDesc]').val()
     };
 
     if ($('input[id=productCode]').val() === '') {
@@ -87,40 +101,15 @@ function insertProducto(){
     };
 };
 
-
-
-function loadModalProduct(id, codigo, marca, color, stock){
-
-    $('input[id=editCodigo]').val(codigo);
-    $("select[id=productBrand] option").prop('selected', false).filter(function() {
-        return $(this).text() == marca;
-    }).prop('selected', true);
-    $("select[id=productColor] option").prop('selected', false).filter(function() {
-        return $(this).text() == color;  
-    }).prop('selected', true);
-    $('input[id=editStock]').val(stock);
-    $('input[id=proId]').val(id);
-};
-
-function loadModalClient(id, nombre, rut, fono, direccion, giro){
-    $('input[id=editId]').val(id);
-    $('input[id=editName]').val(nombre);
-    $('input[id=editRut]').val(rut);
-    $('input[id=editPhone]').val(fono);
-    $('input[id=editGir]').val(giro);
-    $('input[id=editAddress]').val(direccion);
-};
-
 function editProduct(){
     var params = {
-        'proId'    : $('input[id=proId]').val(),
+        'proId'    : $('input[id=editId]').val(),
         'proCodigo': $('input[id=editCodigo]').val(),
-        'proMarca' : $('select[id=productBrand]').val(),
-        'proColor' : $('select[id=productColor]').val(),
+        'proMarca' : $('select[id=editBrand]').val(),
+        'proColor' : $('select[id=editColor]').val(),
         'proStock' : $('input[id=editStock]').val()
     };
     alert('id: '+params['proId']+'codigo: '+params['proCodigo']+'marca: '+params['proMarca']+'color: '+params['proColor']+'stock: '+params['proStock']);
-    /*
     $.ajax({
         url : '../controller/updateProduct.php',
         type : 'post',
@@ -139,7 +128,7 @@ function editProduct(){
         }else{
             alertify.error('Producto no modificado.');
         }
-    })*/
+    })
 };
 
 function deleteProduct(){
@@ -166,6 +155,15 @@ function deleteProduct(){
         }
         location.href="#modal-close";
     })
+};
+
+function loadModalClient(id, nombre, rut, fono, direccion, giro){
+    $('input[id=editId]').val(id);
+    $('input[id=editName]').val(nombre);
+    $('input[id=editRut]').val(rut);
+    $('input[id=editPhone]').val(fono);
+    $('input[id=editGir]').val(giro);
+    $('input[id=editAddress]').val(direccion);
 };
 
 function insertClient(){
