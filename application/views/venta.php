@@ -43,7 +43,7 @@
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
 				<div class="submitProduct">
-					<button onclick="insertClient()" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
+					<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
 				</div>
 			</div>
 					<div>
@@ -85,6 +85,25 @@
 				<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
 				<span class="mdl-checkbox__label">Cheque</span>
 			</label>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
+			<label class="mdl-textfield__label" for="amountSale">Monto</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
+			<label class="mdl-textfield__label" for="amountSale">Monto</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
+			<label class="mdl-textfield__label" for="amountSale">Monto</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" id="cardSail">
+			<label class="mdl-textfield__label" for="cardSail">Tipo Tarjeta</label>
 		</div>
 	</div>
 </div>

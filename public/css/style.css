@@ -33,6 +33,10 @@ header, #content, footer{
   width: 100%;
 }
 
+.powerIcon{
+  margin-top: 26px;
+}
+
 /* Cliente*/
 .mdl-card mdl-shadow--6dp {
   align-items: center;
