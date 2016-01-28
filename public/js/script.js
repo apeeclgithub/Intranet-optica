@@ -214,8 +214,6 @@ function editClient(){
         'clientGir'     : $('input[id=editGir]').val(),
         'clientAddress' : $('input[id=editAddress]').val()
     };
-    alert('id:'+params['cliId']+' nombre:'+params['clientName']+' rut:'+params['clientRut']+' phone:'+
-        params['clientPhone']+' giro:'+params['clientGir']+' direccion:'+params['clientAddress']);
     $.ajax({
         url : '../controller/updateClient.php',
         type : 'post',
@@ -263,3 +261,30 @@ function deleteClient(){
         location.href="#modal-close";
     })
 };
+
+function login(){
+    var params = {
+        'userName'    : $('input[id=userName]').val(),
+        'userPass'    : $('input[id=userPass]').val()
+    };
+    if($('input[id=userName]').val()===''){
+        alertify.error('Ingrese un nombre');
+    }else if($('input[id=userPass]').val()===''){
+        alertify.error('Ingrese una password');
+    }else{
+        $.ajax({
+            url : '../controller/loginUsuario.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                location.href="venta.php";
+            }else{
+                alertify.error('Datos erroneos.');
+                $('input[id=userName]').val('');
+                $('input[id=userPass]').val('');
+            }
+        })
+    }
+}
