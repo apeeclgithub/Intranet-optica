@@ -12,35 +12,35 @@
 
 		<div class="mdl-tabs__panel is-active formAddProduct" id="addProductPanel">
 			<!--<form class="formAddProduct">-->
-				<div class="fontItem">AGREGAR PRODUCTO</div>
-				<div id="dataProducts">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode" >
-						<label class="mdl-textfield__label" for="productCode">Código</label>
-						<span class="mdl-textfield__error">No puede ser vacío</span>
-					</div>
-					<div id="addMarca" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<?php require '../controller/selectMarca.php'; ?>
-					</div>
-					<div id="addColor" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<?php require '../controller/selectColor.php'; ?>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
-						<label class="mdl-textfield__label" for="productStock">Stock</label>
-						<span class="mdl-textfield__error">Ingresar solo números</span>
-					</div>
+			<div class="fontItem" id="">AGREGAR PRODUCTO</div>
+			<div id="dataProducts">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productCode" >
+					<label class="mdl-textfield__label" for="productCode">Código</label>
+					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
-				<div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
-						<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc" ></textarea>
-						<label class="mdl-textfield__label" for="productDesc">Descripción</label>
-						<span class="mdl-textfield__error">No puede ser vacío</span>
-					</div>
+				<div id="addMarca" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<?php require '../controller/selectMarca.php'; ?>
 				</div>
-				<div class="submitProduct">
-					<input onclick="insertProducto()" class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
+				<div id="addColor" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<?php require '../controller/selectColor.php'; ?>
 				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="productStock" >
+					<label class="mdl-textfield__label" for="productStock">Stock</label>
+					<span class="mdl-textfield__error">Ingresar solo números</span>
+				</div>
+			</div>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
+					<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" rows= "4" id="productDesc" ></textarea>
+					<label class="mdl-textfield__label" for="productDesc">Descripción</label>
+					<span class="mdl-textfield__error">No puede ser vacío</span>
+				</div>
+			</div>
+			<div class="submitProduct">
+				<input onclick="insertProducto()" class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="GUARDAR PRODUCTO">
+			</div>
 			<!--</form>-->
 		</div>
 		<div class="mdl-tabs__panel" id="addBrandPanel">

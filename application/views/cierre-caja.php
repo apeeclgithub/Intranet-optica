@@ -13,7 +13,7 @@
 		</div>
 	</div>	
 	<div class="closingCash">
-		<div>
+		<div id="dataClient">
 			<div class="fontItem">SISTEMA</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashMoneySis" >
@@ -36,7 +36,7 @@
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
 		</div>
-		<div>
+		<div id="dataClient">
 			<div class="fontItem">REAL</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashMoneyReal" >
@@ -59,7 +59,7 @@
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
 		</div>
-		<div>
+		<div id="dataClient">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashDif" >
 				<label class="mdl-textfield__label" for="closingCashDif">Diferencia</label>

@@ -46,18 +46,18 @@
 					<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
 				</div>
 			</div>
-					<div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
-				<label class="mdl-textfield__label" for="clientRut">Rut</label>
-				<span class="mdl-textfield__error">Ingrese rut válido</span>
+			<div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
+					<label class="mdl-textfield__label" for="clientRut">Rut</label>
+					<span class="mdl-textfield__error">Ingrese rut válido</span>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
+					<label class="mdl-textfield__label" for="clientName">Nombre</label>
+					<span class="mdl-textfield__error">No puede ser vacío</span>
+				</div>
 			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
-				<label class="mdl-textfield__label" for="clientName">Nombre</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
-			</div>
-		</div>
 		</div>
 	</div>
 	<div id="tablaProducts">
