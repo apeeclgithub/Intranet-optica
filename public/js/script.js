@@ -103,12 +103,12 @@ function loadModalProduct(id, codigo, marca, color, stock){
 };
 
 function loadModalClient(id, nombre, rut, fono, direccion, giro){
-    $('input[id=cliId]').val(id);
-    $('input[id=clientName]').val(nombre);
-    $('input[id=clientRut]').val(rut);
-    $('input[id=clientPhone]').val(fono);
-    $('input[id=clientGir]').val(giro);
-    $('input[id=clientAddress]').val(direccion);
+    $('input[id=editId]').val(id);
+    $('input[id=editName]').val(nombre);
+    $('input[id=editRut]').val(rut);
+    $('input[id=editPhone]').val(fono);
+    $('input[id=editGir]').val(giro);
+    $('input[id=editAddress]').val(direccion);
 };
 
 function editProduct(){
@@ -119,7 +119,7 @@ function editProduct(){
         'proColor' : $('select[id=productColor]').val(),
         'proStock' : $('input[id=editStock]').val()
     };
-    //alert('id: '+params['proId']+'codigo: '+params['proCodigo']+'marca: '+params['proMarca']+'color: '+params['proColor']+'stock: '+params['proStock']);
+    alert('id: '+params['proId']+'codigo: '+params['proCodigo']+'marca: '+params['proMarca']+'color: '+params['proColor']+'stock: '+params['proStock']);
     /*
     $.ajax({
         url : '../controller/updateProduct.php',
@@ -209,13 +209,15 @@ function insertClient(){
 
 function editClient(){
     var params = {
-        'cliId'         : $('input[id=cliId]').val(),
-        'clientName'    : $('input[id=clientName]').val(),
-        'clientRut'     : $('input[id=clientRut]').val(),
-        'clientPhone'   : $('input[id=clientPhone]').val(),
-        'clientGir'     : $('input[id=clientGir]').val(),
-        'clientAddress' : $('input[id=clientAddress]').val()
+        'cliId'         : $('input[id=editId]').val(),
+        'clientName'    : $('input[id=editName]').val(),
+        'clientRut'     : $('input[id=editRut]').val(),
+        'clientPhone'   : $('input[id=editPhone]').val(),
+        'clientGir'     : $('input[id=editGir]').val(),
+        'clientAddress' : $('input[id=editAddress]').val()
     };
+    alert('id:'+params['cliId']+' nombre:'+params['clientName']+' rut:'+params['clientRut']+' phone:'+
+        params['clientPhone']+' giro:'+params['clientGir']+' direccion:'+params['clientAddress']);
     $.ajax({
         url : '../controller/updateClient.php',
         type : 'post',
@@ -225,12 +227,12 @@ function editClient(){
         if(data.success==true){
             $("#tablaClients").load('../controller/selectClientAll.php');
             alertify.success('Cliente modificado.');
-            $('input[id=proId]').val('');
-            $('input[id=clientName]').val('');
-            $('input[id=clientRut]').val('');
-            $('input[id=clientPhone]').val('');
-            $('input[id=clientGir]').val('');
-            $('input[id=clientAddress]').val('');
+            $('input[id=editId]').val('');
+            $('input[id=editName]').val('');
+            $('input[id=editRut]').val('');
+            $('input[id=editPhone]').val('');
+            $('input[id=editGir]').val('');
+            $('input[id=editAddress]').val('');
         }else{
             alertify.error('Cliente no modificado.');
         }

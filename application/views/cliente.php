@@ -45,28 +45,28 @@
 		<div>
 			<h1>EDITAR CLIENTE</h1>
 			<div>
-				<input type="hidden" id="cliId">
+				<input type="hidden" id="editId">
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="editName">
 					<label  for="clientName">Nombre</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
+					<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="editRut">
 					<label  for="clientRut">Rut</label>
 					<span class="mdl-textfield__error">Ingrese rut válido</span>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="clientPhone">
+					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="editPhone">
 					<label  for="clientPhone">Teléfono</label>
 					<span class="mdl-textfield__error">Sólo números</span>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input class="mdl-textfield__input" type="text" id="clientGir">
+					<input class="mdl-textfield__input" type="text" id="editGir">
 					<label for="clientGir">Giro</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
-					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientAddress">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="editAddress">
 					<label for="clientAddress">Dirección</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
