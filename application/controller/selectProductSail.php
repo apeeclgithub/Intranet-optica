@@ -16,14 +16,15 @@
 </script>
 <div id="dataClient">
 	<div class="fontItem">LISTADO DE PRODUCTOS</div>
-	<table id="paginationProductsSail" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp display" cellspacing="0">
+	<table id="paginationProductsSail" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp display" cellspacing="0">
 		<thead style="  cursor: pointer;">
 			<tr>
-				<th>Cantidad</th>
+				<th>Stock</th>
 				<th class="mdl-data-table__cell--non-numeric">Código</th>
 				<th class="mdl-data-table__cell--non-numeric">Marca</th>
 				<th class="mdl-data-table__cell--non-numeric">Color</th>
 				<th class="mdl-data-table__cell--non-numeric">Descripción</th>
+				<th>Cantidad</th>
 				<th>P. Unitario</th>
 				<th>Total</th>
 				<th></th>
@@ -31,7 +32,7 @@
 		</thead>
 		<tbody>
 			<?php
-			require_once '../model/producto.php';
+			require_once '../model/classProducto.php';
 			$objProducto = new Producto();
 			$objProducto->selectProductAll();
 
@@ -39,14 +40,15 @@
 				foreach ($key as $key2 => $value) {
 					?>
 					<tr>
-						<td><input type="text" id="row-1-cant" name="row-1-cant" value=""></td>
+						<td><?php echo $value['pro_stock']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_codigo']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['mar_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['col_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_descripcion']; ?></td>
+						<td><input type="text" id="row-1-cant" name="row-1-cant" value=""></td>
 						<td><input type="text" id="row-1-price" name="row-1-price" value=""></td>
 						<td><input type="text" id="row-1-total" name="row-1-total" value=""></td>
-						<td></td>
+						<td><button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_shopping_cart</i></button></td>
 					</tr>
 					<?php
 				}
