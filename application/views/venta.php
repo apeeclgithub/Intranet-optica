@@ -63,8 +63,11 @@
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductSail.php'; ?>
 	</div>
+	<div id="tablaProducts">
+		<?php require '../controller/selectProductSail.php'; ?>
+	</div>
 	<div id="dataClient">
-		<div class="fontItem">MEDIO DE PAGO</div><br><br>
+		<div class="fontItem">MEDIO DE PAGO</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
 				<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
