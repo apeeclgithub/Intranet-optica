@@ -86,20 +86,6 @@
 		</div>
 	</div>
 	<!--modal cheque cliente -->
-	<div id="open-modal-cheque" class="modal-window">
-		<div>
-			<h1>CHEQUES CLIENTE</h1>
-			<div>
-				CHEQUE1<br>
-				CHEQUE2<br>
-				CHEQUE3<br>
-				CHEQUE4<br>
-			</div>
-			<div>
-				<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
-				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
-			</div>
-		</div>
-	</div>
+	<?php require '../controller/selectCheque.php'; ?>
 </div>
 <?php include('footer.php') ?>

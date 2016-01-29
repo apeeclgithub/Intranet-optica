@@ -1,3 +1,12 @@
+<?php 
+	session_start();
+	if('/Intranet-optica/application/views/login.php'!=$_SERVER['REQUEST_URI']){
+		if(!is_numeric(@$_SESSION['usuario'])){
+		echo "<script>location.href='login.php'</script>";
+		}
+	}
+	
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7"> <![endif]-->

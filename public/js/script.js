@@ -288,3 +288,11 @@ function login(){
         })
     }
 }
+
+function logout(){
+    $.ajax({
+        url: '../controller/logoutUsuario.php'
+    }).done(function(data){
+        location.href="login.php"
+    })
+}

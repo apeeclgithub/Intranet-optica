@@ -35,7 +35,7 @@
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_direccion']; ?></td>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_giro']; ?></td>
 							<td>
-								<a href="#open-modal-cheque" class="btnIcons">
+								<a onclick="loadModalCheque(<?php echo $value['cli_id']; ?>)" href="#open-modal-cheque" class="btnIcons">
 									<i class="material-icons">search</i>
 								</a>
 							</td>
