@@ -64,7 +64,7 @@
 		<?php require '../controller/selectProductSail.php'; ?>
 	</div>
 	<div id="tablaProducts">
-		<?php require '../controller/selectProductSail.php'; ?>
+		<?php require '../controller/selectProductSailDetail.php'; ?>
 	</div>
 	<div id="dataClient">
 		<div class="fontItem">MEDIO DE PAGO</div>
@@ -104,6 +104,23 @@
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<input class="mdl-textfield__input" type="text" id="cardSail">
 			<label class="mdl-textfield__label" for="cardSail">Tipo Tarjeta</label>
+		</div>
+	</div>
+	<div id="dataClient">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleCheque">
+			<label class="mdl-textfield__label" for="amountSaleCheque">Cheque</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleCheque">
+			<label class="mdl-textfield__label" for="amountSaleCheque">Cheque</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleCheque">
+			<label class="mdl-textfield__label" for="amountSaleCheque">Cheque</label>
+			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
 	</div>
 </div>
