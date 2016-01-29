@@ -65,23 +65,23 @@
 	</div>
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductSailDetail.php'; ?>
-	<div id="dataClient">
-		<div class="mdl-textfield mdl-js-textfield">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotal">
-			<label for="amountSaleTotal">Total</label>
-			<span class="mdl-textfield__error">Ingresar solo números</span>
+		<div id="dataClient">
+			<div class="mdl-textfield mdl-js-textfield">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotal">
+				<label for="amountSaleTotal">Total</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotalIva">
+				<label for="amountSaleTotalIva">Total con Iva</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotalFinal">
+				<label for="amountSaleTotalFinal">Total</label>
+				<span class="mdl-textfield__error">Ingresar solo números</span>
+			</div>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotalIva">
-			<label for="amountSaleTotalIva">Total con Iva</label>
-			<span class="mdl-textfield__error">Ingresar solo números</span>
-		</div>
-		<div class="mdl-textfield mdl-js-textfield">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotalFinal">
-			<label for="amountSaleTotalFinal">Total</label>
-			<span class="mdl-textfield__error">Ingresar solo números</span>
-		</div>
-	</div>
 	</div>
 	<div id="dataClient">
 		<div class="fontItem">MEDIO DE PAGO</div>
