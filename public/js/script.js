@@ -157,13 +157,15 @@ function deleteProduct(){
     })
 };
 
-function loadModalClient(id, nombre, rut, fono, direccion, giro){
+function loadModalClient(id, nombre, rut, fono, cel, direccion, comuna, giro){
     $('input[id=editId]').val(id);
     $('input[id=editName]').val(nombre);
     $('input[id=editRut]').val(rut);
     $('input[id=editPhone]').val(fono);
+    $('input[id=editCel]').val(cel);
     $('input[id=editGir]').val(giro);
     $('input[id=editAddress]').val(direccion);
+    $('input[id=editCom]').val(comuna);
 };
 
 function insertClient(){
@@ -171,9 +173,10 @@ function insertClient(){
         'clientName' : $('input[id=clientName]').val(),
         'clientRut' : $('input[id=clientRut]').val(),
         'clientPhone' : $('input[id=clientPhone]').val(),
+        'clientCel' : $('input[id=clientCel]').val(),
         'clientGir' : $('input[id=clientGir]').val(),
-        'clientAddress' : $('input[id=clientAddress]').val()
-
+        'clientAddress' : $('input[id=clientAddress]').val(),
+        'clientCom' : $('input[id=clientCom]').val()
     };
     if ($('input[id=clientName]').val() === '') {
         alertify.error('Ingrese Nombre ');
@@ -181,8 +184,12 @@ function insertClient(){
         alertify.error('Ingrese Rut');
     }else if ($('input[id=clientPhone]').val() === '') {
         alertify.error('Ingrese Fono');
+        }else if ($('input[id=clientCel]').val() === '') {
+        alertify.error('Ingrese Celular');
     }else if ($('input[id=clientAddress]').val() === '') {
         alertify.error('Ingrese Dirección');
+    }else if ($('input[id=clientCom]').val() === '') {
+        alertify.error('Ingrese Comuna');
     }else{
         $.ajax({
             url : '../controller/insertClient.php',
@@ -196,8 +203,10 @@ function insertClient(){
                 $('input[id=clientName]').val('');
                 $('input[id=clientRut]').val('');
                 $('input[id=clientPhone]').val('');
+                $('input[id=clientCel]').val('');
                 $('input[id=clientGir]').val('');
                 $('input[id=clientAddress]').val('');
+                $('input[id=clientCom]').val('');
             }else{
                 alertify.error('cliente no agregado.');
             }
@@ -211,8 +220,10 @@ function editClient(){
         'clientName'    : $('input[id=editName]').val(),
         'clientRut'     : $('input[id=editRut]').val(),
         'clientPhone'   : $('input[id=editPhone]').val(),
+        'clientCel'     : $('input[id=editCel]').val(),
         'clientGir'     : $('input[id=editGir]').val(),
-        'clientAddress' : $('input[id=editAddress]').val()
+        'clientAddress' : $('input[id=editAddress]').val(),
+        'clientCom'     : $('input[id=editCom]').val()
     };
     $.ajax({
         url : '../controller/updateClient.php',
@@ -227,8 +238,10 @@ function editClient(){
             $('input[id=editName]').val('');
             $('input[id=editRut]').val('');
             $('input[id=editPhone]').val('');
+            $('input[id=editCel]').val('');
             $('input[id=editGir]').val('');
-            $('input[id=editAddress]').val('');
+            $('input[id=editAddress]').val(''),
+            $('input[id=editCom]').val('');
         }else{
             alertify.error('Cliente no modificado.');
         }
@@ -251,10 +264,12 @@ function deleteClient(){
             alertify.success('Cliente eliminado exitosamente.');
             $('input[id=cliId]').val('');
             $('input[id=clientName]').val('');
-            $('select[id=clientRut]').val('');
-            $('select[id=clientPhone]').val('');
+            $('input[id=clientRut]').val('');
+            $('input[id=clientPhone]').val('');
+            $('input[id=clientCel]').val('');
             $('input[id=clientGir]').val('');
-            $('textarea[id=clientAddress]').val('');
+            $('input[id=clientAddress]').val('');
+            $('input[id=clientCom]').val('');
         }else{
             alertify.error('Cliente no eliminado.');
         }

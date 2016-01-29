@@ -12,3 +12,12 @@
 		</nav>            
 	</div>
 </header>
+<?php 
+	session_start();
+	if('/Intranet-optica/application/views/login.php'!=$_SERVER['REQUEST_URI']){
+		if(!is_numeric(@$_SESSION['usuario'])){
+		echo "<script>location.href='login.php'</script>";
+		}
+	}
+	
+?>

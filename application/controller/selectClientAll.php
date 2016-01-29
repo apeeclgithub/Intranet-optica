@@ -12,8 +12,10 @@
 			<tr>
 				<th class="mdl-data-table__cell--non-numeric">Nombre</th>
 				<th class="mdl-data-table__cell--non-numeric">Rut</th>
-				<th class="mdl-data-table__cell--non-numeric">Teléfono</th>
+				<th >Teléfono</th>
+				<th >Celular</th>
 				<th class="mdl-data-table__cell--non-numeric">Dirección</th>
+				<th class="mdl-data-table__cell--non-numeric">Comuna</th>
 				<th class="mdl-data-table__cell--non-numeric">Giro</th>
 				<th>Cheques</th>
 				<th></th>
@@ -31,8 +33,10 @@
 						<tr>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_nombre']; ?></td>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_rut']; ?></td>
-							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_fono']; ?></td>
+							<td><?php echo $value['cli_fono']; ?></td>
+							<td><?php echo $value['cli_celular']; ?></td>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_direccion']; ?></td>
+							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_comuna']; ?></td>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_giro']; ?></td>
 							<td>
 								<a onclick="loadModalCheque(<?php echo $value['cli_id']; ?>)" href="#open-modal-cheque" class="btnIcons">
@@ -47,7 +51,9 @@
 											'<?php echo $value['cli_nombre']; ?>',
 											'<?php echo $value['cli_rut']; ?>', 
 											<?php echo $value['cli_fono']; ?>,
+											<?php echo $value['cli_celular']; ?>,
 											'<?php echo $value['cli_direccion']; ?>',
+											'<?php echo $value['cli_comuna']; ?>',
 											'<?php echo $value['cli_giro']; ?>')" href="#open-modal-edit-client" class="btnIcons"><i class="material-icons">edit</i></a>
 									</div>
 									<div class="interior">
@@ -56,7 +62,9 @@
 											'<?php echo $value['cli_nombre']; ?>',
 											'<?php echo $value['cli_rut']; ?>', 
 											<?php echo $value['cli_fono']; ?>,
+											<?php echo $value['cli_celular']; ?>,
 											'<?php echo $value['cli_direccion']; ?>',
+											'<?php echo $value['cli_comuna']; ?>',
 											'<?php echo $value['cli_giro']; ?>')" href="#open-modal-delete-client" class="btnIcons"><i class="material-icons">delete</i></a>
 									</div>
 								</div>

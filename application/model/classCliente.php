@@ -9,7 +9,7 @@
 		public function selectClientAll(){
 			
 			$objConn = new Database();
-			$sql = $objConn->prepare('	SELECT cli_id, cli_nombre, cli_rut, cli_fono, cli_giro, cli_direccion
+			$sql = $objConn->prepare('	SELECT cli_id, cli_nombre, cli_rut, cli_fono, cli_celular, cli_giro, cli_direccion, cli_comuna
 										FROM cliente');
 			$sql->execute();
 			$this->cliente = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -18,16 +18,18 @@
 
 		}
 
-		public function insertClient($clientName, $clientRut, $clientPhone, $clientGir, $clientAddress){
+		public function insertClient($clientName, $clientRut, $clientPhone, $clientCel, $clientGir, $clientAddress, $clientCom){
 			
 			$objConn = new Database();
-			$sql = $objConn->prepare('INSERT INTO cliente (cli_nombre, cli_rut, cli_fono, cli_giro, cli_direccion) VALUES (:clientName, :clientRut, :clientPhone, :clientGir, :clientAddress)');
+			$sql = $objConn->prepare('INSERT INTO cliente (cli_nombre, cli_rut, cli_fono, cli_celular, cli_giro, cli_direccion, cli_comuna) VALUES (:clientName, :clientRut, :clientPhone, :clientCel, :clientGir, :clientAddress, :clientCom)');
 		
 			$sql->bindParam(':clientName', $clientName);
 			$sql->bindParam(':clientRut', $clientRut);
 			$sql->bindParam(':clientPhone', $clientPhone);
+			$sql->bindParam(':clientCel', $clientCel);
 			$sql->bindParam(':clientGir', $clientGir);
 			$sql->bindParam(':clientAddress', $clientAddress);
+			$sql->bindParam(':clientCom', $clientCom);
 
 			$this->cliente = $sql->execute();
 
@@ -35,19 +37,21 @@
 
 		}
 
-		public function updateClient($cliId, $clientName, $clientRut, $clientPhone, $clientGir, $clientAddress){
+		public function updateClient($cliId, $clientName, $clientRut, $clientPhone, $clientCel, $clientGir, $clientAddress, $clientCom){
 
 			$objConn = new Database();
 			$sql = $objConn->prepare('	UPDATE cliente 
-										SET cli_rut = :clientRut, cli_nombre = :clientName, cli_fono = :clientPhone, cli_direccion = :clientAddress, cli_giro = :clientGir 
+										SET cli_rut = :clientRut, cli_nombre = :clientName, cli_fono = :clientPhone, cli_celular = :clientCel, cli_direccion = :clientAddress, cli_comuna = :clientCom, cli_giro = :clientGir 
 										WHERE cli_id = :cliId');
 
 			$sql->bindParam(':cliId', $cliId);
 			$sql->bindParam(':clientName', $clientName);
 			$sql->bindParam(':clientRut', $clientRut);
 			$sql->bindParam(':clientPhone', $clientPhone);
+			$sql->bindParam(':clientCel', $clientCel);
 			$sql->bindParam(':clientGir', $clientGir);
 			$sql->bindParam(':clientAddress', $clientAddress);
+			$sql->bindParam(':clientCom', $clientCom);
 
 			$this->cliente = $sql->execute();
 

@@ -21,12 +21,22 @@
 				<span class="mdl-textfield__error">Sólo números</span>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="clientCel">
+				<label class="mdl-textfield__label" for="clientCel">Celular</label>
+				<span class="mdl-textfield__error">Sólo números</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" id="clientGir">
 				<label class="mdl-textfield__label" for="clientGir">Giro</label>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientAddress">
 				<label class="mdl-textfield__label" for="clientAddress">Dirección</label>
+				<span class="mdl-textfield__error">No puede ser vacío</span>
+			</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientCom">
+				<label class="mdl-textfield__label" for="clientCom">Comuna</label>
 				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
 			<div class="submitProduct">
@@ -62,12 +72,22 @@
 					<span class="mdl-textfield__error">Sólo números</span>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
+					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="editCel">
+					<label  for="editCel">Celular</label>
+					<span class="mdl-textfield__error">Sólo números</span>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" id="editGir">
 					<label for="clientGir">Giro</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield ">
 					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="editAddress">
 					<label for="clientAddress">Dirección</label>
+					<span class="mdl-textfield__error">No puede ser vacío</span>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield ">
+					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="editCom">
+					<label for="editCom">Comuna</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>
 				<button onclick="editClient()" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
