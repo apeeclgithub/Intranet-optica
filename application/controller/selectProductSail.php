@@ -1,18 +1,9 @@
 <script type="text/javascript" language="javascript" class="init">
 	$(document).ready(function() {
-		var table = $('#paginationProductsSail').DataTable();
-
-		$('button').click( function() {
-			var data = table.$('input').serialize();
-			alert(
-				"The following data would have been submitted to the server: \n\n"+
-				data.substr( 0, 120 )+'...'
-				);
-			return false;
+		$('#paginationProductsSail').DataTable( {
+			"pagingType": "full_numbers"
 		} );
 	} );
-
-
 </script>
 <div id="dataClient">
 	<div class="fontItem">LISTADO DE PRODUCTOS</div>
@@ -45,9 +36,9 @@
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['mar_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['col_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_descripcion']; ?></td>
-						<td><input type="text" id="row-1-cant" name="row-1-cant" value=""></td>
-						<td><input type="text" id="row-1-price" name="row-1-price" value=""></td>
-						<td><input type="text" id="row-1-total" name="row-1-total" value=""></td>
+						<td><input type="text" id="" name="" value=""></td>
+						<td><input type="text" id="" name="" value=""></td>
+						<td><input type="text" id="" name="" value=""></td>
 						<td><button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_shopping_cart</i></button></td>
 					</tr>
 					<?php

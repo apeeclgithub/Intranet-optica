@@ -4,15 +4,7 @@
 <div id ="content">
 	<h2>VENTA</h2>
 	<div id="dataSale">
-		<div id="dataClient"><!--
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text"  id="saleDate">
-				<label class="mdl-textfield__label" for="saleDate">Fecha</label>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text"  id="saleTime">
-				<label class="mdl-textfield__label" for="saleTime">Hora</label>
-			</div>-->
+		<div id="dataClient">
 			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
 				<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
 				<span class="mdl-radio__label">Boleta</span>
@@ -23,40 +15,17 @@
 			</label>		
 		</div>
 		<div id="dataClient">
+			<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#open-modal-clientSailAdd" title="Close" id="modal-close">BUSCAR CLIENTE</a></button>
+			<div class="fontItem">CLIENTE</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-				<form action="#" class="searchClientSail">
-					<br><div class="fontItem">BUSCAR CLIENTE</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-						<label class="mdl-button mdl-js-button mdl-button--icon" for="search-expandable2">
-							<i class="material-icons">search</i>
-						</label>
-						<div class="mdl-textfield__expandable-holder">
-							<input class="mdl-textfield__input" type="text" id="search-expandable2">
-							<label class="mdl-textfield__label" for="search-expandable2">
-								Ingrese Rut
-							</label>
-						</div>
-					</div>
-				</form>
+				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
+				<label class="mdl-textfield__label" for="clientName">Nombre</label>
+				<span class="mdl-textfield__error">No puede ser vacío</span>
 			</div>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-
-				<div class="submitProduct">
-					<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">AGREGAR Cliente</button>
-				</div>
-			</div>
-			<div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut">
-					<label class="mdl-textfield__label" for="clientRut">Rut</label>
-					<span class="mdl-textfield__error">Ingrese rut válido</span>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
-					<label class="mdl-textfield__label" for="clientName">Nombre</label>
-					<span class="mdl-textfield__error">No puede ser vacío</span>
-				</div>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-input__expandable-holder	">
+				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut" placeholder="1234567-9">
+				<label class="mdl-textfield__label" for="clientRut">Rut</label>
+				<span class="mdl-textfield__error">Ingrese rut válido</span>
 			</div>
 		</div>
 	</div>
@@ -148,20 +117,30 @@
 			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
 	</div>
+	<div><br><br>
+		<div class="interior">
+			<a class="btn" href="#">AGREGAR MARCA</a>
+		</div>
+		<div class="interior">
+			<a class="btn" href="#">AGREGAR COLOR</a>
+		</div>
+		<div class="interior">
+			<a class="btn" href="#">Exportar Detalle Inventario</a>	
+		</div>
+		<div class="interior">
+			<a class="btn" href="#">Exportar Productos más vendidos</a>
+		</div>
+	</div>
 </div>
-<div><br><br>
-	<div class="interior">
-		<a class="btn" href="#open-modal">AGREGAR MARCA</a>
+<!--modal añade cliente a venta -->
+<div id="open-modal-clientSailAdd" class="modal-window addClientSail">
+	<div>
+		<h1>SELECCIONAR CLIENTE</h1>
+		<div id="tablaClients">
+			<?php require '../controller/selectClientAllSail.php'; ?>
+		</div>
+		<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
+		<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 	</div>
-	<div class="interior">
-		<a class="btn" href="#open-modal-color">AGREGAR COLOR</a>
-	</div>
-	<div class="interior">
-		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Detalle Inventario</button>	
-	</div>
-	<div class="interior">
-		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
-	</div>
-</div>
 </div>
 <?php include('footer.php') ?>
