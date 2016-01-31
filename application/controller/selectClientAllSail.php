@@ -18,7 +18,7 @@
 				<th class="mdl-data-table__cell--non-numeric">Comuna</th>
 				<th class="mdl-data-table__cell--non-numeric">Giro</th>
 				<th>Cheques</th>
-				<th></th>
+				<th>Añadir a la venta</th>
 			</tr>
 		</thead>
 		<tbody>
