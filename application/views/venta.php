@@ -118,6 +118,7 @@
 		</div>
 	</div>
 	<div><br><br>
+	<a href="pdf.php" target="_blank" >PDF</a>
 		<div class="interior">
 			<a class="btn" href="#">AGREGAR MARCA</a>
 		</div>
