@@ -5,16 +5,6 @@
 	<h2>VENTA</h2>
 	<div id="dataSale">
 		<div id="dataClient">
-			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-				<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-				<span class="mdl-radio__label">Boleta</span>
-			</label>
-			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-				<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-				<span class="mdl-radio__label">Factura</span>
-			</label>		
-		</div>
-		<div id="dataClient">
 			<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#open-modal-clientSailAdd" title="Close" id="modal-close">BUSCAR CLIENTE</a></button>
 			<div class="fontItem">CLIENTE</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -31,6 +21,17 @@
 	</div>
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductSail.php'; ?>
+	</div>
+	<div id="dataClient">
+		<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+			<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+			<span class="mdl-radio__label">SIN IVA</span>
+		</label>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"></div>
+		<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+			<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+			<span class="mdl-radio__label">CON IVA</span>
+		</label>		
 	</div>
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductSailDetail.php'; ?>
@@ -61,21 +62,12 @@
 			</label>
 		</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
-				<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
-				<span class="mdl-checkbox__label">Tarjeta</span>
-			</label>
-		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
 				<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
 				<span class="mdl-checkbox__label">Cheque</span>
 			</label>
 		</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
-			<label class="mdl-textfield__label" for="amountSale">Monto</label>
-			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
@@ -86,10 +78,6 @@
 			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
 			<label class="mdl-textfield__label" for="amountSale">Monto</label>
 			<span class="mdl-textfield__error">Ingresar solo números</span>
-		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" id="cardSail">
-			<label class="mdl-textfield__label" for="cardSail">Tipo Tarjeta</label>
 		</div>
 	</div>
 	<div id="dataClient">
@@ -118,7 +106,7 @@
 		</div>
 	</div>
 	<div><br><br>
-	<a href="pdf.php" target="_blank" >PDF</a>
+		<a href="pdf.php" target="_blank" >PDF</a>
 		<div class="interior">
 			<a class="btn" href="#">AGREGAR MARCA</a>
 		</div>

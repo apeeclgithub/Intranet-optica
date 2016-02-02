@@ -1,5 +1,5 @@
 <?php 
-include_once('../../public/fpdf/fpdf.php'); 
+include_once('../../library/fpdf/fpdf.php'); 
 header("Content-Type: text/html; charset=iso-8859-1 ");
 
 class PDF extends FPDF
