@@ -106,6 +106,16 @@
 		</div>
 	</div>
 	<!--modal cheque cliente -->
-	<?php require '../controller/selectCheque.php'; ?>
+	<div id="open-modal-cheque" class="modal-window abrir">
+	<div>
+		<h1>CHEQUES CLIENTE</h1>
+		<div id="abrir">
+			<?php require '../controller/selectCheque.php'; ?>
+		</div>
+			<div>
+				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cerrar</a></button>
+			</div>
+		</div>
+	</div>
 </div>
 <?php include('footer.php') ?>

@@ -311,3 +311,9 @@ function logout(){
         location.href="login.php"
     })
 }
+
+function loadModalCheque(id){
+    var url = '../controller/selectCheque.php?client=';
+    var client = id;
+   $('#abrir').load(url.concat(id));
+}
