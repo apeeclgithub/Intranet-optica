@@ -33,6 +33,10 @@ header, #content, footer{
   width: 100%;
 }
 
+.logo{
+  width:25%;
+}
+
 .powerIcon{
   margin-top: 26px;
 }

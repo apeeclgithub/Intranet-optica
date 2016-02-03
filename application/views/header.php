@@ -8,8 +8,8 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<link href="../../public/img/logo-250.png" rel="icon" type="image/x-icon" /><!--faltafavicon -->
-		<link href="../../public/img/logo-250.png" type="image/x-icon" rel="shortcut icon" />
+		<link href="../../public/img/logo.png" rel="icon" type="image/x-icon" /><!--faltafavicon -->
+		<link href="../../public/img/logo.png" type="image/x-icon" rel="shortcut icon" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Importadora</title>
@@ -35,6 +35,6 @@
 	
 	</head>
 	<body>
-	<h1>Logo</h1>
+	<h1><img src="../../public/img/logo.png" alt="" class="logo"></h1>
 	<?php ini_set("error_reporting", E_ALL);?>
 	
