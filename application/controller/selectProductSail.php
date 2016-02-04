@@ -30,16 +30,19 @@
 			foreach ((array)$objProducto as $key) {
 				foreach ($key as $key2 => $value) {
 					?>
-					<tr>
+					<tr id="row<?php echo $value['pro_id']; ?>">
 						<td><?php echo $value['pro_stock']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_codigo']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['mar_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['col_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_descripcion']; ?></td>
-						<td><input type="text" id="" name="" value=""></td>
-						<td><input type="text" id="" name="" value=""></td>
-						<td><input type="text" id="" name="" value=""></td>
-						<td><button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_shopping_cart</i></button></td>
+						<td><input onkeyup="updatePrice(<?php echo $value['pro_id']; ?>)" type="text" id="addUnidad<?php echo $value['pro_id']; ?>" ></td>
+						<td><input onkeyup="updatePrice(<?php echo $value['pro_id']; ?>)" type="text" id="addPrecio<?php echo $value['pro_id']; ?>" ></td>
+						<td><input type="text" id="addTotal<?php echo $value['pro_id']; ?>" name="" value="" disabled></td>
+						<td><button onclick="addProduct(
+														<?php echo $value['pro_id']; ?>,
+														'<?php echo $value['pro_codigo']; ?>',
+														'<?php echo $value['pro_descripcion']; ?>')" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_shopping_cart</i></button></td>
 					</tr>
 					<?php
 				}

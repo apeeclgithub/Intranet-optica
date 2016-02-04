@@ -325,3 +325,13 @@ function addClient(id, nombre, rut){
     location.href="#modal-close";
     alertify.success('Cliente agregado a la venta');
 }
+
+function updatePrice(id){
+    var unit = $('input[id=addUnidad'+id+']').val();
+    var price = $('input[id=addPrecio'+id+']').val();
+    $('input[id=addTotal'+id+']').val(unit*price);
+}
+
+function addProduct(id, codigo, descripcion){
+    alert(id+codigo+descripcion+$('input[id=addPrecio'+id+']').val());
+}
