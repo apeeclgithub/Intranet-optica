@@ -333,5 +333,52 @@ function updatePrice(id){
 }
 
 function addProduct(id, codigo, descripcion){
-    alert(id+codigo+descripcion+$('input[id=addPrecio'+id+']').val());
+    var params = {
+        'id' : id,
+        'cantidad' : $('input[id=addUnidad'+id+']').val(),
+        'precio' : $('input[id=addPrecio'+id+']').val(),
+        'codigo' : codigo,
+        'descripcion' : descripcion
+    };
+    $.ajax({
+        url : '../controller/functionCarrito.php?page=1',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
+            alertify.success("Producto agregado a la venta.");
+            $('input[id=addUnidad'+id+']').val('');
+            $('input[id=addPrecio'+id+']').val('');
+            $('input[id=addTotal'+id+']').val('');
+        }else{
+            alertify.error("Producto no agregado.");
+        }
+    });
+};
+
+function delProduct(id){
+    var params = {
+        'id' : id
+    };
+    $.ajax({
+        url : '../controller/functionCarrito.php?page=2',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
+            alertify.error("Producto eliminado exitosamente");
+        }else{
+            alertify.error("Producto no eliminado.");
+        }
+    });
+};
+
+function updatePriceSail(id){
+    var unit = $('input[id=sailUnidad'+id+']').val();
+    var price = $('input[id=sailPrecio'+id+']').val();
+    $('input[id=sailTotal'+id+']').val(unit*price);
 }

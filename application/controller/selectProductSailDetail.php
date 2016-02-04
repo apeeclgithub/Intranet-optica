@@ -18,27 +18,30 @@
 				<th></th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="asd">
 			<?php
-			require_once '../model/classProducto.php';
-			$objProducto = new Producto();
-			$objProducto->selectProductAll();
-
-			foreach ((array)$objProducto as $key) {
-				foreach ($key as $key2 => $value) {
-					?>
-					<tr>
-						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_codigo']; ?></td>
-						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_descripcion']; ?></td>
-						<td><input type="text" id="" name="" value=""></td>
-						<td><input type="text" id="" name="" value=""></td>
-						<td><input type="text" id="" name="" value=""></td>
-						<td><button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">highlight_off</i></button></td>
-					</tr>
-					<?php
+			if(!@session_start()){session_start();}
+			require_once '../model/classCarrito.php';
+			$carrito->get_content();
+			$carro = $carrito;
+			foreach ((array)$carro as $key) {
+				foreach ((array)$key as $value) {
+					if(is_array($value)){
+						?>
+						<tr>
+							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['codigo']; ?></td>
+							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['descripcion']; ?></td>
+							<td><input onkeyup="updatePriceSail(<?php echo $value['id']; ?>)" type="text" id="sailUnidad<?php echo $value['id']; ?>" value="<?php echo $value['cantidad']; ?>"></td>
+							<td><input onkeyup="updatePriceSail(<?php echo $value['id']; ?>)" type="text" id="sailPrecio<?php echo $value['id']; ?>" value="<?php echo $value['precio']; ?>"></td>
+							<td><input type="text" id="sailTotal<?php echo $value['id']; ?>" value="<?php echo $value['precio']*$value['cantidad']; ?>" disabled></td>
+							<td><button onclick="delProduct('<?php echo $value['unique_id']; ?>')" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">highlight_off</i></button></td>
+						</tr>
+						<?php
+					}
 				}
 			}
 			?>
 		</tbody>
 	</table>
 </div>
+ 

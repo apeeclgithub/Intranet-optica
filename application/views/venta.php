@@ -1,5 +1,6 @@
 <?php include('header.php');?>
-<?php include('nav_menu.php') ?>
+<?php include('nav_menu.php'); ?>
+<?php require_once '../model/classCarrito.php'; ?>
 
 <div id ="content">
 	<h2>VENTA</h2>
@@ -23,35 +24,25 @@
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductSail.php'; ?>
 	</div>
-	<div id="dataClient">
-		<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-			<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-			<span class="mdl-radio__label">SIN IVA</span>
-		</label>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"></div>
-		<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-			<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-			<span class="mdl-radio__label">CON IVA</span>
-		</label>		
-	</div>
-	<div id="tablaProducts">
-		<?php require '../controller/selectProductSailDetail.php'; ?>
-		<div id="dataClient">
+		<div id="tablaProducts">
+		<div id="tablaProductsDetail">
+			<?php require '../controller/selectProductSailDetail.php'; ?>
+		</div>
+			<div id="dataClient">
 			<div class="mdl-textfield mdl-js-textfield">
 				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotal">
 				<label for="amountSaleTotal">Total</label>
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
-			<div class="mdl-textfield mdl-js-textfield">
-				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotalIva">
-				<label for="amountSaleTotalIva">Total con Iva</label>
-				<span class="mdl-textfield__error">Ingresar solo números</span>
-			</div>
-			<div class="mdl-textfield mdl-js-textfield">
-				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotalFinal">
-				<label for="amountSaleTotalFinal">Total</label>
-				<span class="mdl-textfield__error">Ingresar solo números</span>
-			</div>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+				<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+				<span class="mdl-radio__label">SIN IVA</span>
+			</label>
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"></div>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+				<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+				<span class="mdl-radio__label">CON IVA</span>
+			</label>		
 		</div>
 	</div>
 	<div id="dataClient">
