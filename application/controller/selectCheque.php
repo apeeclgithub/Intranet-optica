@@ -13,13 +13,9 @@
 				Monto: <?php echo $value['che_monto']?>
 			</p>
 			
-		<?php
-		}
-		if(!is_numeric($key)){
-			?><p>Cliente no cuenta con cheques.</p><?php
+		<?php 
 		}
 	}
 
-	//var_dump($objCheque);
 ?>
 		
