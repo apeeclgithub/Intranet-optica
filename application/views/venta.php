@@ -7,6 +7,7 @@
 		<div id="dataClient">
 			<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#open-modal-clientSailAdd" title="Close" id="modal-close">BUSCAR CLIENTE</a></button>
 			<div class="fontItem">CLIENTE</div>
+			<input id="clientId" type="hidden" value="" />
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
 				<label class="mdl-textfield__label" for="clientName">Nombre</label>
@@ -128,8 +129,7 @@
 		<div id="tablaClients">
 			<?php require '../controller/selectClientAllSail.php'; ?>
 		</div>
-		<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
-		<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
+		<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 	</div>
 </div>
 <?php include('footer.php') ?>

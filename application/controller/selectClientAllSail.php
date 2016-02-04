@@ -17,7 +17,6 @@
 				<th class="mdl-data-table__cell--non-numeric">Dirección</th>
 				<th class="mdl-data-table__cell--non-numeric">Comuna</th>
 				<th class="mdl-data-table__cell--non-numeric">Giro</th>
-				<th>Cheques</th>
 				<th>Añadir a la venta</th>
 			</tr>
 		</thead>
@@ -38,12 +37,7 @@
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_direccion']; ?></td>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_comuna']; ?></td>
 							<td class="mdl-data-table__cell--non-numeric"><?php echo $value['cli_giro']; ?></td>
-							<td>
-								<a onclick="loadModalCheque(<?php echo $value['cli_id']; ?>)" href="#open-modal-cheque" class="btnIcons">
-									<i class="material-icons">search</i>
-								</a>
-							</td>
-							<td><button class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_circle_outline</i></button></td>
+							<td><button onclick="addClient(<?php echo $value['cli_id']; ?>, '<?php echo $value['cli_nombre']; ?>', '<?php echo $value['cli_rut']; ?>')" class="mdl-button mdl-js-button mdl-button--icon"><i class="material-icons">add_circle_outline</i></button></td>
 						</tr>
 						<?php
 					}

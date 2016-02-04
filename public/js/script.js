@@ -317,3 +317,11 @@ function loadModalCheque(id){
     var client = id;
    $('#abrir').load(url.concat(id));
 }
+
+function addClient(id, nombre, rut){
+    $('input[id=clientId]').val(id);
+    $('input[id=clientName]').val(nombre);
+    $('input[id=clientRut]').val(rut);
+    location.href="#modal-close";
+    alertify.success('Cliente agregado a la venta');
+}
