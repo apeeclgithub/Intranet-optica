@@ -29,20 +29,18 @@
 			<?php require '../controller/selectProductSailDetail.php'; ?>
 		</div>
 			<div id="dataClient">
-			<div class="mdl-textfield mdl-js-textfield">
-				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotal">
+			<div id="valor_total" class="mdl-textfield mdl-js-textfield">
+				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleTotal" 
+				value="<?php echo $carrito->precio_total();?>">
 				<label for="amountSaleTotal">Total</label>
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
-			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-				<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-				<span class="mdl-radio__label">SIN IVA</span>
-			</label>
-			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"></div>
-			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-				<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-				<span class="mdl-radio__label">CON IVA</span>
-			</label>		
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-iva">
+					<input onclick="updateTotalIva()" type="checkbox" id="checkbox-iva" class="mdl-checkbox__input">
+					<span class="mdl-checkbox__label">CON IVA</span>
+				</label>	
+			</div>	
 		</div>
 	</div>
 	<div id="dataClient">
