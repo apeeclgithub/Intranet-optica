@@ -371,6 +371,7 @@ function delProduct(id){
     }).done(function(data){
         if(data.success==true){
             $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
+            $("#valor_total").load('../controller/functionCarrito.php?page=3');
             alertify.error("Producto eliminado exitosamente");
         }else{
             alertify.error("Producto no eliminado.");
