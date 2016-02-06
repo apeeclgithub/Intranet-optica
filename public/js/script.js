@@ -418,3 +418,7 @@ function updateTotalIva(){amountSaleTotal
     }
 
 }
+
+function cantCheque(){
+    alert($('#chequeSelect').val());
+}
