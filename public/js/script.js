@@ -184,7 +184,7 @@ function insertClient(){
         alertify.error('Ingrese Rut');
     }else if ($('input[id=clientPhone]').val() === '') {
         alertify.error('Ingrese Fono');
-        }else if ($('input[id=clientCel]').val() === '') {
+    }else if ($('input[id=clientCel]').val() === '') {
         alertify.error('Ingrese Celular');
     }else if ($('input[id=clientAddress]').val() === '') {
         alertify.error('Ingrese Dirección');
@@ -315,7 +315,7 @@ function logout(){
 function loadModalCheque(id){
     var url = '../controller/selectCheque.php?client=';
     var client = id;
-   $('#abrir').load(url.concat(id));
+    $('#abrir').load(url.concat(id));
 }
 
 function addClient(id, nombre, rut){

@@ -333,3 +333,8 @@ tr td input{
 .addClientSail>div{
   width:978px !important;
 }
+
+#valor_total input{
+  font-size:2rem !important;
+  text-align: right;
+}

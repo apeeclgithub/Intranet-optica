@@ -10,14 +10,12 @@
 			<div class="fontItem">CLIENTE</div>
 			<input id="clientId" type="hidden" value="" />
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				<input class="mdl-textfield__input" type="text" pattern="[w-\.]" id="clientName">
-				<label class="mdl-textfield__label" for="clientName">Nombre</label>
-				<span class="mdl-textfield__error">No puede ser vacío</span>
+				<input class="mdl-textfield__input" type="text" id="clientName" disabled="disabled">
+				<label  for="clientName">Nombre</label>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-input__expandable-holder	">
-				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut" placeholder="1234567-9">
-				<label class="mdl-textfield__label" for="clientRut">Rut</label>
-				<span class="mdl-textfield__error">Ingrese rut válido</span>
+				<input class="mdl-textfield__input" type="text" pattern="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" id="clientRut" disabled="disabled">
+				<label  for="clientRut">Rut</label>
 			</div>
 		</div>
 	</div>
