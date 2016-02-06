@@ -15,30 +15,52 @@ class PDF extends FPDF
 		$this->Ln(10);
 		$this->Cell(0,10, utf8_decode('Importadora y Comercializadora de artículos Ópticos'),1,0,'C');
 		$this->Ln(10);
-		$this->Cell(0,10, 'Rut: 76.371.666-k');
+		$this->Cell(0,10, 'Rut: 76.371.666-k',0,0,'C');
 		$this->Ln(5);
-		$this->Cell(0,10, 'Mac Iver 180, Oficina 35');
+		$this->Cell(0,10, 'Mac Iver 180, Oficina 35',0,0,'C');
 		$this->Ln(5);
-		$this->Cell(0,10, 'Importadoralypltda@gmail.com');
+		$this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
 		$this->Ln(10);
+		$this->Cell(40,5,"N. de Venta: ");
+		$this->Ln(5);
 		$this->Cell(40,5,"Fecha: ");
 	}
 
-	function TablaBasica($header) {
+	function TablaCliente(){
+		$this->SetFont('Arial','',12);
+		$this->Cell(40,5, utf8_decode('Nombre: '));
+		$this->Ln(5);
+		$this->Cell(40,5, utf8_decode('Dirección: '));
+		$this->Ln(5);
+		$this->Cell(40,5, utf8_decode('Comuna: '));
+		$this->Ln(5);
+		$this->Cell(40,5, utf8_decode('Rut: '));
+		$this->Ln(5);
+		$this->Cell(40,5, utf8_decode('Fono: '));
+		$this->Ln(5);
+		$this->Cell(40,5, utf8_decode('Celular: '));
+	}
+
+	function TablaBasica() {
     //Cabecera
-    foreach($header as $col)
-    $this->Cell(40,7,$col,1);
+	$this->Cell(20,10, utf8_decode('Código'),1,0,'C');
+	$this->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
+	$this->Cell(20,10, utf8_decode('Cantidad'),1,0,'C');
+	$this->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
+	$this->Cell(20,10, utf8_decode('Total'),1,0,'C');
     $this->Ln();
     
-      $this->Cell(40,5,"hola",1);
-      $this->Cell(40,5,"hola2",1);
-      $this->Cell(40,5,"hola3",1);
-      $this->Cell(40,5,"hola4",1);
+      $this->Cell(20,10,"hola",1);
+      $this->Cell(100,10,"hola2",1);
+      $this->Cell(20,10,"hola3",1);
+      $this->Cell(30,10,"hola4",1);
+      $this->Cell(20,10,"hola4",1);
       $this->Ln();
-      $this->Cell(40,5,"linea ",1);
-      $this->Cell(40,5,"linea 2",1);
-      $this->Cell(40,5,"linea 3",1);
-      $this->Cell(40,5,"linea 4",1);
+      $this->Cell(20,10,"hola",1);
+      $this->Cell(100,10,"hola2",1);
+      $this->Cell(20,10,"hola3",1);
+      $this->Cell(30,10,"hola4",1);
+      $this->Cell(20,10,"hola4",1);
    }
 
 //Pie de página
@@ -58,8 +80,9 @@ $pdf=new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
-$header=array('Columna 1','Columna 2','Columna 3','Columna 4');
-$pdf->TablaBasica($header);
+$pdf->TablaCliente();
+$pdf->Ln(10);
+$pdf->TablaBasica();
 //Aquí escribimos lo que deseamos mostrar...
 $pdf->Output();
 ?> 
