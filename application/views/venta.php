@@ -22,11 +22,11 @@
 	<div id="tablaProducts">
 		<?php require '../controller/selectProductSail.php'; ?>
 	</div>
-		<div id="tablaProducts">
+	<div id="tablaProducts">
 		<div id="tablaProductsDetail">
 			<?php require '../controller/selectProductSailDetail.php'; ?>
 		</div>
-			
+
 		<div id="valor_total">
 			<div id="dataClient">
 				<div class="mdl-textfield mdl-js-textfield">
@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	<div id="dataClient">
-	<div class="fontItem">MEDIO DE PAGO</div>
+		<div class="fontItem">MEDIO DE PAGO</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
 				<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
@@ -94,18 +94,9 @@
 	</div>
 	<div><br><br>
 		<a href="../../application/pdf/pdf.php" target="_blank" >PDF</a>
-		<div class="interior">
-			<a class="btn" href="#">AGREGAR MARCA</a>
-		</div>
-		<div class="interior">
-			<a class="btn" href="#">AGREGAR COLOR</a>
-		</div>
-		<div class="interior">
-			<a class="btn" href="#">Exportar Detalle Inventario</a>	
-		</div>
-		<div class="interior">
-			<a class="btn" href="#">Exportar Productos más vendidos</a>
-		</div>
+	</div>
+	<div class="interior">
+		<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="#open-modal-closeSail" title="Close" id="modal-close">REALIZAR VENTA</a></button>	
 	</div>
 </div>
 <!--modal añade cliente a venta -->
@@ -117,5 +108,15 @@
 		</div>
 		<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 	</div>
+</div>
+<!--modal FINALIZAR venta -->
+<div id="open-modal-closeSail" class="modal-window">
+		<div>
+			<h1>FINALIZAR VENTA</h1>
+			<div>
+				<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
+				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
+			</div>
+		</div>
 </div>
 <?php include('footer.php') ?>
