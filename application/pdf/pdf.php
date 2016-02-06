@@ -67,11 +67,13 @@ class PDF extends FPDF
 	function Footer()
 	{
 
-		$this->SetY(-10);
-
-		$this->SetFont('Arial','I',8);
-
-		$this->Cell(0,10,'Importadora');
+		$this->SetY(260);
+		$this->Cell(40,5, 'Fecha Entrega: ');
+		$this->Ln(10);
+		$this->Cell(40,5,'Firma Cliente: ');
+		$this->Ln(10);
+		$this->Cell(40,5, 'Firma Vendedor: ');
+	
 	}
 
 }
