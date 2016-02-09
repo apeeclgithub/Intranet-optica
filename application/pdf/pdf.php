@@ -49,9 +49,15 @@ class PDF extends FPDF
 	$this->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
 	$this->Cell(20,10, utf8_decode('Total'),1,0,'C');
     $this->Ln();
-    
-      $this->Cell(20,10,"hola",1);
-      $this->Cell(100,10,"hola2",1);
+
+    require_once '../model/classCarrito.php';
+	if(!@session_start()){session_start();}
+			$carrito->get_content();
+			$carro = $carrito;
+			
+
+      $this->Cell(20,10, var_dump($carrito),1);
+      /*$this->Cell(100,10,"hola2",1);
       $this->Cell(20,10,"hola3",1);
       $this->Cell(30,10,"hola4",1);
       $this->Cell(20,10,"hola4",1);
@@ -60,7 +66,7 @@ class PDF extends FPDF
       $this->Cell(100,10,"hola2",1);
       $this->Cell(20,10,"hola3",1);
       $this->Cell(30,10,"hola4",1);
-      $this->Cell(20,10,"hola4",1);
+      $this->Cell(20,10,"hola4",1);*/
    }
 
 //Pie de página

@@ -48,14 +48,14 @@
 		<div class="fontItem">MEDIO DE PAGO</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-				<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+				<input onclick="verMontoEfectivo()" type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
 				<span class="mdl-checkbox__label">Efectivo</span>
 			</label>
 		</div>
 
 
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale">
+		<div id="medioEfectivo" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style='display:none;'>
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleEfectivo" >
 			<label class="mdl-textfield__label" for="amountSale">Monto</label>
 			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
@@ -64,11 +64,11 @@
 		<div class="fontItem">MEDIO DE PAGO</div>
 		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
-				<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
+				<input onclick="verMontoCheque()" type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
 				<span class="mdl-checkbox__label">Cheque</span>
 			</label>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<div id="medioCheque" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style='display:none;'>
 			<select onchange="cantCheque()" class="browser-default" name="chequeSelect" id="chequeSelect">
 				<option value="" disabled selected>Cantidad de cheques</option>
 				<option value="1">1</option>
@@ -76,27 +76,22 @@
 				<option value="3">3</option>
 				<option value="4">4</option>
 				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
 			</select>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSale" disabled>
+		<div id="medioCheque2" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style='display:none;'>
+			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleCheque" disabled>
 			<label class="mdl-textfield__label" for="amountSale">Total</label>
 			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
-
-		<?php require_once '../controller/functionCheque.php'; ?>
-		
+		<div id="cargaCheques">
+			<?php require_once '../controller/functionCheque.php'; ?>
+		</div>
 	</div>
 	<div><br><br>
 		<a href="../../application/pdf/pdf.php" target="_blank" >PDF</a>
 	</div>
 	<div class="interior">
-		<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="#open-modal-closeSail" title="Close" id="modal-close">REALIZAR VENTA</a></button>	
+		<button onclick="completarVenta()" class="mdl-button mdl-button--raised mdl-button--colored">REALIZAR VENTA</button>	
 	</div>
 </div>
 <!--modal añade cliente a venta -->
@@ -114,7 +109,7 @@
 		<div>
 			<h1>FINALIZAR VENTA</h1>
 			<div>
-				<button onclick="" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
+				<button onclick="realizarVenta()" class="mdl-button mdl-button--raised mdl-button--colored">Aceptar</button>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cancelar</a></button>
 			</div>
 		</div>

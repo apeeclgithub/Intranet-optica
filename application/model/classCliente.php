@@ -21,7 +21,8 @@
 		public function insertClient($clientName, $clientRut, $clientPhone, $clientCel, $clientGir, $clientAddress, $clientCom){
 			
 			$objConn = new Database();
-			$sql = $objConn->prepare('INSERT INTO cliente (cli_nombre, cli_rut, cli_fono, cli_celular, cli_giro, cli_direccion, cli_comuna) VALUES (:clientName, :clientRut, :clientPhone, :clientCel, :clientGir, :clientAddress, :clientCom)');
+			$sql = $objConn->prepare('	INSERT INTO cliente (cli_nombre, cli_rut, cli_fono, cli_celular, cli_giro, cli_direccion, cli_comuna) 
+										VALUES (:clientName, :clientRut, :clientPhone, :clientCel, :clientGir, :clientAddress, :clientCom)');
 		
 			$sql->bindParam(':clientName', $clientName);
 			$sql->bindParam(':clientRut', $clientRut);

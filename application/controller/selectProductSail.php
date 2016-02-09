@@ -31,7 +31,7 @@
 				foreach ($key as $key2 => $value) {
 					?>
 					<tr id="row<?php echo $value['pro_id']; ?>">
-						<td><?php echo $value['pro_stock']; ?></td>
+						<td><?php echo $value['pro_stock']; ?><input id="stock<?php echo $value['pro_id']; ?>" type="hidden" value="<?php echo $value['pro_stock']; ?>" /></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['pro_codigo']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['mar_nombre']; ?></td>
 						<td class="mdl-data-table__cell--non-numeric"><?php echo $value['col_nombre']; ?></td>

@@ -1,3 +1,5 @@
+Date.prototype.toString = function() { return this.getFullYear()+"-"+(this.getMonth()+1)+"-"+this.getDate(); }
+
 function insertMarca(){
     var params = {
         'marNombre' : $('input[id=productBrand]').val()
@@ -109,7 +111,6 @@ function editProduct(){
         'proColor' : $('select[id=editColor]').val(),
         'proStock' : $('input[id=editStock]').val()
     };
-    alert('id: '+params['proId']+'codigo: '+params['proCodigo']+'marca: '+params['proMarca']+'color: '+params['proColor']+'stock: '+params['proStock']);
     $.ajax({
         url : '../controller/updateProduct.php',
         type : 'post',
@@ -128,7 +129,8 @@ function editProduct(){
         }else{
             alertify.error('Producto no modificado.');
         }
-    })
+    });
+    location.href="#modal-close";
 };
 
 function deleteProduct(){
@@ -333,30 +335,37 @@ function updatePrice(id){
 }
 
 function addProduct(id, codigo, descripcion){
-    var params = {
-        'id' : id,
-        'cantidad' : $('input[id=addUnidad'+id+']').val(),
-        'precio' : $('input[id=addPrecio'+id+']').val(),
-        'codigo' : codigo,
-        'descripcion' : descripcion
-    };
-    $.ajax({
-        url : '../controller/functionCarrito.php?page=1',
-        type : 'post',
-        data : params,
-        dataType : 'json'
-    }).done(function(data){
-        if(data.success==true){
-            $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
-            $("#valor_total").load('../controller/functionCarrito.php?page=3');
-            alertify.success("Producto agregado a la venta.");
-            $('input[id=addUnidad'+id+']').val('');
-            $('input[id=addPrecio'+id+']').val('');
-            $('input[id=addTotal'+id+']').val('');
-        }else{
-            alertify.error("Producto no agregado.");
-        }
-    });
+    if(($('input[id=stock'+id+']').val()-$('input[id=addUnidad'+id+']').val())<=0){
+        alertify.error('No tiene stock suficiente');
+        $('input[id=addUnidad'+id+']').val('');
+        $('input[id=addPrecio'+id+']').val('');
+        $('input[id=addTotal'+id+']').val('');
+    }else{
+        var params = {
+            'id' : id,
+            'cantidad' : $('input[id=addUnidad'+id+']').val(),
+            'precio' : $('input[id=addPrecio'+id+']').val(),
+            'codigo' : codigo,
+            'descripcion' : descripcion
+        };
+        $.ajax({
+            url : '../controller/functionCarrito.php?page=1',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
+                $("#valor_total").load('../controller/functionCarrito.php?page=3');
+                alertify.success("Producto agregado a la venta.");
+                $('input[id=addUnidad'+id+']').val('');
+                $('input[id=addPrecio'+id+']').val('');
+                $('input[id=addTotal'+id+']').val('');
+            }else{
+                alertify.error("Producto no agregado.");
+            }
+        });
+    }
 };
 
 function delProduct(id){
@@ -409,16 +418,122 @@ function updatePriceSail(id, codigo, descripcion){
     });
 }
 
-function updateTotalIva(){amountSaleTotal
+function updateTotalIva(){
     if( $('#checkbox-iva').prop('checked') ) {
         var total = $('#amountSaleTotal').val()*1.2;
         $('#amountSaleTotal').val(Math.round(total));
     }else{
         $("#valor_total").load('../controller/functionCarrito.php?page=3');
     }
+}
 
+function verMontoEfectivo(){
+    if( $('#checkbox-1').prop('checked') ) {
+        document.getElementById('medioEfectivo').style.display='block';
+    }else{
+        document.getElementById('medioEfectivo').style.display='none';
+    }
+}
+
+function verMontoCheque(){
+    if( $('#checkbox-3').prop('checked') ) {
+        document.getElementById('medioCheque').style.display='block';
+        document.getElementById('medioCheque2').style.display='block';
+    }else{
+        document.getElementById('medioCheque').style.display='none';
+        document.getElementById('medioCheque2').style.display='none';
+    }
 }
 
 function cantCheque(){
-    alert($('#chequeSelect').val());
+    $("#cargaCheques").load('../controller/functionCheque.php?cheques='+$('#chequeSelect').val());
+}
+
+function actualizaMontoCheque(id){
+    var total = 0;
+    for (var i = 1; i < id; i++) {
+        var cheque = $('input[id=amountSaleCheque'+i+']').val();
+        total = Number(total)+Number(cheque);
+        $('input[id=amountSaleCheque]').val(total);
+    };   
+}
+
+function completarVenta(){
+    if($('input[id=clientId]').val()==''){
+        alertify.error("Debe seleccionar un cliente.");
+    }else if($('input[id=amountSaleTotal]').val()==0){
+        alertify.error("Debe ingresar algún producto.");
+    }else if(($('input[id=amountSaleEfectivo]').val()+$('input[id=amountSaleCheque]').val())!=$('input[id=amountSaleTotal]').val()){
+        alertify.error('Los montos no cuadran.');
+    }else{
+        location.href="#open-modal-closeSail";
+    }
+}
+
+function realizarVenta(){
+    var array; 
+        var cheque1 = {
+            'numero'    : $('input[id=checkSailNumber1]').val(),
+            'banco'     : $('input[id=checkSailBank1]').val(),
+            'fechaCheque':$('input[id=checkSailDate1]').val(),
+            'titular'   : $('input[id=checkSailTitular1]').val(),
+            'monto'     : $('input[id=amountSaleCheque1]').val()
+        };
+        var cheque2 = {
+            'numero'    : $('input[id=checkSailNumber2]').val(),
+            'banco'     : $('input[id=checkSailBank2]').val(),
+            'fechaCheque':$('input[id=checkSailDate2]').val(),
+            'titular'   : $('input[id=checkSailTitular2]').val(),
+            'monto'     : $('input[id=amountSaleCheque2]').val()
+        };
+        var cheque3 = {
+            'numero'    : $('input[id=checkSailNumber3]').val(),
+            'banco'     : $('input[id=checkSailBank3]').val(),
+            'fechaCheque':$('input[id=checkSailDate3]').val(),
+            'titular'   : $('input[id=checkSailTitular3]').val(),
+            'monto'     : $('input[id=amountSaleCheque3]').val()
+        };
+        var cheque4 = {
+            'numero'    : $('input[id=checkSailNumber4]').val(),
+            'banco'     : $('input[id=checkSailBank4]').val(),
+            'fechaCheque':$('input[id=checkSailDate4]').val(),
+            'titular'   : $('input[id=checkSailTitular4]').val(),
+            'monto'     : $('input[id=amountSaleCheque4]').val()
+        };
+        var cheque5 = {
+            'numero'    : $('input[id=checkSailNumber5]').val(),
+            'banco'     : $('input[id=checkSailBank5]').val(),
+            'fechaCheque':$('input[id=checkSailDate5]').val(),
+            'titular'   : $('input[id=checkSailTitular5]').val(),
+            'monto'     : $('input[id=amountSaleCheque5]').val()
+        };
+
+        array = {
+            'cheque1'   : cheque1,
+            'cheque2'   : cheque2,
+            'cheque3'   : cheque3,
+            'cheque4'   : cheque4,
+            'cheque5'   : cheque5
+        };
+
+    var params = {
+        'cliId'     : $('input[id=clientId]').val(),
+        'valor'     : $('input[id=amountSaleTotal]').val(),
+        'fecha'     : new Date(),
+        'efectivo'  : $('input[id=amountSaleEfectivo]').val(),
+        'cheque'    : $('input[id=amountSaleCheque]').val(),
+        'array'     : array
+    };
+    $.ajax({
+        url : '../controller/functionVenta.php',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    }).done(function(data){
+        if(data.success==true){
+            alertify.success(data.msg);
+        }
+        location.href="#modal-close";
+    });
+
 }
