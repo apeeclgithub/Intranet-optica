@@ -1,6 +1,8 @@
 <?php 
 include_once('../../library/fpdf/fpdf.php'); 
 header("Content-Type: text/html; charset=iso-8859-1 ");
+require_once '../model/classDatabase.php';
+
 
 class PDF extends FPDF
 {
@@ -41,7 +43,7 @@ class PDF extends FPDF
 		$this->Cell(40,5, utf8_decode('Celular: '));
 	}
 
-	function TablaBasica() {
+/*	function TablaBasica() {
     //Cabecera
 	$this->Cell(20,10, utf8_decode('Código'),1,0,'C');
 	$this->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
@@ -66,21 +68,36 @@ class PDF extends FPDF
       $this->Cell(100,10,"hola2",1);
       $this->Cell(20,10,"hola3",1);
       $this->Cell(30,10,"hola4",1);
-      $this->Cell(20,10,"hola4",1);*/
-   }
+      $this->Cell(20,10,"hola4",1);
+  }*/
+  	function Client(){
+	  	require_once '../model/classCliente.php';
+	  	$objClient = new Cliente();
+	  	$objClient->selectClientAll();
+
+	  	foreach ((array) $objClient as $key) {
+	  		foreach ($key as $key2 => $value) {
+	  			$pdf->Cell(26,4,$value,0,1,'R');
+
+	  		}
+	  	}
+  	}
 
 //Pie de página
-	function Footer()
-	{
+  function Footer()
+  {
 
-		$this->SetY(260);
-		$this->Cell(40,5, 'Fecha Entrega: ');
-		$this->Ln(10);
-		$this->Cell(40,5,'Firma Cliente: ');
-		$this->Ln(10);
-		$this->Cell(40,5, 'Firma Vendedor: ');
-	
-	}
+  	$this->SetY(260);
+  	$this->Cell(40,5, 'Fecha Entrega: ');
+  	$this->Cell(210,5, utf8_decode('Total:'),0,0,'C');
+  	$this->Ln(10);
+  	$this->Cell(40,5,'Firma Cliente: ');
+  	$this->Cell(212,5, utf8_decode('Abono:'),0,0,'C');
+  	$this->Ln(10);
+  	$this->Cell(40,5, 'Firma Vendedor: ');
+  	$this->Cell(210,5, utf8_decode('Saldo:'),0,0,'C');
+
+  }
 
 }
 //Creación del objeto de la clase heredada
@@ -89,8 +106,9 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->TablaCliente();
+$pdf->Client();
 $pdf->Ln(10);
-$pdf->TablaBasica();
-//Aquí escribimos lo que deseamos mostrar...
+/*$pdf->TablaBasica();
+*///Aquí escribimos lo que deseamos mostrar...
 $pdf->Output();
 ?> 
