@@ -52,6 +52,8 @@
 		}
 	}
 
+    $carrito->destroy();
+
     echo json_encode($json);
 
 ?>

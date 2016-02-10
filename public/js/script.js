@@ -63,12 +63,12 @@ function loadModalProduct(id, codigo, marca, color, stock){
 };
 
 function insertProducto(){
-    var params = {
-        'proCodigo' : $('input[id=productCode]').val(),
-        'proMarca'  : $('select[id=productBrand]').val(),
-        'proColor'  : $('select[id=productColor]').val(),
-        'proStock'  : $('input[id=productStock]').val(),
-        'proDesc'   : $('textarea[id=productDesc]').val()
+    var params     = {
+        'proCodigo': $('input[id=productCode]').val(),
+        'proMarca' : $('select[id=productBrand]').val(),
+        'proColor' : $('select[id=productColor]').val(),
+        'proStock' : $('input[id=productStock]').val(),
+        'proDesc'  : $('textarea[id=productDesc]').val()
     };
 
     if ($('input[id=productCode]').val() === '') {
@@ -534,6 +534,7 @@ function realizarVenta(){
             alertify.success(data.msg);
         }
         location.href="#modal-close";
+        location.href="../views/venta.php"
     });
 
 }
