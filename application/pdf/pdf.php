@@ -71,16 +71,7 @@ class PDF extends FPDF
       $this->Cell(20,10,"hola4",1);
   }*/
   	function Client(){
-	  	require_once '../model/classCliente.php';
-	  	$objClient = new Cliente();
-	  	$objClient->selectClientAll();
 
-	  	foreach ((array) $objClient as $key) {
-	  		foreach ($key as $key2 => $value) {
-	  			$pdf->Cell(26,4,$value,0,1,'R');
-
-	  		}
-	  	}
   	}
 
 //Pie de página
@@ -108,6 +99,16 @@ $pdf->Ln(10);
 $pdf->TablaCliente();
 $pdf->Client();
 $pdf->Ln(10);
+	  	require_once '../model/classCliente.php';
+	  	$objClient = new Cliente();
+	  	$objClient->selectClientAll();
+
+	  	foreach ((array) $objClient as $key) {
+	  		foreach ($key as $key2 => $value) {
+	  			$pdf->Cell(40,5,$value['cli_nombre'],0,1);
+
+	  		}
+	  	}
 /*$pdf->TablaBasica();
 *///Aquí escribimos lo que deseamos mostrar...
 $pdf->Output();
