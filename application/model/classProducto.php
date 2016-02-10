@@ -32,7 +32,9 @@
 			$sql->bindParam(':proStock', $proStock);
 			$sql->bindParam(':proDesc', $proDesc);
 
-			$this->producto = $sql->execute();
+			if(!(array)$this->selectProduct($proCodigo, $proMarca, $proColor)){
+				$this->producto = $sql->execute();
+			}
 
 			return $this->producto;
 
@@ -67,6 +69,24 @@
 			$this->producto = $sql->execute();
 
 			return $this->producto;
+		}
+
+		public function selectProduct($proCodigo, $proMarca, $proColor){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT pro_id 
+										FROM producto 
+										WHERE pro_codigo = :proCodigo
+										AND marca_mar_id = :proMarca
+										AND color_col_id = :proColor');
+			$sql->bindParam(':proCodigo', $proCodigo);
+			$sql->bindParam(':proMarca', $proMarca);
+			$sql->bindParam(':proColor', $proColor);
+			$sql->execute();
+			$this->producto = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->producto;
+			
 		}
 
 	}

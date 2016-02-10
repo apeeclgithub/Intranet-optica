@@ -21,10 +21,23 @@
 			$sql = $objConn->prepare('INSERT INTO color (col_nombre) VALUES (:colNombre)');
 			$sql->bindParam(':colNombre', $colNombre);
 
-			$this->color = $sql->execute();
+			if(!(array)$this->selectColor($colNombre)){
+				$this->color = $sql->execute();
+			}
 
 			return $this->color;
 
+		}
+
+		public function selectColor($color){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('SELECT col_nombre FROM color WHERE col_nombre = :color');
+			$sql->bindParam(':color', $color);
+			$sql->execute();
+			$this->color = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->color;
 		}
 
 	}

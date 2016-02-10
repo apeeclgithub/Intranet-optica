@@ -19,7 +19,7 @@ function insertMarca(){
                 alertify.success("Marca agregada exitosamente.");
                 $('input[id=productBrand]').val('');
             }else{
-                alertify.error("Marca no agregada.");
+                alertify.error("Marca ya existe.");
             }
         })
     };
@@ -44,7 +44,7 @@ function insertColor(){
                 alertify.success("Color agregado exitosamente.");
                 $('input[id=productColor]').val('');
             }else{
-                alertify.error("Color no agregado.");
+                alertify.error("Color ya existe.");
             }
         })
     };
@@ -97,7 +97,7 @@ function insertProducto(){
                 $('input[id=productStock]').val('');
                 $('textarea[id=productDesc]').val('');
             }else{
-                alertify.error('Producto no agregado.');
+                alertify.error('Producto ya existe.');
             }
         })
     };
