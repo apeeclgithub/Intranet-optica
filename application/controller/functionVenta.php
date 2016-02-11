@@ -18,7 +18,7 @@
 	$objVenta->insertVenta($numVenta, $_POST['fecha'],$_POST['valor'], $_POST['cliId']);
 	if($objVenta){
 		$json['msg'] = 'Venta creada.';
-        $json['id'] = $numVenta;
+        
 	}
 
 	$objTipo = new Venta();
@@ -54,7 +54,7 @@
 	}
 
     $carrito->destroy();
-
+    $json['id'] = $numVenta;
     echo json_encode($json);
 
 ?>

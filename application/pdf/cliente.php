@@ -51,7 +51,7 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->Ln(10);
-
+$pdf->Header();
   	require_once '../model/classCliente.php';
   	$objClient = new Cliente();
   	$objClient->selectClientAll();
@@ -65,6 +65,7 @@ $pdf->Ln(10);
 			$pdf->Cell(70,5,$value['cli_direccion'],1,0);
 			$pdf->Cell(25,5,$value['cli_comuna'],1,0);
 			$pdf->Cell(25,5,$value['cli_giro'],1,0);
+            $pdf->Ln(10);
 
   		}
   	}

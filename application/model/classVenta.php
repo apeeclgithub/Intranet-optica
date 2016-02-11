@@ -132,6 +132,22 @@
 			return $this->venta;
 
 		}
+        
+        public function selectTotal($fecha){
+            
+            $objConn = new Database();
+			$sql = $objConn->prepare('	SELECT SUM(ven_valor_neto)
+                                        FROM venta
+                                        WHERE ven_fecha = :fecha');
+            
+            $sql->bindParam(':fecha', $fecha);
+            
+			$sql->execute();
+			$this->venta = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->venta;
+            
+        }
 
 	}
 

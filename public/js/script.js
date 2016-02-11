@@ -1,30 +1,5 @@
 Date.prototype.toString = function() { return this.getFullYear()+"-"+(this.getMonth()+1)+"-"+this.getDate(); }
 
-function insertMarca(){
-    var params = {
-        'marNombre' : $('input[id=productBrand]').val()
-    };
-    if ($('input[id=productBrand]').val() === '') {
-        alertify.error("Marca no debe ir vacia.");
-    }else{
-        $.ajax({
-            url : '../controller/insertMarca.php',
-            type : 'post',
-            data : params,
-            dataType : 'json'
-        }).done(function(data){
-            if(data.success==true){
-                $("#addMarca").load('../controller/selectMarca.php');
-                $("#addMarcaEdit").load('../controller/selectMarcaEdit.php');
-                alertify.success("Marca agregada exitosamente.");
-                $('input[id=productBrand]').val('');
-            }else{
-                alertify.error("Marca ya existe.");
-            }
-        })
-    };
-};
-
 function insertColor(){
     var params = {
         'colNombre' : $('input[id=productColor]').val()
@@ -539,4 +514,19 @@ function realizarVenta(){
         location.href='../views/venta.php';
     });
 
+}
+
+$(document).ready(function(){
+    var date = new Date();
+    $('input[id=closingCashDate]').val(date);
+    $('input[id=closingCashTime]').val(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds());
+});
+
+function cuadrarCaja(){
+    var cash = $('input[id=closingCashMoneyReal]').val();
+    var check =$('input[id=closingCashCheckReal]').val();
+    $('input[id=closingCashTotalReal]').val(Number(cash)+Number(check));
+    var sistema = $('input[id=closingCashTotalSis]').val();
+    var real = $('input[id=closingCashTotalReal]').val();
+    $('input[id=closingCashDif]').val(Number(sistema)-Number(real));
 }
