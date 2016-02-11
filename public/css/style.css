@@ -29,6 +29,11 @@ body{
   background-color: #FAFAFA !important;
 }
 
+a{
+  color:white !important;
+  text-decoration: none !important;
+}
+
 header, #content, footer{
   width: 100%;
 }
