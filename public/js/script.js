@@ -531,10 +531,12 @@ function realizarVenta(){
         dataType : 'json'
     }).done(function(data){
         if(data.success==true){
-            alertify.success(data.msg);
+            var url = '../pdf/pdf.php?id='.concat(data.id);
+            alertify.success(url);
+            window.open(url, '_blank');
         }
         location.href="#modal-close";
-        location.href="../views/venta.php"
+        location.href='../views/venta.php';
     });
 
 }

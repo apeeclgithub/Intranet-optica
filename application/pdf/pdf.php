@@ -4,6 +4,7 @@ header("Content-Type: text/html; charset=iso-8859-1 ");
 require_once '../model/classDatabase.php';
 
 
+
 class PDF extends FPDF
 {
    //Cabecera de página
@@ -23,9 +24,7 @@ class PDF extends FPDF
 		$this->Ln(5);
 		$this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
 		$this->Ln(10);
-		$this->Cell(40,5,"N. de Venta: ");
-		$this->Ln(5);
-		$this->Cell(40,5,"Fecha: ");
+		
 	}
 
 	function TablaCliente(){
@@ -78,15 +77,7 @@ class PDF extends FPDF
   function Footer()
   {
 
-  	$this->SetY(260);
-  	$this->Cell(40,5, 'Fecha Entrega: ');
-  	$this->Cell(210,5, utf8_decode('Total:'),0,0,'C');
-  	$this->Ln(10);
-  	$this->Cell(40,5,'Firma Cliente: ');
-  	$this->Cell(212,5, utf8_decode('Abono:'),0,0,'C');
-  	$this->Ln(10);
-  	$this->Cell(40,5, 'Firma Vendedor: ');
-  	$this->Cell(210,5, utf8_decode('Saldo:'),0,0,'C');
+  	
 
   }
 
@@ -96,19 +87,78 @@ $pdf=new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
-$pdf->TablaCliente();
-$pdf->Client();
+
+require_once '../model/classVenta.php';
+$objVenta = new Venta();
+$objVenta->selectVentaById($_GET['id']); 
+foreach ((array) $objVenta as $key) {
+    foreach ($key as $key2 => $value) {
+        $pdf->SetFont('Arial','',12);
+        $pdf->Cell(40,5,"N. de Venta: ");
+        $pdf->Cell(100,5,$value['ven_id']);
+		$pdf->Ln(5);
+		$pdf->Cell(40,5,"Fecha: ");
+        $pdf->Cell(100,5,$value['ven_fecha']);
+        $pdf->Ln(15);
+        
+		$pdf->Cell(40,5, utf8_decode('Nombre:'));
+        $pdf->Cell(100,5,utf8_decode($value['cli_nombre']));
+		$pdf->Ln(5);
+		$pdf->Cell(40,5, utf8_decode('Dirección: '));
+        $pdf->Cell(100,5,$value['cli_direccion']);
+		$pdf->Ln(5);
+		$pdf->Cell(40,5, utf8_decode('Comuna: '));
+        $pdf->Cell(100,5,$value['cli_comuna']);
+		$pdf->Ln(5);
+		$pdf->Cell(40,5, utf8_decode('Rut: '));
+        $pdf->Cell(100,5,$value['cli_rut']);
+		$pdf->Ln(5);
+		$pdf->Cell(40,5, utf8_decode('Fono: '));
+        $pdf->Cell(100,5,$value['cli_fono']);
+		$pdf->Ln(5);
+		$pdf->Cell(40,5, utf8_decode('Celular: '));
+        $pdf->Cell(100,5,$value['cli_celular']);
+    }
+}
+
 $pdf->Ln(10);
-	  	require_once '../model/classCliente.php';
-	  	$objClient = new Cliente();
-	  	$objClient->selectClientAll();
 
-	  	foreach ((array) $objClient as $key) {
-	  		foreach ($key as $key2 => $value) {
-	  			$pdf->Cell(40,5,$value['cli_nombre'],0,1);
+$pdf->Cell(20,10, utf8_decode('Código'),1,0,'C');
+$pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
+$pdf->Cell(20,10, utf8_decode('Cantidad'),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
+$pdf->Cell(20,10, utf8_decode('Total'),1,0,'C');
+$pdf->Ln();
 
-	  		}
-	  	}
+$objVenta->selectProductVenta($_GET['id']);
+
+foreach ((array) $objVenta as $key) {
+    foreach ($key as $key2 => $value) {
+	  	$pdf->Cell(20,10, utf8_decode($value['pro_codigo']),1,0,'C');
+        $pdf->Cell(100,10, utf8_decode($value['pro_descripcion']),1,0,'C');
+        $pdf->Cell(20,10, utf8_decode($value['det_cantidad']),1,0,'C');
+        $pdf->Cell(30,10, utf8_decode($value['det_valor']),1,0,'C');
+        $pdf->Cell(20,10, utf8_decode($value['det_cantidad']*$value['det_valor']),1,0,'C');
+        $pdf->Ln();
+    }
+}
+
+$objVenta->selectTotalVenta($_GET['id']);
+
+foreach ((array) $objVenta as $key) {
+    foreach ($key as $key2 => $value) {
+
+    $pdf->SetY(250);
+    $pdf->Cell(40,5, 'Fecha Entrega: ');
+    $pdf->Cell(0,5, $value['ven_fecha']);
+    $pdf->Ln(10);
+    $pdf->Cell(40,5, utf8_decode('Total:'),0,0);
+    $pdf->Cell(40,5, $value['ven_valor_neto'],0,0);
+    $pdf->Ln(10);
+    $pdf->Cell(80,5,'Firma Cliente: ');
+    $pdf->Cell(40,5, 'Firma Vendedor: ');
+    }
+}
 /*$pdf->TablaBasica();
 *///Aquí escribimos lo que deseamos mostrar...
 $pdf->Output();
