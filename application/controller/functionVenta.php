@@ -18,6 +18,7 @@
 	$objVenta->insertVenta($numVenta, $_POST['fecha'],$_POST['valor'], $_POST['cliId']);
 	if($objVenta){
 		$json['msg'] = 'Venta creada.';
+        $json['id'] = $numVenta;
 	}
 
 	$objTipo = new Venta();
@@ -46,7 +47,7 @@
 	foreach ((array)$carro as $key) {
 		foreach ((array)$key as $value) {
 			if(is_array($value)){
-				$objProducto->insertProducto($value['cantidad'], $numVenta, $value['id']);
+				$objProducto->insertProducto($value['cantidad'], $numVenta, $value['id'], $value['precio']);
 				$objProducto->updateCantidad( $value['id'], $value['cantidad']);
 			}
 		}
