@@ -42,9 +42,6 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->Ln(10);
-
-$pdf->Header();
-
     require_once '../model/classCliente.php';
     $objClient = new Cliente();
     $objClient->selectClientAll();
@@ -52,14 +49,14 @@ $pdf->Header();
     foreach ((array) $objClient as $key) {
       foreach ($key as $key2 => $value) {
 
-        $pdf->Cell(30,10,$value['cli_nombre'],1,0);
+        $pdf->Cell(50,10,$value['cli_nombre'],1,0);
         $pdf->Cell(30,10,$value['cli_rut'],1,0);
-        $pdf->Cell(30,5,$value['cli_fono'],1,0);
-        $pdf->Cell(30,5,$value['cli_celular'],1,0);
-      $pdf->Cell(70,5,$value['cli_direccion'],1,0);
-      $pdf->Cell(25,5,$value['cli_comuna'],1,0);
-      $pdf->Cell(25,5,$value['cli_giro'],1,0);
-            $pdf->Ln(10);
+        $pdf->Cell(30,10,$value['cli_fono'],1,0);
+        $pdf->Cell(30,10,$value['cli_celular'],1,0);
+        $pdf->Cell(70,10,$value['cli_direccion'],1,0);
+        $pdf->Cell(35,10,$value['cli_comuna'],1,0);
+        $pdf->Cell(35,10,$value['cli_giro'],1,0);
+        $pdf->Ln(10);
 
 
       }
