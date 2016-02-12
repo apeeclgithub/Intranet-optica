@@ -7,10 +7,6 @@
             <input class="mdl-textfield__input" type="text"  id="closingCashDate" >
 			<label class="mdl-textfield__label" for="closingCashDate">Fecha</label>
 		</div>
-		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			<input class="mdl-textfield__input" type="text"  id="closingCashTime">
-			<label class="mdl-textfield__label" for="closingCashTime">Hora</label>
-		</div>
 	</div>	
 	<div class="closingCash">
 		<div id="dataClient">
