@@ -44,7 +44,6 @@
 		<div class="mdl-tabs__tab-bar">
 			<a href="#printDailyReportPanel" class="mdl-tabs__tab is-active">REPORTE DIARIO</a>
 			<a href="#printMonthReportPanel" class="mdl-tabs__tab">REPORTE MENSUAL</a>
-			<a href="#printBalanceReportPanel" class="mdl-tabs__tab">REPORTE SALDO PENDIENTE</a>
 			<a href="#printSailDetail" class="mdl-tabs__tab">DETALLE POR N. VENTA</a>
 		</div>
 
@@ -71,18 +70,6 @@
 					<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="REPORTE MENSUAL">
 				</div>
 			</div>
-		</div>
-		<div class="mdl-tabs__panel" id="printBalanceReportPanel">
-			<div class="contentProducts">
-				<div class="fontItem" >REPORTE SALDO PENDIENTE</div>
-				<br><p>Seleccione Fecha</p>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input id="dateBalance" class="mdl-textfield__input" type="date">	
-				</div>
-				<div class="dateBalance">
-					<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="Reporte Saldo">
-				</div>
-			</div><br>
 		</div>
 		<div class="mdl-tabs__panel" id="printSailDetail">
 			<div class="contentProducts">
