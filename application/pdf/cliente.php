@@ -42,6 +42,14 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->Ln(10);
+$pdf->Cell(50,10,'Nombre',1,0);
+$pdf->Cell(30,10,'Rut',1,0);
+$pdf->Cell(30,10,'Fono',1,0);
+$pdf->Cell(30,10,'Celular',1,0);
+$pdf->Cell(70,10,utf8_decode('Dirección'),1,0);
+$pdf->Cell(35,10,'Comuna',1,0);
+$pdf->Cell(35,10,'Giro',1,0);
+$pdf->Ln(10);
     require_once '../model/classCliente.php';
     $objClient = new Cliente();
     $objClient->selectClientAll();
@@ -49,13 +57,13 @@ $pdf->Ln(10);
     foreach ((array) $objClient as $key) {
       foreach ($key as $key2 => $value) {
 
-        $pdf->Cell(50,10,$value['cli_nombre'],1,0);
+        $pdf->Cell(50,10,utf8_decode($value['cli_nombre']),1,0);
         $pdf->Cell(30,10,$value['cli_rut'],1,0);
         $pdf->Cell(30,10,$value['cli_fono'],1,0);
         $pdf->Cell(30,10,$value['cli_celular'],1,0);
-        $pdf->Cell(70,10,$value['cli_direccion'],1,0);
-        $pdf->Cell(35,10,$value['cli_comuna'],1,0);
-        $pdf->Cell(35,10,$value['cli_giro'],1,0);
+        $pdf->Cell(70,10,utf8_decode($value['cli_direccion']),1,0);
+        $pdf->Cell(35,10,utf8_decode($value['cli_comuna']),1,0);
+        $pdf->Cell(35,10,utf8_decode($value['cli_giro']),1,0);
         $pdf->Ln(10);
 
 
