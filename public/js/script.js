@@ -459,11 +459,15 @@ function actualizaMontoCheque(id){
 }
 
 function completarVenta(){
+    var efectivo = $('input[id=amountSaleEfectivo]').val();
+    var cheque = $('input[id=amountSaleCheque]').val();
+    var total = $('input[id=amountSaleTotal]').val();
+    
     if($('input[id=clientId]').val()==''){
         alertify.error("Debe seleccionar un cliente.");
     }else if($('input[id=amountSaleTotal]').val()==0){
         alertify.error("Debe ingresar algún producto.");
-    }else if(($('input[id=amountSaleEfectivo]').val()+$('input[id=amountSaleCheque]').val())!=$('input[id=amountSaleTotal]').val()){
+    }else if((Number(efectivo)+Number(cheque))!=Number(total)){
         alertify.error('Los montos no cuadran.');
     }else{
         location.href="#open-modal-closeSail";
