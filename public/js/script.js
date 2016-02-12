@@ -1,5 +1,30 @@
 Date.prototype.toString = function() { return this.getFullYear()+"-"+(this.getMonth()+1)+"-"+this.getDate(); }
 
+function insertMarca(){
+    var params = {
+        'marNombre' : $('input[id=productBrand]').val()
+    };
+    if ($('input[id=productBrand]').val() === '') {
+        alertify.error("Marca no debe ir vacia.");
+    }else{
+        $.ajax({
+            url : '../controller/insertMarca.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                $("#addMarca").load('../controller/selectMarca.php');
+                $("#addMarcaEdit").load('../controller/selectMarcaEdit.php');
+                alertify.success("Marca agregada exitosamente.");
+                $('input[id=productBrand]').val('');
+            }else{
+                alertify.error("Marca ya existe.");
+            }
+        })
+    };
+};
+
 function insertColor(){
     var params = {
         'colNombre' : $('input[id=productColor]').val()

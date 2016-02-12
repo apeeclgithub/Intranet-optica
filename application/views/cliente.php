@@ -110,7 +110,7 @@
 	<div>
 		<h1>CHEQUES CLIENTE</h1>
 		<div id="abrir">
-			<?php require '../controller/selectCheque.php'; ?>
+			<?php require_once '../controller/selectCheque.php'; ?>
 		</div>
 			<div>
 				<button class="mdl-button mdl-button--raised mdl-button--colored" ><a href="#modal-close" title="Close" id="modal-close">Cerrar</a></button>
