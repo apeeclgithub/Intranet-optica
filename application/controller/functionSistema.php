@@ -2,7 +2,7 @@
     require_once '../model/classVenta.php';
     require_once '../model/classCheque.php';
 
-    $fecha = date("Y-m-d");
+    $fecha = $_SESSION['date'];
     $objVenta = new Venta();
     $objVenta->selectTotal($fecha);
 
@@ -24,6 +24,7 @@
             $totalCheque = $key2['SUM(che_monto)'];
         }
     }
+
 ?>
 
 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

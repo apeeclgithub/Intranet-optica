@@ -545,6 +545,14 @@ $(document).ready(function(){
     var date = new Date();
     $('input[id=closingCashDate]').val(date);
     $('input[id=closingCashTime]').val(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds());
+    var params = {'date' : date};
+    $.ajax({
+        url : '../controller/functionDate.php',
+        type : 'post',
+        data : params,
+        dataType : 'json'
+    });
+    
 });
 
 function cuadrarCaja(){
