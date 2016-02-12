@@ -78,9 +78,9 @@
 				<option value="5">5</option>
 			</select>
 		</div>
-		<div id="medioCheque2" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style='display:none;'>
+		<div id="medioCheque2" class="mdl-textfield mdl-js-textfield " style='display:none;'>
 			<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="amountSaleCheque" disabled>
-			<label class="mdl-textfield__label" for="amountSale">Total</label>
+			<label for="amountSale">Total</label>
 			<span class="mdl-textfield__error">Ingresar solo números</span>
 		</div>
 		<div id="cargaCheques">
