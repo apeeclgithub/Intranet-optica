@@ -17,24 +17,24 @@
 			<div class="fontItem">REAL</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input onkeyup="cuadrarCaja()" class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashMoneyReal" >
-				<label class="mdl-textfield__label" for="closingCashMoneyReal">Efectivo</label>
+				<label for="closingCashMoneyReal">Efectivo</label>
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input onkeyup="cuadrarCaja()" class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashCheckReal" >
-				<label class="mdl-textfield__label" for="closingCashCheckReal">Cheque</label>
+				<label  for="closingCashCheckReal">Cheque</label>
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashTotalReal" >
-				<label class="mdl-textfield__label" for="closingCashTotalReal">Total</label>
+				<label  for="closingCashTotalReal">Total</label>
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
 		</div>
 		<div id="dataClient">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="closingCashDif" >
-				<label class="mdl-textfield__label" for="closingCashDif">Diferencia</label>
+				<label for="closingCashDif">Diferencia</label>
 				<span class="mdl-textfield__error">Ingresar solo números</span>
 			</div>
 			<div>
