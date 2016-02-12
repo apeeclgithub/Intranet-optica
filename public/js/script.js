@@ -567,3 +567,20 @@ function cuadrarCaja(){
     var real = $('input[id=closingCashTotalReal]').val();
     $('input[id=closingCashDif]').val(Number(sistema)-Number(real));
 }
+
+function imprimirVenta(){
+    var params = {'id' : $('input[id=detalleVentaID]').val()};
+    $.ajax({
+            url : '../controller/functionImprimir.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                var url = "../pdf/pdf.php?id="+$('input[id=detalleVentaID]').val();
+                window.open(url, '_blank');
+            }else{
+                alertify.error("Venta no existe.");
+            }
+        });
+}

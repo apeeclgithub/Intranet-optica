@@ -88,12 +88,12 @@
 			<div class="contentProducts">
 				<div class="fontItem" >REPORTE DETALLE DE VENTA</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="clientPhone">
+					<input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="detalleVentaID">
 					<label class="mdl-textfield__label" for="clientPhone">Número de Venta</label>
 					<span class="mdl-textfield__error">Sólo números</span>
 				</div>
 				<div>
-					<button class="mdl-button mdl-button--raised mdl-button--colored" >Imprimir</button>
+					<button onclick="imprimirVenta()"  class="mdl-button mdl-button--raised mdl-button--colored" >Imprimir</button>
 				</div>
 			</div><br>
 		</div>
