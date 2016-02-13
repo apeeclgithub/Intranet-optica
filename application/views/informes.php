@@ -84,18 +84,14 @@
 				</div>
 			</div><br>
 		</div>
-	</div>
-	<div class="interior">
-		<button class="mdl-button mdl-button--raised mdl-button--colored">EXPORTAR CIERRE CAJA </button>	
-	</div>
-	<div class="interior">
-		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Listado Clientes</button>
-	</div>
+		<div class="interior">
+			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/cliente.php" target="_blank">LISTADO CLIENTES</a></button>
+		</div>
 	<div class="interior">
 		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
 	</div>
-	<div class="interior">
-		<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Detalle Inventario</button>
-	</div>
+		<div class="interior">
+			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/detalleInventario.php" target="_blank">Exportar Inventario</a></button>	
+		</div>
 </div>
 <?php include('footer.php') ?>

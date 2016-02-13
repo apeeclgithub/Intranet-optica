@@ -47,7 +47,7 @@
 			<?php require '../controller/selectClientAll.php'; ?>
 		</div>
 		<div>
-			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/cliente.php" target="_blank">Exportar Listado</a></button>
+			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/cliente.php" target="_blank">Listado Clientes</a></button>
 		</div>
 	</div>
 	<!--modal editar cliente -->
