@@ -65,9 +65,11 @@ $pdf->Ln();
 
       }
     }
+$pdf->Ln(10);
 
 $pdf->Cell(50,10, utf8_decode('Efectivo'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');
+$pdf->Ln(10);
 
 $pdf->Cell(50,10, utf8_decode('Cheque N°'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');

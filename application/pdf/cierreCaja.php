@@ -58,10 +58,12 @@ $pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
 $pdf->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
 $pdf->Cell(30,10, utf8_decode('P. Total'),1,0,'C');
 $pdf->Cell(30,10, utf8_decode('Total Final'),1,0,'C');
+$pdf->Ln(10);
 
 
 $pdf->Cell(50,10, utf8_decode('Efectivo'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');
+$pdf->Ln(10);
 
 $pdf->Cell(50,10, utf8_decode('Cheque N°'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');
