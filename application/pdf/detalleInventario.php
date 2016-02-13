@@ -37,16 +37,16 @@ function Footer()
 
 }
 //Creación del objeto de la clase heredada
-$pdf=new PDF();
+$pdf=new PDF('L','mm','A4');
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->Ln(10);
-$pdf->Cell(20,10, utf8_decode('Código'),1,0,'C');
+$pdf->Cell(50,10, utf8_decode('Código'),1,0,'C');
 $pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
-$pdf->Cell(20,10, utf8_decode('Color'),1,0,'C');
-$pdf->Cell(20,10, utf8_decode('Marca'),1,0,'C');
-$pdf->Cell(30,10, utf8_decode('Total'),1,0,'C');
+$pdf->Cell(50,10, utf8_decode('Color'),1,0,'C');
+$pdf->Cell(50,10, utf8_decode('Marca'),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
 $pdf->Ln();
     require_once '../model/classProducto.php';
     $objProduct = new Producto();
@@ -55,10 +55,10 @@ $pdf->Ln();
     foreach ((array) $objProduct as $key) {
       foreach ($key as $key2 => $value) {
 
-        $pdf->Cell(20,10,$value['pro_codigo'],1,0);
+        $pdf->Cell(50,10,$value['pro_codigo'],1,0);
         $pdf->Cell(100,10,utf8_decode($value['pro_descripcion']),1,0);
-        $pdf->Cell(20,10,$value['col_nombre'],1,0);
-        $pdf->Cell(20,10,$value['mar_nombre'],1,0);
+        $pdf->Cell(50,10,$value['col_nombre'],1,0);
+        $pdf->Cell(50,10,$value['mar_nombre'],1,0);
         $pdf->Cell(30,10,$value['pro_stock'],1,0);
         $pdf->Ln(10);
 
