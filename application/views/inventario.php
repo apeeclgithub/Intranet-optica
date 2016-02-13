@@ -104,7 +104,7 @@
 					<label for="productStock">Stock</label>
 					<span class="mdl-textfield__error">Ingresar solo números</span>
 				</div>				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="textAreaDesc">
-					<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" id="productDesc" ></textarea>
+					<textarea class="mdl-textfield__input" type="text" pattern="[w-\.]" id="editDescripcion" ></textarea>
 					<label class="mdl-textfield__label" for="productDesc">Descripción</label>
 					<span class="mdl-textfield__error">No puede ser vacío</span>
 				</div>

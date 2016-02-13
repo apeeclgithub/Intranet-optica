@@ -40,11 +40,11 @@
 
 		}
 
-		public function updateProduct($proId, $proCodigo, $proMarca, $proColor, $proStock){
+		public function updateProduct($proId, $proCodigo, $proMarca, $proColor, $proStock, $proDescripcion){
 
 			$objConn = new Database();
 			$sql = $objConn->prepare('	UPDATE producto 
-										SET pro_codigo = :proCodigo, pro_stock = :proStock, marca_mar_id = :proMarca, color_col_id = :proColor
+										SET pro_codigo = :proCodigo, pro_stock = :proStock, marca_mar_id = :proMarca, color_col_id = :proColor, pro_descripcion = :proDescripcion
 										WHERE pro_id = :proId');
 
 			$sql->bindParam(':proId', $proId);
@@ -52,6 +52,7 @@
 			$sql->bindParam(':proMarca', $proMarca);
 			$sql->bindParam(':proColor', $proColor);
 			$sql->bindParam(':proStock', $proStock);
+            $sql->bindParam(':proDescripcion', $proDescripcion);
 
 			$this->producto = $sql->execute();
 

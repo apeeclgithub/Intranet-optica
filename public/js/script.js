@@ -50,7 +50,7 @@ function insertColor(){
     };
 };
 
-function loadModalProduct(id, codigo, marca, color, stock){
+function loadModalProduct(id, codigo, marca, color, stock, descripcion){
     $('input[id=editCodigo]').val(codigo);
     $("select[id=editBrand] option").prop('selected', false).filter(function() {
         return $(this).text() == marca;
@@ -60,6 +60,7 @@ function loadModalProduct(id, codigo, marca, color, stock){
     }).prop('selected', true);
     $('input[id=editStock]').val(stock);
     $('input[id=editId]').val(id);
+    $('textarea[id=editDescripcion]').val(descripcion);
 };
 
 function insertProducto(){
@@ -109,7 +110,8 @@ function editProduct(){
         'proCodigo': $('input[id=editCodigo]').val(),
         'proMarca' : $('select[id=editBrand]').val(),
         'proColor' : $('select[id=editColor]').val(),
-        'proStock' : $('input[id=editStock]').val()
+        'proStock' : $('input[id=editStock]').val(),
+        'proDescripcion' : $('textarea[id=editDescripcion]').val()
     };
     $.ajax({
         url : '../controller/updateProduct.php',
@@ -125,7 +127,7 @@ function editProduct(){
             $('select[id=productBrand]').val('');
             $('select[id=productColor]').val('');
             $('input[id=productStock]').val('');
-            $('textarea[id=productDesc]').val('');
+            $('textarea[id=editDescripcion]').val('');
         }else{
             alertify.error('Producto no modificado.');
         }

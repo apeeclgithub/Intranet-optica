@@ -41,7 +41,8 @@
 									'<?php echo $value['pro_codigo']; ?>', 
 									'<?php echo $value['mar_nombre']; ?>',
 									'<?php echo $value['col_nombre']; ?>',
-									<?php echo $value['pro_stock']; ?>)" class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
+									<?php echo $value['pro_stock']; ?>,
+                                    '<?php echo $value['pro_descripcion']; ?>')" class="btnIcons" href="#open-modal-edit"><i class="material-icons">edit</i></a>&nbsp;&nbsp;&nbsp;
 								</div>
 								<div class="interior">
 									<a onclick="loadModalProduct(
@@ -49,7 +50,8 @@
 									'<?php echo $value['pro_codigo']; ?>', 
 									'<?php echo $value['mar_nombre']; ?>',
 									'<?php echo $value['col_nombre']; ?>',
-									<?php echo $value['pro_stock']; ?>)" class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
+									<?php echo $value['pro_stock']; ?>,
+                                    '<?php echo $value['pro_descripcion']; ?>')" class="btnIcons" href="#open-modal-delete"><i class="material-icons">delete</i></a>
 								</div>
 							</div>
 						</td>
