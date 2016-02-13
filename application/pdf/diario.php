@@ -42,34 +42,15 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->Ln(10);
-$pdf->Cell(50,10,utf8_decode('Nombre'),1,0);
-$pdf->Cell(30,10,utf8_decode('Rut'),1,0);
-$pdf->Cell(30,10,utf8_decode('Fono'),1,0);
-$pdf->Cell(30,10,utf8_decode('Celular'),1,0);
-$pdf->Cell(70,10,utf8_decode('Dirección'),1,0);
-$pdf->Cell(35,10,utf8_decode('Comuna'),1,0);
-$pdf->Cell(35,10,utf8_decode('Giro'),1,0);
+$pdf->Cell(50,10,'Productos Vendidos ',0,0, 'C');
 $pdf->Ln(10);
-    require_once '../model/classCliente.php';
-    $objClient = new Cliente();
-    $objClient->selectClientAll();
 
-    foreach ((array) $objClient as $key) {
-      foreach ($key as $key2 => $value) {
-
-        $pdf->Cell(50,10,utf8_decode($value['cli_nombre']),1,0);
-        $pdf->Cell(30,10,$value['cli_rut'],1,0);
-        $pdf->Cell(30,10,$value['cli_fono'],1,0);
-        $pdf->Cell(30,10,$value['cli_celular'],1,0);
-        $pdf->Cell(70,10,utf8_decode($value['cli_direccion']),1,0);
-        $pdf->Cell(35,10,utf8_decode($value['cli_comuna']),1,0);
-        $pdf->Cell(35,10,utf8_decode($value['cli_giro']),1,0);
-        $pdf->Ln(10);
-
-
-      }
-    }
-
+$pdf->Cell(50,10, utf8_decode('Código'),1,0,'C');
+$pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('P. Total'),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('Total Final'),1,0,'C');
 
 $pdf->Output();
 ?> 

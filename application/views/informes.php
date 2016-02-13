@@ -55,7 +55,7 @@
 					<input id="dateSaleDaily" class="mdl-textfield__input" type="date">
 				</div>
 				<div class="dateSaleDaily">
-					<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="Reporte diario">
+			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/diario.php" target="_blank">Imprimir</a></button>
 				</div>
 			</form>
 		</div>
