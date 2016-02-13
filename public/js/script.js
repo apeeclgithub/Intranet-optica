@@ -135,7 +135,7 @@ function editProduct(){
 
 function deleteProduct(){
     var params = {
-        'proId'    : $('input[id=proId]').val()
+        'proId'    : $('input[id=editId]').val()
     };
     $.ajax({
         url : '../controller/deleteProduct.php',
