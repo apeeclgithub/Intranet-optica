@@ -49,7 +49,7 @@
 
 		<div class="mdl-tabs__panel is-active" id="printDailyReportPanel">
 			<form class="formAddProduct">
-				<div class="fontItem">REPORTE DIARIO (Incluye detalle de venta)</div>
+				<div class="fontItem">REPORTE DIARIO</div>
 				<br><p>Seleccione Fecha</p>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input id="dateSaleDaily" class="mdl-textfield__input" type="date">
@@ -61,7 +61,7 @@
 		</div>
 		<div class="mdl-tabs__panel" id="printMonthReportPanel">
 			<div class="contentProducts">
-				<div class="fontItem" style="float:left;">REPORTE MENSUAL (Incluye detalle de venta)</div>
+				<div class="fontItem" style="float:left;">REPORTE MENSUAL</div>
 				<br><br><p>Seleccione Fecha</p>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input id="dateSaleMonth" class="mdl-textfield__input" type="date">	
