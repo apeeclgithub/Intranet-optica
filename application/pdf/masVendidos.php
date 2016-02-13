@@ -50,6 +50,8 @@ $pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Color'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Marca'),1,0,'C');
 $pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
+$pdf->Ln(10);
+
 
 $pdf->Output();
 ?> 
