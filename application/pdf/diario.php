@@ -44,6 +44,24 @@ $pdf->Ln(10);
 $pdf->Ln(10);
 $pdf->Cell(50,10,'Productos Vendidos ',0,0, 'C');
 $pdf->Ln(10);
+$pdf->Cell(50,10,'Cantidad productos Vendidos ',0,0, 'C');
+$pdf->Ln(10);
+$pdf->Ln(10);
+$pdf->Cell(50,10,'Fecha Reporte',0,0, 'C');
+$pdf->Ln(10);
+$pdf->Cell(50,10,'Cheque',0,0, 'C');
+$pdf->Ln(10);
+$pdf->Cell(50,10,'Fecha Reporte',0,0, 'C');
+$pdf->Ln(10);
+
+$pdf->Cell(50,10, utf8_decode('N° Cheque'),1,0,'C');
+$pdf->Cell(100,10, utf8_decode('Fecha '),1,0,'C');
+$pdf->Cell(30,10, utf8_decode('Monto'),1,0,'C');
+
+$pdf->Ln(10);
+
+$pdf->Cell(50,10,'Cantidad productos Vendidos ',0,0, 'C');
+$pdf->Ln(10);
 
 $pdf->Cell(50,10, utf8_decode('Código'),1,0,'C');
 $pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
