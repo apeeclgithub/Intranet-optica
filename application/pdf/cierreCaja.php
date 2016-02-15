@@ -2,7 +2,7 @@
 include_once('../../library/fpdf/fpdf.php'); 
 header("Content-Type: text/html; charset=iso-8859-1 ");
 require_once '../model/classDatabase.php';
-
+session_start();
 
 class PDF extends FPDF
 {
@@ -37,35 +37,71 @@ function Footer()
 
 }
 //Creación del objeto de la clase heredada
-$pdf=new PDF('L','mm','A4');
+$pdf=new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->Ln(10);
 $pdf->Ln(10);
-$pdf->Cell(50,10,'Total ',0,0, 'C');
 $pdf->Ln(10);
 
-$pdf->Cell(50,10, utf8_decode('Monto Efectivo'),1,0,'C');
-$pdf->Cell(50,10, utf8_decode('Monto Cheque'),1,0,'C');
-$pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');
-$pdf->Ln(10);
-$pdf->Cell(50,10,'Productos Vendidos ',0,0, 'C');
-$pdf->Ln(10);
+require_once '../model/classVenta.php';
+require_once '../model/classCheque.php';
 
-$pdf->Cell(50,10, utf8_decode('Código'),1,0,'C');
-$pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
-$pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
-$pdf->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
-$pdf->Cell(30,10, utf8_decode('P. Total'),1,0,'C');
-$pdf->Cell(30,10, utf8_decode('Total Final'),1,0,'C');
+$fecha = $_SESSION['date'];
+//$fecha = '2016-2-11';
+$objVenta = new Venta();
+$objVenta->selectTotal($fecha);
+
+$total;
+
+foreach((array)$objVenta as $key){
+    foreach($key as $key2){
+        $total = $key2['SUM(ven_valor_neto)'];
+    }
+}
+
+$objCheque = new Cheque();
+$objCheque->selectTotalCheque($fecha);
+
+$totalCheque;
+
+foreach((array)$objCheque as $key){
+    foreach($key as $key2){
+        $totalCheque = $key2['SUM(che_monto)'];
+    }
+}
+
+$selectNumeroCheque;
+
+$objNuCheque = new Cheque();
+$objNuCheque->selectNumeroCheque($fecha);
+
+$totalCheque;
+
+foreach((array)$objNuCheque as $key){
+    foreach($key as $key2){
+        $selectNumeroCheque = $key2['COUNT(che_monto)'];
+    }
+}
+
+
+$pdf->Cell(95,10, utf8_decode('Fecha'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode($fecha),1,0,'C');
+$pdf->Ln(40);
+
+$pdf->Cell(95,10, utf8_decode('Monto Efectivo'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode(number_format($total-$totalCheque,0,',','.')),1,0,'C');
 $pdf->Ln(10);
-
-
-$pdf->Cell(50,10, utf8_decode('Efectivo'),1,0,'C');
-$pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode('Monto Cheque'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode(number_format($totalCheque,0,',','.')),1,0,'C');
 $pdf->Ln(10);
+$pdf->Cell(95,10, utf8_decode('Cantidad de Cheques'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode($selectNumeroCheque),1,0,'C');
+$pdf->Ln(40);
+$pdf->Cell(95,10, utf8_decode('Total Diario'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode(number_format($total,0,',','.')),1,0,'C');
+$pdf->Ln(20);
 
-$pdf->Cell(50,10, utf8_decode('Cheque N°'),1,0,'C');
-$pdf->Cell(50,10, utf8_decode('Total'),1,0,'C');
+
 $pdf->Output();
 ?> 

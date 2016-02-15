@@ -39,7 +39,7 @@
 			</div>
 			<div>
 				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="RESUMEN VENTA DIARIA">
-				<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="CERRAR CAJA">
+				<input onclick="cerrarCaja('<?php echo $_SESSION['date']; ?>')" class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="CERRAR CAJA">
 			</div>
 		</div>
 	</div>

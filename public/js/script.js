@@ -586,3 +586,8 @@ function imprimirVenta(){
             }
         });
 }
+
+function cerrarCaja(date){
+    var url = "../pdf/cierreCaja.php?date="+date;
+                window.open(url, '_blank');
+}
