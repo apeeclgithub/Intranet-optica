@@ -587,7 +587,12 @@ function imprimirVenta(){
         });
 }
 
-function cerrarCaja(date){
-    var url = "../pdf/cierreCaja.php?date="+date;
-                window.open(url, '_blank');
+function cerrarCaja(){
+    var caja = $('input[id=closingCashDif]').val();
+    if(Number(caja)<1 && caja != "" && Number(caja)>-1){
+        var url = "../pdf/cierreCaja.php";
+        window.open(url, '_blank');
+    }else{
+       alertify.error("La caja no cuadra.");
+    }
 }
