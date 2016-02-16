@@ -87,9 +87,6 @@
 			<?php require_once '../controller/functionCheque.php'; ?>
 		</div>
 	</div>
-	<div><br><br>
-		<a href="../../application/pdf/pdf.php" target="_blank" >PDF</a>
-	</div>
 	<div class="interior">
 		<button onclick="completarVenta()" class="mdl-button mdl-button--raised mdl-button--colored">REALIZAR VENTA</button>	
 	</div>
