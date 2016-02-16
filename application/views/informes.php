@@ -55,7 +55,7 @@
 					<input id="dateSaleDaily" class="mdl-textfield__input" type="date">
 				</div>
 				<div class="dateSaleDaily">
-			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/diario.php" target="_blank">Imprimir</a></button>
+			<a class="mdl-button mdl-button--raised mdl-button--colored" onclick="reporteDiario()">Imprimir</a>
 				</div>
 			</form>
 		</div>
@@ -64,10 +64,25 @@
 				<div class="fontItem" style="float:left;">REPORTE MENSUAL</div>
 				<br><br><p>Seleccione Fecha</p>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input id="dateSaleMonth" class="mdl-textfield__input" type="date">	
+                    <select id="dateSaleMonth">
+                        <option value="0">Seleccione un mes</option>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+						
 				</div>
 				<div class="dateSaleMonth">
-					<input class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="REPORTE MENSUAL">
+					<input onclick="reporteMensual()" class="mdl-button mdl-button--raised mdl-button--colored" type="submit" value="REPORTE MENSUAL">
 				</div>
 			</div>
 		</div>

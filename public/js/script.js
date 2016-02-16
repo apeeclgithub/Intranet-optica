@@ -596,3 +596,27 @@ function cerrarCaja(){
        alertify.error("La caja no cuadra.");
     }
 }
+
+function ventaDiaria(date){
+    var url = "../pdf/ventaDiaria.php?date="+date;
+    window.open(url, '_blank');
+}
+
+function reporteDiario(){
+    var fecha = $('input[id=dateSaleDaily]').val();
+    if(fecha!=""){
+        var url = "../pdf/ventaDiaria.php?date="+fecha;
+        window.open(url, '_blank');
+    }else{
+        alertify.error("Seleccione una fecha.");
+    }
+}
+function reporteMensual(){
+    var mes = $('select[id=dateSaleMonth]').val();
+    if(mes!=0){
+        var url = "../pdf/ventaMensual.php?date="+mes;
+        window.open(url, '_blank');
+    }else{
+        alertify.error("Seleccione una mes.");
+    }
+}

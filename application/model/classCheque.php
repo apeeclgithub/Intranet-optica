@@ -59,15 +59,34 @@
             
         }
         
-        public function selectNumeroCheque($fecha){
+        public function listChequeFecha($fecha){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT che_numero, che_banco, che_fecha, che_monto, che_titular 
+										FROM cheque 
+										INNER JOIN tipo ON tipo.tip_id = cheque.tipo_tip_id
+										WHERE tipo.tip_fecha = :fecha
+                                        ORDER BY tipo.tip_fecha');
+
+			$sql->bindParam(':fecha', $fecha);
+			$this->cheque = $sql->execute();
+			$this->cheque = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->cheque;
+
+		}
+        
+        public function selectTotalChequeMes($fecha1, $fecha2){
             
             $objConn = new Database();
-			$sql = $objConn->prepare('	SELECT COUNT(che_monto)
+			$sql = $objConn->prepare('	SELECT SUM(che_monto)
                                         FROM cheque
                                         INNER JOIN tipo ON cheque.tipo_tip_id = tipo.tip_id
-                                        WHERE tip_fecha = :fecha');
+                                        WHERE tip_fecha >= :fecha1
+                                        AND tip_fecha <= :fecha2');
             
-            $sql->bindParam(':fecha', $fecha);
+            $sql->bindParam(':fecha1', $fecha1);
+            $sql->bindParam(':fecha2', $fecha2);
             
 			$sql->execute();
 			$this->cheque = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -75,6 +94,25 @@
 			return $this->cheque;
             
         }
+        
+        public function listChequeMes($fecha1, $fecha2){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT che_numero, tip_fecha, che_banco, che_fecha, che_monto, che_titular 
+										FROM cheque 
+										INNER JOIN tipo ON tipo.tip_id = cheque.tipo_tip_id
+										WHERE tipo.tip_fecha >= :fecha1
+                                        AND tipo.tip_fecha <= :fecha2
+                                        ORDER BY tipo.tip_fecha');
+
+			$sql->bindParam(':fecha1', $fecha1);
+            $sql->bindParam(':fecha2', $fecha2);
+			$this->cheque = $sql->execute();
+			$this->cheque = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->cheque;
+
+		}
 
 	}
 

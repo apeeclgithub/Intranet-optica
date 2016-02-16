@@ -47,10 +47,11 @@ $pdf->Ln(10);
 require_once '../model/classVenta.php';
 require_once '../model/classCheque.php';
 
+$fecha1 = Date("Y")."-".$_GET['date']."-1";
+$fecha2 = Date("Y")."-".$_GET['date']."-31";
 $fecha = $_GET['date'];
-//$fecha = '2016-2-11';
 $objVenta = new Venta();
-$objVenta->selectTotal($fecha);
+$objVenta->selectTotalMes($fecha1, $fecha2);
 
 $total;
 
@@ -61,7 +62,7 @@ foreach((array)$objVenta as $key){
 }
 
 $objCheque = new Cheque();
-$objCheque->selectTotalCheque($fecha);
+$objCheque->selectTotalChequeMes($fecha1, $fecha2);
 
 $totalCheque;
 
@@ -77,7 +78,7 @@ $selectNumeroCheque;
 
 
 $pdf->Cell(95,10, utf8_decode('Fecha'),1,0,'C');
-$pdf->Cell(95,10, utf8_decode($fecha),1,0,'C');
+$pdf->Cell(95,10, utf8_decode($fecha1),1,0,'C');
 $pdf->Ln(20);
 
 $pdf->Cell(95,10, utf8_decode('Monto Efectivo'),1,0,'C');
@@ -92,22 +93,24 @@ $pdf->Cell(95,10, utf8_decode(number_format($total,0,',','.')),1,0,'C');
 $pdf->Ln(20);
 
 $objCheques = new Cheque();
-$objCheques->listChequeFecha($fecha);
+$objCheques->listChequeMes($fecha1, $fecha2);
 
 foreach((array)$objCheques as $key){
     $pdf->Cell(50,10, utf8_decode('Cantidad de cheques: '.count($key)));
     $pdf->Ln(10);
-    $pdf->Cell(30,10, utf8_decode('Número'),1,0,'C');
+    $pdf->Cell(20,10, utf8_decode('Número'),1,0,'C');
+    $pdf->Cell(25,10, utf8_decode('Fecha'),1,0,'C');
     $pdf->Cell(40,10, utf8_decode('Banco'),1,0,'C');
-    $pdf->Cell(60,10, utf8_decode('Titular'),1,0,'C');
-    $pdf->Cell(30,10, utf8_decode('Fecha'),1,0,'C');
+    $pdf->Cell(50,10, utf8_decode('Titular'),1,0,'C');
+    $pdf->Cell(25,10, utf8_decode('Fecha pago'),1,0,'C');
     $pdf->Cell(30,10, utf8_decode('Monto'),1,0,'C');
     $pdf->Ln(10);
     foreach($key as $key2){
-        $pdf->Cell(30,10, utf8_decode($key2['che_numero']),1,0,'C');
+        $pdf->Cell(20,10, utf8_decode($key2['che_numero']),1,0,'C');
+        $pdf->Cell(25,10, utf8_decode($key2['tip_fecha']),1,0,'C');
         $pdf->Cell(40,10, utf8_decode($key2['che_banco']),1,0,'C');
-        $pdf->Cell(60,10, utf8_decode($key2['che_titular']),1,0,'C');
-        $pdf->Cell(30,10, utf8_decode($key2['che_fecha']),1,0,'C');
+        $pdf->Cell(50,10, utf8_decode($key2['che_titular']),1,0,'C');
+        $pdf->Cell(25,10, utf8_decode($key2['che_fecha']),1,0,'C');
         $pdf->Cell(30,10, utf8_decode(number_format($key2['che_monto'],0,',','.')),1,0,'C');
         $pdf->Ln(10);
     }
@@ -115,22 +118,24 @@ foreach((array)$objCheques as $key){
 }
 
 $objVentas = new Venta();
-$objVentas->listVenta($fecha);
+$objVentas->listVentaMes($fecha1, $fecha2);
 
 foreach((array)$objVentas as $key){
     $pdf->Cell(50,10, utf8_decode('Cantidad de ventas: '.count($key)));
     $pdf->Ln(10);
 
-    $pdf->Cell(40,10, utf8_decode('Correlativo'),1,0,'C');
+    $pdf->Cell(30,10, utf8_decode('Correlativo'),1,0,'C');
+    $pdf->Cell(30,10, utf8_decode('Fecha'),1,0,'C');
     $pdf->Cell(40,10, utf8_decode('Rut Cliente'),1,0,'C');
-    $pdf->Cell(80,10, utf8_decode('Nombre Cliente'),1,0,'C');
+    $pdf->Cell(60,10, utf8_decode('Nombre Cliente'),1,0,'C');
     $pdf->Cell(30,10, utf8_decode('Total Venta'),1,0,'C');
     $pdf->Ln(10);
     
     foreach($key as $key2){
-        $pdf->Cell(40,10, utf8_decode($key2['ven_id']),1,0,'C');
+        $pdf->Cell(30,10, utf8_decode($key2['ven_id']),1,0,'C');
+        $pdf->Cell(30,10, utf8_decode($key2['ven_fecha']),1,0,'C');
         $pdf->Cell(40,10, utf8_decode($key2['cli_rut']),1,0,'C');
-        $pdf->Cell(80,10, utf8_decode($key2['cli_nombre']),1,0,'C');
+        $pdf->Cell(60,10, utf8_decode($key2['cli_nombre']),1,0,'C');
         $pdf->Cell(30,10, utf8_decode(number_format($key2['ven_valor_neto'],0,',','.')),1,0,'C');
         $pdf->Ln(10);
     }

@@ -148,6 +148,60 @@
 			return $this->venta;
             
         }
+        
+        public function listVenta($fecha){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT ven_id, cli_rut, cli_nombre, ven_valor_neto
+                                        FROM venta
+                                        INNER JOIN cliente ON venta.cliente_cli_id = cliente.cli_id
+                                        WHERE ven_fecha = :fecha
+                                        ORDER BY ven_fecha');
+
+			$sql->bindParam(':fecha', $fecha);
+			$this->venta = $sql->execute();
+			$this->venta = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->venta;
+
+		}
+        
+        public function selectTotalMes($fecha1, $fecha2){
+            
+            $objConn = new Database();
+			$sql = $objConn->prepare('	SELECT SUM(ven_valor_neto)
+                                        FROM venta
+                                        WHERE ven_fecha >= :fecha1
+                                        AND ven_fecha <= :fecha2');
+            
+            $sql->bindParam(':fecha1', $fecha1);
+            $sql->bindParam(':fecha2', $fecha2);
+            
+			$sql->execute();
+			$this->venta = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->venta;
+            
+        }
+        
+        public function listVentaMes($fecha1, $fecha2){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT ven_id, cli_rut, cli_nombre, ven_valor_neto, ven_fecha
+                                        FROM venta
+                                        INNER JOIN cliente ON venta.cliente_cli_id = cliente.cli_id
+                                        WHERE ven_fecha >= :fecha1
+                                        AND ven_fecha <= :fecha2
+                                        ORDER BY ven_fecha');
+
+			$sql->bindParam(':fecha1', $fecha1);
+            $sql->bindParam(':fecha2', $fecha2);
+			$this->venta = $sql->execute();
+			$this->venta = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->venta;
+
+		}
 
 	}
 
