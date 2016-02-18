@@ -22,6 +22,7 @@ class PDF extends FPDF
     $this->Cell(0,10, 'Mac Iver 180, Oficina 35',0,0,'C');
     $this->Ln(5);
     $this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
+    $this->Ln(10);
   }
 
 //Pie de página
@@ -32,7 +33,7 @@ function Footer()
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Page number
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,'Page '.$this->PageNo(),0,0,'C');
 }
 
 }
@@ -40,8 +41,6 @@ function Footer()
 $pdf=new PDF('L','mm','A4');
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
-$pdf->Ln(10);
-$pdf->Ln(10);
 $pdf->Cell(50,10,utf8_decode('Nombre'),1,0);
 $pdf->Cell(30,10,utf8_decode('Rut'),1,0);
 $pdf->Cell(30,10,utf8_decode('Fono'),1,0);

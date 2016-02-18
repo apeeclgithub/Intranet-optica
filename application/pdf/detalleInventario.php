@@ -22,7 +22,32 @@ class PDF extends FPDF
     $this->Cell(0,10, 'Mac Iver 180, Oficina 35',0,0,'C');
     $this->Ln(5);
     $this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
+    $this->Ln(10);
   }
+
+function CabeceraProds(){
+  //Pie de página
+}
+function Productos()
+{
+    require_once '../model/classProducto.php';
+    $objProduct = new Producto();
+    $objProduct->selectProductAll();
+
+    foreach ((array) $objProduct as $key) {
+      foreach ($key as $key2 => $value) {
+
+        $this->Cell(50,10,$value['pro_codigo'],1,0);
+        $this->Cell(100,10,utf8_decode($value['pro_descripcion']),1,0);
+        $this->Cell(50,10,$value['col_nombre'],1,0);
+        $this->Cell(50,10,$value['mar_nombre'],1,0);
+        $this->Cell(30,10,$value['pro_stock'],1,0);
+        $this->Ln(10);
+
+
+      }
+    }
+}
 
 //Pie de página
 function Footer()
@@ -32,7 +57,7 @@ function Footer()
     // Arial italic 8
     $this->SetFont('Arial','I',8);
     // Page number
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,'Page '.$this->PageNo(),0,0,'C');
 }
 
 }
@@ -40,31 +65,15 @@ function Footer()
 $pdf=new PDF('L','mm','A4');
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
-$pdf->Ln(10);
-$pdf->Ln(10);
 $pdf->Cell(50,10, utf8_decode('Código'),1,0,'C');
 $pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Color'),1,0,'C');
 $pdf->Cell(50,10, utf8_decode('Marca'),1,0,'C');
 $pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
 $pdf->Ln();
-    require_once '../model/classProducto.php';
-    $objProduct = new Producto();
-    $objProduct->selectProductAll();
-
-    foreach ((array) $objProduct as $key) {
-      foreach ($key as $key2 => $value) {
-
-        $pdf->Cell(50,10,$value['pro_codigo'],1,0);
-        $pdf->Cell(100,10,utf8_decode($value['pro_descripcion']),1,0);
-        $pdf->Cell(50,10,$value['col_nombre'],1,0);
-        $pdf->Cell(50,10,$value['mar_nombre'],1,0);
-        $pdf->Cell(30,10,$value['pro_stock'],1,0);
-        $pdf->Ln(10);
+$pdf->Productos();
 
 
-      }
-    }
 
 
 $pdf->Output();
