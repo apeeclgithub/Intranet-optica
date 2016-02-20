@@ -10,7 +10,7 @@ class PDF extends FPDF
   function Header()
   {
 
-    $this->Image('../../public/img/logo.png',130,8,33);
+    $this->Image('../../public/img/logo.png',88,8,33);
 
     $this->SetFont('Arial','',12);
     $this->Ln(10);
@@ -22,6 +22,7 @@ class PDF extends FPDF
     $this->Cell(0,10, 'Mac Iver 180, Oficina 35',0,0,'C');
     $this->Ln(5);
     $this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
+    $this->Ln(10);
   }
 
 //Pie de página
@@ -40,8 +41,6 @@ function Footer()
 $pdf=new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
-$pdf->Ln(10);
-$pdf->Ln(10);
 $pdf->Ln(10);
 
 require_once '../model/classVenta.php';

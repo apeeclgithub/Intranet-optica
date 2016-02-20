@@ -339,3 +339,8 @@ tr td input{
   font-size:2rem !important;
   text-align: right;
 }
+
+.noColor a{
+  color: white !important;
+  text-decoration: none !important;
+}

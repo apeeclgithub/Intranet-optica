@@ -100,13 +100,13 @@
 			</div><br>
 		</div>
 		<div class="interior">
-			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/cliente.php" target="_blank">LISTADO CLIENTES</a></button>
+			<button class="mdl-button mdl-button--raised mdl-button--colored noColor"><a href="../pdf/cliente.php" target="_blank">LISTADO CLIENTES</a></button>
 		</div>
 		<div class="interior">
-			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/cliente.php" target="_blank">MAS VENDIDOS</a></button>
+			<button class="mdl-button mdl-button--raised mdl-button--colored noColor"><a href="../pdf/cliente.php" target="_blank">MAS VENDIDOS</a></button>
 		</div>
 		<div class="interior">
-			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/detalleInventario.php" target="_blank">Exportar Inventario</a></button>	
+			<button class="mdl-button mdl-button--raised mdl-button--colored noColor"><a href="../pdf/detalleInventario.php" target="_blank">Exportar Inventario</a></button>	
 		</div>
 </div>
 <?php include('footer.php') ?>
