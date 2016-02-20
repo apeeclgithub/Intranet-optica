@@ -1,7 +1,9 @@
 <script type="text/javascript" language="javascript" class="init">
 	$(document).ready(function() {
 		$('#paginationClientsSailAdd').DataTable( {
-			"pagingType": "full_numbers"
+			"scrollY":        "300px",
+	        "scrollCollapse": true,
+	        "paging":         false
 		} );
 	} );
 </script>

@@ -22,6 +22,8 @@ class PDF extends FPDF
     $this->Cell(0,10, 'Mac Iver 180, Oficina 35',0,0,'C');
     $this->Ln(5);
     $this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
+    $this->Ln(10);
+    $this->Ln(10);
   }
 
 //Pie de página
@@ -40,9 +42,7 @@ function Footer()
 $pdf=new PDF();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
-$pdf->Ln(10);
-$pdf->Ln(10);
-$pdf->Ln(10);
+
 
 require_once '../model/classVenta.php';
 require_once '../model/classCheque.php';

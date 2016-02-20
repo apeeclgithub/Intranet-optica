@@ -12,7 +12,7 @@ class PDF extends FPDF
 
     $this->Image('../../public/img/logo.png',130,8,33);
 
-    $this->SetFont('Arial','',12);
+    $this->SetFont('Arial','B',12);
     $this->Ln(10);
     $this->Ln(10);
     $this->Cell(0,10, utf8_decode('Importadora y Comercializadora de artículos Ópticos'),1,0,'C');
@@ -23,6 +23,39 @@ class PDF extends FPDF
     $this->Ln(5);
     $this->Cell(0,10, 'Importadoralypltda@gmail.com',0,0,'C');
     $this->Ln(10);
+    $this->Ln(10);
+    $this->Cell(15,10, utf8_decode('N°'),1,0,'C');
+    $this->Cell(50,10,utf8_decode('Nombre'),1,0,'C');
+    $this->Cell(30,10,utf8_decode('Rut'),1,0,'C');
+    $this->Cell(25,10,utf8_decode('Fono'),1,0,'C');
+    $this->Cell(25,10,utf8_decode('Celular'),1,0,'C');
+    $this->Cell(70,10,utf8_decode('Dirección'),1,0,'C');
+    $this->Cell(35,10,utf8_decode('Comuna'),1,0,'C');
+    $this->Cell(30,10,utf8_decode('Giro'),1,0,'C');
+    $this->Ln(10);
+  }
+
+  function Client(){
+        require_once '../model/classCliente.php';
+    $objClient = new Cliente();
+    $objClient->selectClientAll();
+
+    foreach ((array) $objClient as $key) {
+      foreach ($key as $key2 => $value) {
+        $key2 = $key2+1;
+        $this->Cell(15,10, utf8_decode($key2),1,0,'C');
+        $this->Cell(50,10,utf8_decode($value['cli_nombre']),1,0);
+        $this->Cell(30,10,$value['cli_rut'],1,0);
+        $this->Cell(25,10,$value['cli_fono'],1,0);
+        $this->Cell(25,10,$value['cli_celular'],1,0);
+        $this->Cell(70,10,utf8_decode($value['cli_direccion']),1,0);
+        $this->Cell(35,10,utf8_decode($value['cli_comuna']),1,0);
+        $this->Cell(30,10,utf8_decode($value['cli_giro']),1,0);
+        $this->Ln(10);
+
+
+      }
+    }
   }
 
 //Pie de página
@@ -40,35 +73,8 @@ function Footer()
 //Creación del objeto de la clase heredada
 $pdf=new PDF('L','mm','A4');
 $pdf->AddPage();
-$pdf->SetFont('Times','',12);
-$pdf->Cell(50,10,utf8_decode('Nombre'),1,0);
-$pdf->Cell(30,10,utf8_decode('Rut'),1,0);
-$pdf->Cell(30,10,utf8_decode('Fono'),1,0);
-$pdf->Cell(30,10,utf8_decode('Celular'),1,0);
-$pdf->Cell(70,10,utf8_decode('Dirección'),1,0);
-$pdf->Cell(35,10,utf8_decode('Comuna'),1,0);
-$pdf->Cell(35,10,utf8_decode('Giro'),1,0);
-$pdf->Ln(10);
-    require_once '../model/classCliente.php';
-    $objClient = new Cliente();
-    $objClient->selectClientAll();
-
-    foreach ((array) $objClient as $key) {
-      foreach ($key as $key2 => $value) {
-
-        $pdf->Cell(50,10,utf8_decode($value['cli_nombre']),1,0);
-        $pdf->Cell(30,10,$value['cli_rut'],1,0);
-        $pdf->Cell(30,10,$value['cli_fono'],1,0);
-        $pdf->Cell(30,10,$value['cli_celular'],1,0);
-        $pdf->Cell(70,10,utf8_decode($value['cli_direccion']),1,0);
-        $pdf->Cell(35,10,utf8_decode($value['cli_comuna']),1,0);
-        $pdf->Cell(35,10,utf8_decode($value['cli_giro']),1,0);
-        $pdf->Ln(10);
-
-
-      }
-    }
-
+$pdf->SetFont('Arial','',10);
+$pdf->Client();
 
 $pdf->Output();
 ?> 

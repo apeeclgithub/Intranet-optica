@@ -123,10 +123,10 @@ foreach ((array) $objVenta as $key) {
 
 $pdf->Ln(10);
 
-$pdf->Cell(20,10, utf8_decode('Código'),1,0,'C');
-$pdf->Cell(100,10, utf8_decode('Descripción'),1,0,'C');
+$pdf->Cell(35,10, utf8_decode('Código'),1,0,'C');
+$pdf->Cell(95,10, utf8_decode('Descripción'),1,0,'C');
 $pdf->Cell(20,10, utf8_decode('Cantidad'),1,0,'C');
-$pdf->Cell(30,10, utf8_decode('P. Unitario'),1,0,'C');
+$pdf->Cell(25,10, utf8_decode('P. Unitario'),1,0,'C');
 $pdf->Cell(20,10, utf8_decode('Total'),1,0,'C');
 $pdf->Ln();
 
@@ -134,11 +134,11 @@ $objVenta->selectProductVenta($_GET['id']);
 
 foreach ((array) $objVenta as $key) {
     foreach ($key as $key2 => $value) {
-	  	$pdf->Cell(20,10, utf8_decode($value['pro_codigo']),1,0,'C');
-        $pdf->Cell(100,10, utf8_decode($value['pro_descripcion']),1,0,'C');
-        $pdf->Cell(20,10, utf8_decode($value['det_cantidad']),1,0,'C');
-        $pdf->Cell(30,10, utf8_decode($value['det_valor']),1,0,'C');
-        $pdf->Cell(20,10, utf8_decode($value['det_cantidad']*$value['det_valor']),1,0,'C');
+	  	$pdf->Cell(35,10, utf8_decode($value['pro_codigo']),1,0);
+        $pdf->Cell(95,10, utf8_decode($value['pro_descripcion']),1,0);
+        $pdf->Cell(20,10, utf8_decode($value['det_cantidad']),1,0);
+        $pdf->Cell(25,10, utf8_decode($value['det_valor']),1,0);
+        $pdf->Cell(20,10, utf8_decode($value['det_cantidad']*$value['det_valor']),1,0);
         $pdf->Ln();
     }
 }
