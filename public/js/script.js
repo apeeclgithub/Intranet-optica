@@ -257,7 +257,6 @@ function deleteClient(){
     var params = {
         'cliId'    : $('input[id=editId]').val()
     };
-    alert(params['cliId']);
     $.ajax({
         url : '../controller/deleteClient.php',
         type : 'post',
