@@ -397,27 +397,32 @@ function updatePriceSail(id, codigo, descripcion){
     if($('input[id=sailUnidad'+id+']').val()<$('input[id=viejo'+id+']').val()){
         var unit = $('input[id=sailUnidad'+id+']').val()-$('input[id=viejo'+id+']').val();
     }
-    var params = {
+    if($('input[id=sailUnidad'+id+']').val()<=$('input[id=stock'+id+']').val()){
+        var params = {
         'id' : id,
         'cantidad' : unit,
         'precio' : $('input[id=sailPrecio'+id+']').val(),
         'codigo' : codigo,
         'descripcion' : descripcion
-    };
-    $.ajax({
-        url : '../controller/functionCarrito.php?page=1',
-        type : 'post',
-        data : params,
-        dataType : 'json'
-    }).done(function(data){
-        if(data.success==true){
-            $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
-            $("#valor_total").load('../controller/functionCarrito.php?page=3');
-            $('input[id=addUnidad'+id+']').val('');
-            $('input[id=addPrecio'+id+']').val('');
-            $('input[id=addTotal'+id+']').val('');
-        }
-    });
+        };
+        $.ajax({
+            url : '../controller/functionCarrito.php?page=1',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                $("#tablaProductsDetail").load('../controller/selectProductSailDetail.php');
+                $("#valor_total").load('../controller/functionCarrito.php?page=3');
+                $('input[id=addUnidad'+id+']').val('');
+                $('input[id=addPrecio'+id+']').val('');
+                $('input[id=addTotal'+id+']').val('');
+            }
+        });
+    }else{
+        alertify.error('No tiene stock suficiente');
+    }
+    
 }
 
 function updateTotalIva(){
