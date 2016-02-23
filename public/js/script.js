@@ -255,8 +255,9 @@ function editClient(){
 
 function deleteClient(){
     var params = {
-        'cliId'    : $('input[id=cliId]').val()
+        'cliId'    : $('input[id=editId]').val()
     };
+    alert(params['cliId']);
     $.ajax({
         url : '../controller/deleteClient.php',
         type : 'post',
@@ -611,6 +612,7 @@ function reporteDiario(){
         alertify.error("Seleccione una fecha.");
     }
 }
+
 function reporteMensual(){
     var mes = $('select[id=dateSaleMonth]').val();
     if(mes!=0){

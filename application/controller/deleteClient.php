@@ -2,7 +2,7 @@
 
 	require '../model/classCliente.php';
 
-	$cliId    = $_POST['cliId'];
+	$cliId    = $_POST['cliId']; 
 
 	$objCliente = new Cliente();
 	$json['success'] = false;
