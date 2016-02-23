@@ -31,11 +31,40 @@
 			$sql->bindParam(':clientGir', $clientGir);
 			$sql->bindParam(':clientAddress', $clientAddress);
 			$sql->bindParam(':clientCom', $clientCom);
-
-			$this->cliente = $sql->execute();
+            
+            if(!(array)$this->selectClient($clientName, $clientRut, $clientPhone, $clientCel, $clientGir, $clientAddress, $clientCom)){
+				$this->cliente = $sql->execute();
+			}
 
 			return $this->cliente;
 
+		}
+        
+        public function selectClient($clientName, $clientRut, $clientPhone, $clientCel, $clientGir, $clientAddress, $clientCom){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('  SELECT cli_nombre FROM cliente 
+                                        WHERE cli_nombre = :clientName
+                                        AND cli_rut = :clientRut
+                                        AND cli_fono = :clientPhone
+                                        AND cli_celular = :clientCel
+                                        AND cli_giro = :clientGir
+                                        AND cli_direccion = :clientAddress
+                                        AND cli_comuna = :clientCom');
+			
+            $sql->bindParam(':clientName', $clientName);
+			$sql->bindParam(':clientRut', $clientRut);
+			$sql->bindParam(':clientPhone', $clientPhone);
+			$sql->bindParam(':clientCel', $clientCel);
+			$sql->bindParam(':clientGir', $clientGir);
+			$sql->bindParam(':clientAddress', $clientAddress);
+			$sql->bindParam(':clientCom', $clientCom);
+            
+			$sql->execute();
+			$this->cliente = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->cliente;
+            
 		}
 
 		public function updateClient($cliId, $clientName, $clientRut, $clientPhone, $clientCel, $clientGir, $clientAddress, $clientCom){
