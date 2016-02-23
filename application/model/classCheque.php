@@ -113,6 +113,23 @@
 			return $this->cheque;
 
 		}
+        
+        public function selectNumeroCheque($fecha){
+            
+            $objConn = new Database();
+			$sql = $objConn->prepare('	SELECT COUNT(che_monto)
+                                        FROM cheque
+                                        INNER JOIN tipo ON cheque.tipo_tip_id = tipo.tip_id
+                                        WHERE tip_fecha = :fecha');
+            
+            $sql->bindParam(':fecha', $fecha);
+            
+			$sql->execute();
+			$this->cheque = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->cheque;
+            
+        }
 
 	}
 
