@@ -3,10 +3,10 @@ require("../../library/fpdf/fpdf.php");
 //require("../model/classDatabase.php");
 header("Content-Type: text/html; charset=iso-8859-1 ");
 
-$con= mysql_connect("localhost","apeecl_optica_db","TdomZbzPF)Xu");
+$con= mysql_connect("localhost","","");
 mysql_query("SET NAMES 'utf8'");
 if($con){   
-    $db = mysql_select_db("apeecl_optica_db",$con);
+    $db = mysql_select_db("",$con);
     if(!$db){ 
         echo "Problemas para conectar a la BD";
     }
