@@ -78,7 +78,7 @@
 			<button class="mdl-button mdl-button--raised mdl-button--colored noColor"><a href="../pdf/detalleInventario.php" target="_blank">Exportar Detalle Inventario</a></button>	
 		</div>
 		<div class="interior">
-			<button class="mdl-button mdl-button--raised mdl-button--colored">Exportar Productos más vendidos</button>
+			<button class="mdl-button mdl-button--raised mdl-button--colored"><a href="../pdf/masVendidos.php" target="_blank">Exportar Productos más vendidos</a></button>
 		</div>
 	</div>
 

@@ -89,6 +89,36 @@
 			return $this->producto;
 			
 		}
+        
+        public function distinctProduct(){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT DISTINCT(producto_pro_id) 
+										FROM detalle');
+
+			$sql->execute();
+			$this->producto = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->producto;
+			
+		}
+        
+        public function selectProductByDet($id){
+
+			$objConn = new Database();
+			$sql = $objConn->prepare('	SELECT pro_codigo, pro_stock, pro_descripcion, col_nombre, mar_nombre
+										FROM producto 
+										INNER JOIN marca ON producto.marca_mar_id = marca.mar_id 
+										INNER JOIN color ON producto.color_col_id = color.col_id
+                                        WHERE pro_id = :id');
+
+			$sql->bindParam(':id', $id);
+			$sql->execute();
+			$this->producto = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+			return $this->producto;
+			
+		}
 
 	}
 

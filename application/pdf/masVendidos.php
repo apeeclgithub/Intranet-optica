@@ -2,6 +2,7 @@
 include_once('../../library/fpdf/fpdf.php'); 
 header("Content-Type: text/html; charset=iso-8859-1 ");
 require_once '../model/classDatabase.php';
+require_once '../model/classProducto.php';
 
 
 class PDF extends FPDF
@@ -52,6 +53,27 @@ $pdf->Cell(50,10, utf8_decode('Marca'),1,0,'C');
 $pdf->Cell(30,10, utf8_decode('Stock'),1,0,'C');
 $pdf->Ln(10);
 
+$det = new Producto();
+$det->distinctProduct();
+$det2 = new Producto();
+
+
+foreach ((array) $det as $key) {
+      foreach ($key as $key2 => $value) {
+          $det2->selectProductByDet($key2['DISTINCT(producto_pro_id)']);
+           $pdf->Cell(50,10, utf8_decode($key2['DISTINCT(producto_pro_id)']),1,0,'C');
+          foreach ((array) $det2 as $key3) {
+            foreach ($key3 as $key4 => $value) {
+                $pdf->Cell(50,10, utf8_decode($key4['pro_codigo']),1,0,'C');
+                $pdf->Cell(100,10, utf8_decode($key4['pro_codigo']),1,0,'C');
+                $pdf->Cell(50,10, utf8_decode($key4['pro_codigo']),1,0,'C');
+                $pdf->Cell(50,10, utf8_decode($key4['pro_codigo']),1,0,'C');
+                $pdf->Cell(30,10, utf8_decode($key4['pro_codigo']),1,0,'C');
+                $pdf->Ln(10);
+            }
+          }
+      }
+}
 
 $pdf->Output();
 ?> 
