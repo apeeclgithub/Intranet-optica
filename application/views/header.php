@@ -21,7 +21,7 @@
 		<link href="../../public/css/style.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="../../public/mdl/material.min.css">
 		<script src="../../public/mdl/material.min.js"></script>
-		<!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 		<link href="../../public/css/alertify.bootstrap.css" rel="stylesheet" type="text/css" />
 		<link href="../../public/css/alertify.core.css" rel="stylesheet" type="text/css" />
