@@ -1,5 +1,28 @@
 Date.prototype.toString = function() { return this.getFullYear()+"-"+(this.getMonth()+1)+"-"+this.getDate(); }
 
+function anularVenta(){
+    var params = {
+        'ventaId' : $('input[id=anulaVenta]').val()
+    };
+    if ($('input[id=anulaVenta]').val() === '') {
+        alertify.error("Id de venta no debe ir vacia.");
+    }else{
+        $.ajax({
+            url : '../controller/anularVenta.php',
+            type : 'post',
+            data : params,
+            dataType : 'json'
+        }).done(function(data){
+            if(data.success==true){
+                alertify.success("Venta anulada exitosamente.");
+                $('input[id=anulaVenta]').val('');
+            }else{
+                alertify.error("Venta no existe.") ;
+            }
+        })
+    };
+};
+
 function insertMarca(){
     var params = {
         'marNombre' : $('input[id=productBrand]').val()

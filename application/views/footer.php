@@ -1,5 +1,5 @@
 		<footer>
-			<div>Pie de página</div>
+			<div></div>
 		</footer>
 	</body>
 </html>
